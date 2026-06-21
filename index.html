@@ -74,7 +74,7 @@ body{
 @media(min-width:900px){.hero-wrap{height:560px}}
 
 /* ── BRETON SUBTITLE ── */
-.breton-sub{font-size:.58em;color:#A8D8EA;letter-spacing:.07em;font-style:italic;font-weight:400;display:block;margin-top:.15rem}
+.breton-sub{font-size:1em;color:#A8D8EA;letter-spacing:.02em;font-style:italic;font-weight:700;display:block;margin-top:.2rem}
 
 /* ── SUBPAGE LINK ── */
 .page-links{margin-top:1.1rem}
@@ -205,6 +205,11 @@ details[open] summary::before{transform:rotate(90deg)}
 .hl-section ul{margin-left:1.1rem}
 .hl-section li{font-size:.83rem;line-height:1.5;color:var(--text);margin-bottom:.18rem}
 
+/* ── DAY MAP ── */
+.day-map-wrap{margin:.25rem 0 .75rem;border-radius:.5rem;overflow:hidden;height:190px;border:1px solid var(--border)}
+.day-map-wrap iframe{width:100%;height:100%;border:0;display:block}
+@media(min-width:600px){.day-map-wrap{height:240px}}
+
 /* ── TIPS BOX ── */
 .tips-box{
   margin:1rem .75rem;padding:1.1rem 1.2rem;
@@ -298,6 +303,8 @@ footer strong{display:block;margin-bottom:.35rem;font-size:.8rem;color:var(--tex
     <h3 class="card-title">Pfungen → Strassburg → Reims</h3>
     <div class="drive-badge">🚗 ~620 km · ~6 Std. · Anreisetag</div>
     <p class="card-desc">Frühzeitig losfahren — über Basel und Strassburg nach Reims. Wer mag, legt in Strassburg einen Mittagsstopp ein: Das Münster und das Quartier Petite France sind einen kurzen Spaziergang wert. Abends erwartet euch die <strong>Cathédrale Notre-Dame de Reims</strong> — dreimal häufiger von Monet gemalt als der Dom in Rouen, abends beleuchtet schlicht atemberaubend.</p>
+    
+    <div class="day-map-wrap"><iframe src="https://maps.google.com/maps?saddr=Pfungen,+Winterthur,+Schweiz&daddr=Reims,+France&output=embed&hl=de" loading="lazy" allowfullscreen referrerpolicy="no-referrer-when-downgrade"></iframe></div>
     <div class="map-links">
       <a href="https://maps.google.com/?q=Cathédrale+Notre-Dame+de+Reims,+France" class="map-btn" target="_blank">📍 Cathédrale de Reims</a>
       <a href="https://maps.google.com/?q=Quartier+Petite+France+Strasbourg" class="map-btn" target="_blank">📍 Strassburg (Stopp)</a>
@@ -339,6 +346,8 @@ footer strong{display:block;margin-bottom:.35rem;font-size:.8rem;color:var(--tex
     <h3 class="card-title">Reims → Épernay → Rouen</h3>
     <div class="drive-badge">🚗 ~280 km · ~3.5 Std.</div>
     <p class="card-desc">Vormittags eine <strong>Champagner-Kellerführung</strong>: Entweder in Reims (Taittinger oder Pommery — monumentale Römergruben!) oder kurzer Abstecher nach <strong>Épernay</strong>, wo Moët &amp; Chandon, Perrier-Jouët und Pol Roger Seite an Seite an der «Avenue de Champagne» stehen. Eine Kellerführung dauert ca. 1.5 Std., Kosten ~€30–50/Person. Dann Fahrt nach <strong>Rouen</strong> — Abendspaziergang durch die Rue du Gros-Horloge zur beleuchteten gotischen Kathedrale.</p>
+    
+    <div class="day-map-wrap"><iframe src="https://maps.google.com/maps?saddr=Reims,+France&daddr=Epernay,+France+to:Rouen,+France&output=embed&hl=de" loading="lazy" allowfullscreen referrerpolicy="no-referrer-when-downgrade"></iframe></div>
     <div class="map-links">
       <a href="https://maps.google.com/?q=Avenue+de+Champagne+Épernay,+France" class="map-btn" target="_blank">📍 Avenue de Champagne</a>
       <a href="https://maps.google.com/?q=Cathédrale+Notre-Dame+de+Rouen,+France" class="map-btn" target="_blank">📍 Kathedrale Rouen</a>
@@ -381,6 +390,8 @@ footer strong{display:block;margin-bottom:.35rem;font-size:.8rem;color:var(--tex
     <h3 class="card-title">Rouen → Étretat → Honfleur</h3>
     <div class="drive-badge">🚗 ~180 km · ~2.5 Std.</div>
     <p class="card-desc">Morgens Rouen erkunden: <strong>Abbaye Saint-Ouen</strong> (flamboyante Gotik par excellence), <strong>Palais de Justice</strong> (Fassade wie steinernes Spitzentuch), Vieux-Marché (wo Johanna von Arkus 1431 verbrannte). Mittags Fahrt nach <strong>Étretat</strong> — die Kreidefelsenbögen Falaise d'Aval und d'Amont sind schlicht ausserordentlich. <strong>Wanderung auf dem Chemin des Falaises: ~1.5 Std.</strong> Abends das malerischste Hafenstädtchen der Normandie: <strong>Honfleur</strong>, Liebling der Impressionisten. Den Vieux-Bassin im letzten Abendlicht geniessen.</p>
+    
+    <div class="day-map-wrap"><iframe src="https://maps.google.com/maps?saddr=Rouen,+France&daddr=Etretat,+France+to:Honfleur,+France&output=embed&hl=de" loading="lazy" allowfullscreen referrerpolicy="no-referrer-when-downgrade"></iframe></div>
     <div class="map-links">
       <a href="https://maps.google.com/?q=Falaises+d'Étretat,+France" class="map-btn" target="_blank">📍 Falaises d'Étretat</a>
       <a href="https://maps.google.com/?q=Vieux-Bassin+Honfleur,+France" class="map-btn" target="_blank">📍 Vieux-Bassin Honfleur</a>
@@ -423,6 +434,8 @@ footer strong{display:block;margin-bottom:.35rem;font-size:.8rem;color:var(--tex
     <h3 class="card-title">Honfleur → Deauville/Trouville → Bayeux</h3>
     <div class="drive-badge">🚗 ~130 km · ~2 Std.</div>
     <p class="card-desc">Morgens noch etwas Honfleur: Der Vieux-Bassin, die Quais, der kleine Markt. Dann die <strong>Côte Fleurie</strong>: <strong>Deauville</strong> und <strong>Trouville</strong> (durch einen Tunnel verbunden). Die Planches — die ikonische Strandpromenade mit den Farbkabinen und den eingravierten Filmstarnamen — riechen nach Belle Époque. Trouville ist volkstümlicher, hat den besseren Fischmarkt. Nachmittags: Weiterfahrt nach <strong>Bayeux</strong> — die erste Stadt der Normandie, die nach D-Day befreit wurde und die einzige, die den Krieg ohne Bombenschäden überstand.</p>
+    
+    <div class="day-map-wrap"><iframe src="https://maps.google.com/maps?saddr=Honfleur,+France&daddr=Deauville,+France+to:Bayeux,+France&output=embed&hl=de" loading="lazy" allowfullscreen referrerpolicy="no-referrer-when-downgrade"></iframe></div>
     <div class="map-links">
       <a href="https://maps.google.com/?q=Les+Planches+Deauville,+France" class="map-btn" target="_blank">📍 Les Planches Deauville</a>
       <a href="https://maps.google.com/?q=Marché+de+Trouville,+France" class="map-btn" target="_blank">📍 Trouville Marché</a>
@@ -464,6 +477,8 @@ footer strong{display:block;margin-bottom:.35rem;font-size:.8rem;color:var(--tex
     <h3 class="card-title">Bayeux &amp; die D-Day-Strände</h3>
     <div class="drive-badge">🚗 ~80 km Rundfahrt · Lokaler Tag</div>
     <p class="card-desc">Vormittags die berühmte <strong>Tapisserie de Bayeux</strong> — 70 Meter Leinwand aus dem 11. Jh., die 1066 erzählt. UNESCO-Welterbe. Dazu die Kathedrale. Nachmittags die <strong>D-Day-Strände</strong>: Bei <strong>Arromanches</strong> liegen die Überreste des künstlichen Mulberry-Hafens noch immer im Meer — das Musée du Débarquement erklärt die Genialität dieser Konstruktion. Am <strong>Omaha Beach</strong> begreift man, was der 6. Juni 1944 bedeutete. Der <strong>Cimetière Américain de Colleville-sur-Mer</strong> mit seinen 9'387 weissen Marmorkreuzen über dem Atlantik ist still, erschütternd und von einer eigentümlichen Schönheit. Optional: <strong>Pointe du Hoc</strong> — die Rangers kletterten hier senkrechte Klippen hoch, die Bombenkrater sind noch sichtbar.</p>
+    
+    <div class="day-map-wrap"><iframe src="https://maps.google.com/maps?saddr=Bayeux,+France&daddr=Arromanches-les-Bains,+France+to:Omaha+Beach,+Colleville-sur-Mer,+France+to:Pointe+du+Hoc,+France&output=embed&hl=de" loading="lazy" allowfullscreen referrerpolicy="no-referrer-when-downgrade"></iframe></div>
     <div class="map-links">
       <a href="https://maps.google.com/?q=Tapisserie+de+Bayeux,+France" class="map-btn" target="_blank">📍 Tapisserie de Bayeux</a>
       <a href="https://maps.google.com/?q=Arromanches-les-Bains,+France" class="map-btn" target="_blank">📍 Arromanches</a>
@@ -509,6 +524,8 @@ footer strong{display:block;margin-bottom:.35rem;font-size:.8rem;color:var(--tex
     <h3 class="card-title">Bayeux → Utah Beach → Mont Saint-Michel</h3>
     <div class="drive-badge">🚗 ~130 km · ~2 Std.</div>
     <p class="card-desc">Morgens: <strong>Utah Beach</strong> — das westlichste D-Day-Landungsgebiet, heute ein langer, stiller Strand. <strong>Sainte-Mère-Église</strong>: Das Airborne Museum ist das beste Fallschirmjäger-Museum Frankreichs — und ja, die Puppe des Fallschirmjägers John Steele hängt noch an der Kirchturmspitze. Mittags: Fahrt zum <strong>Mont Saint-Michel</strong>. Der erste Anblick des aufragenden Felsens aus der flachen Bucht — dieser Moment lässt niemanden kalt. <strong>Gezeiten prüfen</strong> auf annuaire-maree.fr! Flut am Abend ist spektakulär — das Wasser kommt mit der Geschwindigkeit eines galoppierenden Pferdes.</p>
+    
+    <div class="day-map-wrap"><iframe src="https://maps.google.com/maps?saddr=Bayeux,+France&daddr=Sainte-Mere-Eglise,+France+to:Mont+Saint-Michel,+France&output=embed&hl=de" loading="lazy" allowfullscreen referrerpolicy="no-referrer-when-downgrade"></iframe></div>
     <div class="map-links">
       <a href="https://maps.google.com/?q=Utah+Beach+Museum,+Sainte-Marie-du-Mont,+France" class="map-btn" target="_blank">📍 Utah Beach</a>
       <a href="https://maps.google.com/?q=Airborne+Museum+Sainte-Mère-Église,+France" class="map-btn" target="_blank">📍 Airborne Museum</a>
@@ -551,6 +568,8 @@ footer strong{display:block;margin-bottom:.35rem;font-size:.8rem;color:var(--tex
     <h3 class="card-title">Mont Saint-Michel → Saint-Malo</h3>
     <div class="drive-badge">🚗 ~55 km · ~1 Std.</div>
     <p class="card-desc">Früh morgens — <strong>vor 9 Uhr!</strong> — die <strong>Abbaye du Mont Saint-Michel</strong> besuchen: dann gehört sie fast euch allein. Der <strong>Cloître</strong> (Kreuzgang) ist ein Meisterwerk der normannischen Gotik. 1.5–2 Std. einplanen. Mittags: Fahrt nach <strong>Saint-Malo</strong> (~1 Std.). Die vollständig erhaltenen <strong>Remparts</strong> (Stadtmauern) in 1.5–2 Std. umrunden — fantastischer Blick aufs Meer und die vorgelagerten Inseln. Bei <strong>Niedrigwasser</strong> zu Fuss auf die <strong>Île du Grand Bé</strong>: Chateaubriands Grab. Fakt: Saint-Malo wurde im Zweiten Weltkrieg zu 80% zerstört und danach täuschend originalgetreu wiederaufgebaut.</p>
+    
+    <div class="day-map-wrap"><iframe src="https://maps.google.com/maps?saddr=Mont+Saint-Michel,+France&daddr=Saint-Malo,+France&output=embed&hl=de" loading="lazy" allowfullscreen referrerpolicy="no-referrer-when-downgrade"></iframe></div>
     <div class="map-links">
       <a href="https://maps.google.com/?q=Abbaye+du+Mont+Saint-Michel,+France" class="map-btn" target="_blank">📍 Abbaye du Mont Saint-Michel</a>
       <a href="https://maps.google.com/?q=Remparts+de+Saint-Malo,+France" class="map-btn" target="_blank">📍 Remparts Saint-Malo</a>
@@ -598,6 +617,8 @@ footer strong{display:block;margin-bottom:.35rem;font-size:.8rem;color:var(--tex
     <h3 class="card-title">Saint-Malo → Cancale → Cap Fréhel → Dinan</h3>
     <div class="drive-badge">🚗 ~100 km · ~2 Std.</div>
     <p class="card-desc">Morgens: <strong>Cancale</strong> (15 Min.). Am <strong>Marché de la Houle</strong> kauft ihr Austern direkt vom Züchter — für €3–5 eine Handvoll Fines de Claire, aufgestossen mit Zitrone, stehend am Kai mit Blick auf die Austernbänke und den Mont Saint-Michel am Horizont. So beginnt ein guter Tag. Mittags: <strong>Cap Fréhel</strong> (~45 Min.) — wilder Felsvorsprung mit Leuchtturm und Heide. <strong>Wanderung zum Fort La Latte: ~3 km hin und zurück, ~1.5 Std.</strong> — eine mittelalterliche Burg direkt auf Klippen über dem Meer. Absolut lohnend. Nachmittags: <strong>Dinan</strong> — das am besten erhaltene mittelalterliche Stadtbild der Bretagne.</p>
+    
+    <div class="day-map-wrap"><iframe src="https://maps.google.com/maps?saddr=Saint-Malo,+France&daddr=Cancale,+France+to:Cap+Frehel,+France+to:Dinan,+France&output=embed&hl=de" loading="lazy" allowfullscreen referrerpolicy="no-referrer-when-downgrade"></iframe></div>
     <div class="map-links">
       <a href="https://maps.google.com/?q=Marché+de+la+Houle+Cancale,+France" class="map-btn" target="_blank">📍 Austernmarkt Cancale</a>
       <a href="https://maps.google.com/?q=Cap+Fréhel,+France" class="map-btn" target="_blank">📍 Cap Fréhel</a>
@@ -642,6 +663,8 @@ footer strong{display:block;margin-bottom:.35rem;font-size:.8rem;color:var(--tex
     <h3 class="card-title">Dinan → Côte de Granit Rose (Perros-Guirec)</h3>
     <div class="drive-badge">🚗 ~120 km · ~1.5 Std.</div>
     <p class="card-desc">Morgens letzter Blick über Dinan von der <strong>Terrasse des Jardins Anglais</strong> — bester Aussichtspunkt auf die mittelalterliche Stadtsilhouette. Nachmittags: Die <strong>Côte de Granit Rose</strong> ist einer der faszinierendsten Küstenabschnitte Europas. Gigantische rosa Granitfelsen formen bizarre, fast surrealistische Skulpturen am Wasser. <strong>Wanderung: Sentier des Douaniers</strong> zwischen <strong>Perros-Guirec</strong> und <strong>Ploumanach</strong> — 7 km, ~2 Std., durch Felsen, Buchten und Heideflächen. Einer der schönsten Küstenwanderwege der Bretagne. Absolut nicht verpassen.</p>
+    
+    <div class="day-map-wrap"><iframe src="https://maps.google.com/maps?saddr=Dinan,+France&daddr=Perros-Guirec,+France&output=embed&hl=de" loading="lazy" allowfullscreen referrerpolicy="no-referrer-when-downgrade"></iframe></div>
     <div class="map-links">
       <a href="https://maps.google.com/?q=Perros-Guirec,+France" class="map-btn" target="_blank">📍 Perros-Guirec</a>
       <a href="https://maps.google.com/?q=Ploumanach+Côte+de+Granit+Rose,+France" class="map-btn" target="_blank">📍 Ploumanach</a>
@@ -684,6 +707,8 @@ footer strong{display:block;margin-bottom:.35rem;font-size:.8rem;color:var(--tex
     <h3 class="card-title">Perros-Guirec → Morlaix → Quimper</h3>
     <div class="drive-badge">🚗 ~175 km · ~2.5 Std.</div>
     <p class="card-desc">Morgens letzte Eindrücke der rosa Granitküste. Kurzer Stopp in <strong>Morlaix</strong> (~45 Min. von Perros): Das <strong>zweigeschossige Eisenbahnviadukt</strong> von 1861 dominiert die Altstadt dramatisch. Die alten <strong>Maisons à pondalez</strong> mit ihren innen spiralförmigen Holztreppen sind einzigartig in Europa — 30 Min. Stadtspaziergang genügt. Nachmittags: <strong>Quimper</strong> — die lebendige Hauptstadt der Bretagne. Die <strong>Cathédrale Saint-Corentin</strong> hat einen um 3 Grad versetzten Chor (mittelalterliche Absicht!). Die <strong>Faïenceries HB-Henriot</strong> stellen das berühmte handbemalte Quimper-Porzellan her — tolle Mitbringsel.</p>
+    
+    <div class="day-map-wrap"><iframe src="https://maps.google.com/maps?saddr=Perros-Guirec,+France&daddr=Morlaix,+France+to:Quimper,+France&output=embed&hl=de" loading="lazy" allowfullscreen referrerpolicy="no-referrer-when-downgrade"></iframe></div>
     <div class="map-links">
       <a href="https://maps.google.com/?q=Viaduc+de+Morlaix,+France" class="map-btn" target="_blank">📍 Viaduc de Morlaix</a>
       <a href="https://maps.google.com/?q=Cathédrale+Saint-Corentin+Quimper,+France" class="map-btn" target="_blank">📍 Cathédrale Quimper</a>
@@ -726,6 +751,8 @@ footer strong{display:block;margin-bottom:.35rem;font-size:.8rem;color:var(--tex
     <h3 class="card-title">Quimper → Pointe du Raz → Concarneau</h3>
     <div class="drive-badge">🚗 ~150 km · ~2.5 Std.</div>
     <p class="card-desc">Einer der dramatischsten Tage der Reise: Die <strong>Pointe du Raz</strong> (~1 Std. ab Quimper) ist der westlichste Punkt des französischen Festlandes. Der Wind heult, die Wellen donnern gegen die Klippen, und in der Ferne liegt die Île de Sein. <strong>Wanderung auf dem Kap: ~1.5 Std.</strong> Optional: <strong>Pointe du Van</strong> (15 Min. weiter nördlich) — weniger bekannt, gleichermassen grandios, deutlich weniger Touristen. Mittags kurzer Stopp in <strong>Douarnenez</strong> — echter Fischerhafen, Port du Rosmeur. Nachmittags: <strong>Concarneau</strong> mit der <strong>Ville Close</strong> — eine vollständig erhaltene mittelalterliche Festung auf einer Insel mitten im Hafen.</p>
+    
+    <div class="day-map-wrap"><iframe src="https://maps.google.com/maps?saddr=Quimper,+France&daddr=Pointe+du+Raz,+Plogoff,+France+to:Douarnenez,+France+to:Concarneau,+France&output=embed&hl=de" loading="lazy" allowfullscreen referrerpolicy="no-referrer-when-downgrade"></iframe></div>
     <div class="map-links">
       <a href="https://maps.google.com/?q=Pointe+du+Raz,+Finistère,+France" class="map-btn" target="_blank">📍 Pointe du Raz</a>
       <a href="https://maps.google.com/?q=Pointe+du+Van,+Finistère,+France" class="map-btn" target="_blank">📍 Pointe du Van</a>
@@ -769,6 +796,8 @@ footer strong{display:block;margin-bottom:.35rem;font-size:.8rem;color:var(--tex
     <h3 class="card-title">Concarneau → Pont-Aven → Carnac → Vannes</h3>
     <div class="drive-badge">🚗 ~120 km · ~2 Std.</div>
     <p class="card-desc">Morgens: <strong>Pont-Aven</strong> (~30 Min.) — das Dorf, das Paul Gauguin berühmt machte. Heute eine hübsche Galerienstadt an einem Fluss mit alten Mühlen. Die <strong>Kouign-Amann</strong> beim örtlichen Bäcker probieren — buttrig, karamellisiert, eine moralische Pflicht. Mittags: <strong>Alignements de Carnac</strong> (~45 Min.) — das grösste vorgeschichtliche Megalith-Monument der Welt: Über 3'000 aufrecht stehende Steine aus dem Neolithikum in langen parallelen Reihen. Nichts bereitet auf diesen Anblick vor. Nachmittags: <strong>Vannes</strong> (~25 Min.) mit seiner wunderschönen mittelalterlichen Altstadt, vollständig erhaltenen Stadtmauern und den ikonischen <strong>Lavandières</strong>-Skulpturen an der Stadtmauer.</p>
+    
+    <div class="day-map-wrap"><iframe src="https://maps.google.com/maps?saddr=Concarneau,+France&daddr=Pont-Aven,+France+to:Carnac,+France+to:Vannes,+France&output=embed&hl=de" loading="lazy" allowfullscreen referrerpolicy="no-referrer-when-downgrade"></iframe></div>
     <div class="map-links">
       <a href="https://maps.google.com/?q=Pont-Aven+Musée,+France" class="map-btn" target="_blank">📍 Pont-Aven</a>
       <a href="https://maps.google.com/?q=Alignements+de+Carnac,+France" class="map-btn" target="_blank">📍 Alignements de Carnac</a>
@@ -812,6 +841,8 @@ footer strong{display:block;margin-bottom:.35rem;font-size:.8rem;color:var(--tex
     <h3 class="card-title">Vannes → Golfe du Morbihan → Nantes → Loire-Tal</h3>
     <div class="drive-badge">🚗 ~200 km · ~2.5 Std.</div>
     <p class="card-desc">Morgens: <strong>Vannes Altstadt</strong> zu Fuss — die Remparts, Jardins des Remparts, Cathédrale Saint-Pierre. Optional: Eine <strong>Bootsfahrt auf dem Golfe du Morbihan</strong> (Croisières du Golfe, ~2 Std.) — dieser fast geschlossene Meeresarm mit Inseln und Gezeitenkanälen ist eine bretonische Besonderheit. Mittags: Fahrt nach <strong>Nantes</strong> (~1.5 Std.): Die <strong>Machines de l'Île</strong> — animatronische Riesenmaschinen, darunter ein zwölf Meter hoher Elefant mit echten Passagieren — sind eines der surrealsten Kunstprojekte Frankreichs. Tickets online kaufen! Abends: Weiterfahrt nach <strong>Saumur</strong> im Loire-Tal (~45 Min.).</p>
+    
+    <div class="day-map-wrap"><iframe src="https://maps.google.com/maps?saddr=Vannes,+France&daddr=Nantes,+France+to:Saumur,+France&output=embed&hl=de" loading="lazy" allowfullscreen referrerpolicy="no-referrer-when-downgrade"></iframe></div>
     <div class="map-links">
       <a href="https://maps.google.com/?q=Golfe+du+Morbihan,+France" class="map-btn" target="_blank">📍 Golfe du Morbihan</a>
       <a href="https://maps.google.com/?q=Machines+de+l'Île+Nantes,+France" class="map-btn" target="_blank">📍 Machines de l'Île</a>
@@ -854,6 +885,8 @@ footer strong{display:block;margin-bottom:.35rem;font-size:.8rem;color:var(--tex
     <h3 class="card-title">Loire-Tal → Azay-le-Rideau → Beaune (Burgund)</h3>
     <div class="drive-badge">🚗 ~430 km · ~4.5 Std. · Rückreisetag</div>
     <p class="card-desc">Morgens optional: <strong>Château d'Azay-le-Rideau</strong> (30 Min. ab Saumur) — eines der romantischsten Renaissanceschlösser Frankreichs, das sich im Wasser des Indre spiegelt. Alternativ: <strong>Chinon</strong> (Burg, Weinort, Rabelais-Stadt). Dann Fahrt nach <strong>Beaune</strong> in Burgund (~4 Std.). Das <strong>Hôtel-Dieu</strong> (mittelalterliches Krankenhaus mit dem farbig glasierten Ziegeldach) ist eines der ikonischsten Gebäude Frankreichs. Und dann: Eine <strong>Weinprobe in einem Burgunder Cave</strong> — Maison Joseph Drouhin oder Bouchard Père &amp; Fils. Das darf nicht fehlen.</p>
+    
+    <div class="day-map-wrap"><iframe src="https://maps.google.com/maps?saddr=Saumur,+France&daddr=Azay-le-Rideau,+France+to:Beaune,+France&output=embed&hl=de" loading="lazy" allowfullscreen referrerpolicy="no-referrer-when-downgrade"></iframe></div>
     <div class="map-links">
       <a href="https://maps.google.com/?q=Château+d'Azay-le-Rideau,+France" class="map-btn" target="_blank">📍 Azay-le-Rideau</a>
       <a href="https://maps.google.com/?q=Hôtel-Dieu+Beaune,+France" class="map-btn" target="_blank">📍 Hôtel-Dieu Beaune</a>
@@ -896,6 +929,8 @@ footer strong{display:block;margin-bottom:.35rem;font-size:.8rem;color:var(--tex
     <h3 class="card-title">Beaune → (Dijon) → Pfungen</h3>
     <div class="drive-badge">🚗 ~320 km · ~3.5 Std. · Heimreisetag</div>
     <p class="card-desc">Letzter Reisetag — entspannter Heimweg. Optionaler Morgen-Stopp in <strong>Dijon</strong> (30 Min. ab Beaune): Der <strong>Palais des Ducs de Bourgogne</strong> mit seinem Place de la Libération ist beeindruckend. Und bei <strong>Maille</strong> (Rue de la Liberté) gibt es Senf in mehr Variationen als vorstellbar — das perfekte Mitbringsel. Dann Heimfahrt über <strong>Besançon und Pontarlier</strong> (Schweizer Grenze Les Longevilles) oder via <strong>Basel</strong>. Nach ca. 3–3.5 Stunden: Willkommen zurück in Pfungen — mit Meeresrauschen in den Ohren, Austerngeschmack auf der Zunge und Erinnerungen, die lange nachwirken.</p>
+    
+    <div class="day-map-wrap"><iframe src="https://maps.google.com/maps?saddr=Beaune,+France&daddr=Dijon,+France+to:Pfungen,+Winterthur,+Schweiz&output=embed&hl=de" loading="lazy" allowfullscreen referrerpolicy="no-referrer-when-downgrade"></iframe></div>
     <div class="map-links">
       <a href="https://maps.google.com/?q=Palais+des+Ducs+de+Bourgogne+Dijon,+France" class="map-btn" target="_blank">📍 Dijon</a>
       <a href="https://maps.google.com/?q=Maille+Dijon,+France" class="map-btn" target="_blank">📍 Maille Senfgeschäft</a>
