@@ -1,0 +1,654 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Wörterbuch · Français & Brezhoneg · France 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,700&family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#F5F3EE;--card:#fff;--text:#1C2B3A;--muted:#6B7280;--border:#E4E0D8;
+  --staedte:#1E3A8A;--kueste:#0E7490;--natur:#2D6A4F;--geschichte:#9B1C1C;--anreise:#64748B
+}
+body{background:var(--bg);font-family:'Inter',system-ui,sans-serif;color:var(--text);max-width:780px;margin:0 auto;font-size:15px}
+
+/* ── HEADER ── */
+.site-header{
+  background:linear-gradient(160deg,#0A1628 0%,#1B3461 55%,#0D5276 100%);
+  color:#fff;text-align:center;padding:2rem 1.5rem 1.5rem;position:relative;overflow:hidden
+}
+.site-header::before{
+  content:'';position:absolute;top:0;left:0;right:0;height:4px;
+  background:linear-gradient(90deg,#002395 33%,#fff 33%,#fff 66%,#ED2939 66%)
+}
+.flag{font-size:2.8rem;display:block;margin-bottom:.4rem;line-height:1}
+.header-label{font-size:.7rem;letter-spacing:.22em;text-transform:uppercase;color:rgba(255,255,255,.55);margin-bottom:.7rem}
+.header-title{font-family:'Playfair Display',Georgia,serif;font-size:clamp(1.6rem,4vw,2.2rem);font-weight:700;line-height:1.2;margin-bottom:.3rem}
+.header-title em{font-style:italic;color:#7DC8E8}
+.breton-sub{font-size:.58em;color:#A8D8EA;letter-spacing:.07em;font-style:italic;font-weight:400;display:block;margin-top:.1rem}
+.header-dates{font-size:.82rem;color:rgba(255,255,255,.7);margin-bottom:.9rem}
+.back-btn{
+  display:inline-block;background:rgba(255,255,255,.14);color:rgba(255,255,255,.88);
+  text-decoration:none;padding:.35rem 1rem;border-radius:2rem;font-size:.75rem;font-weight:600;
+  border:1px solid rgba(255,255,255,.24)
+}
+.back-btn:hover{background:rgba(255,255,255,.24)}
+
+/* ── INTRO BOX ── */
+.intro-box{
+  background:#fff;margin:.75rem .75rem 0;padding:1.1rem 1.2rem;
+  border-radius:.75rem;box-shadow:0 1px 4px rgba(0,0,0,.07);
+  border-left:5px solid var(--staedte)
+}
+.intro-box h2{
+  font-family:'Playfair Display',Georgia,serif;
+  font-size:1.1rem;font-weight:700;margin-bottom:.6rem;color:var(--staedte)
+}
+.intro-box p{font-size:.85rem;line-height:1.65;color:var(--text);margin-bottom:.5rem}
+.intro-box p:last-child{margin-bottom:0}
+.tip-tag{display:inline-block;background:#EFF6FF;color:var(--staedte);font-size:.72rem;font-weight:700;padding:.2rem .5rem;border-radius:.25rem;margin-right:.3rem}
+
+/* ── COLUMN HEADERS ── */
+.col-headers{
+  display:grid;grid-template-columns:1fr 1fr 1fr;gap:.5rem;
+  padding:.6rem 1.2rem .3rem;font-size:.7rem;font-weight:700;
+  text-transform:uppercase;letter-spacing:.08em;color:var(--muted)
+}
+.col-headers span:nth-child(1){color:#374151}
+.col-headers span:nth-child(2){color:#002395}
+.col-headers span:nth-child(3){color:#1a1a1a}
+
+/* ── SECTION CARDS ── */
+.ph-section{
+  background:var(--card);margin:.5rem .75rem .75rem;border-radius:.75rem;overflow:hidden;
+  box-shadow:0 1px 4px rgba(0,0,0,.07);border-left:5px solid var(--border)
+}
+.ph-section.c-staedte{border-left-color:var(--staedte)}
+.ph-section.c-kueste{border-left-color:var(--kueste)}
+.ph-section.c-natur{border-left-color:var(--natur)}
+.ph-section.c-geschichte{border-left-color:var(--geschichte)}
+.ph-section.c-anreise{border-left-color:var(--anreise)}
+
+.sec-title{
+  display:flex;align-items:center;gap:.5rem;
+  padding:.7rem 1.1rem;font-size:.85rem;font-weight:700
+}
+.c-staedte .sec-title{color:var(--staedte)}
+.c-kueste .sec-title{color:var(--kueste)}
+.c-natur .sec-title{color:var(--natur)}
+.c-geschichte .sec-title{color:var(--geschichte)}
+.c-anreise .sec-title{color:var(--anreise)}
+
+.ph-body{padding:0 .75rem .5rem}
+
+/* ── PHRASE ROWS ── */
+.ph{
+  display:grid;grid-template-columns:1fr 1fr 1fr;gap:.35rem .6rem;
+  padding:.6rem 0;border-bottom:1px solid var(--border);align-items:start
+}
+.ph:last-of-type{border-bottom:none}
+.ph-col{display:flex;align-items:baseline;gap:.35rem;flex-wrap:wrap}
+.lb{
+  font-size:.6rem;font-weight:700;padding:.15rem .38rem;border-radius:.2rem;
+  flex-shrink:0;line-height:1.4;letter-spacing:.03em
+}
+.lb-de{background:#E5E7EB;color:#374151}
+.lb-fr{background:#002395;color:#fff}
+.lb-br{background:#1a1a1a;color:#fff}
+.pw{font-size:.87rem;line-height:1.4;color:var(--text)}
+.pw em{font-style:italic}
+
+/* Note spanning all 3 columns */
+.ph-note{
+  grid-column:1/-1;font-size:.71rem;font-style:italic;
+  color:#7C6F5B;background:#FDF8F0;border-radius:.3rem;
+  padding:.25rem .5rem;margin-top:.1rem
+}
+
+/* Mobile: stack 3 cols → 1 col */
+@media(max-width:599px){
+  .ph{grid-template-columns:1fr;gap:.2rem}
+  .col-headers{display:none}
+}
+
+/* ── TIPS BOX ── */
+.tips-box{
+  margin:.5rem .75rem;padding:1rem 1.1rem;
+  background:#FFF8E7;border:1px solid #F6D860;border-radius:.75rem
+}
+.tips-box h3{font-size:.82rem;font-weight:700;margin-bottom:.5rem;color:#92400E}
+.tips-box ul{margin-left:1.1rem}
+.tips-box li{font-size:.8rem;line-height:1.55;margin-bottom:.25rem;color:var(--text)}
+
+/* ── FOOTER ── */
+footer{
+  text-align:center;padding:1.5rem 1rem 2rem;font-size:.72rem;color:var(--muted);
+  border-top:1px solid var(--border);margin-top:.5rem
+}
+footer strong{display:block;margin-bottom:.3rem;font-size:.78rem;color:var(--text)}
+
+@media(max-width:480px){
+  .site-header{padding:1.5rem 1rem 1.2rem}
+  .ph-section,.intro-box,.tips-box{margin-left:.5rem;margin-right:.5rem}
+  .ph-body{padding:0 .6rem .4rem}
+}
+</style>
+</head>
+<body>
+
+<!-- ══ HEADER ══ -->
+<header class="site-header">
+  <span class="flag">🇫🇷</span>
+  <div class="header-label">Normandie &amp; Bretagne 2026 · Wörterbuch</div>
+  <h1 class="header-title">Bonjour, <em>Normandie!</em><span class="breton-sub">Demat, <em>Breizh!</em></span></h1>
+  <div class="header-dates">Français · Brezhoneg · für Reisende</div>
+  <a href="./index.html" class="back-btn">← Zurück zum Reiseplan</a>
+</header>
+
+<!-- ══ INTRO ══ -->
+<div class="intro-box">
+  <h2>📖 Drei Sprachen — eine Reise</h2>
+  <p><strong>Französisch</strong> ist die Amtssprache in der Normandie und Bretagne. Das <strong>Bretonische</strong> (Brezhoneg) hingegen ist eine <em>keltische</em> Sprache — verwandt mit Walisisch und Kornisch, nicht mit Französisch. Man erkennt es an Ortsbezeichnungen wie <em>Plougastel</em>, <em>Douarnenez</em>, <em>Penn-ar-Bed</em>. Heute sprechen noch rund 200'000 Menschen Bretonisch, v. a. im Finistère.</p>
+  <p>Viele internationale Fachbegriffe kommen aus dem Bretonischen: <em>Menhir</em> (maen-hir = langer Stein) und <em>Dolmen</em> (taol-maen = Tischstein) sind weltweit bekannte Lehnwörter aus dem Brezhoneg. Auch das französische Wort <em>goéland</em> (Möwe) stammt vom Bretonischen <em>gwelan</em>.</p>
+  <p><span class="tip-tag">💡 Tipp</span> Ein «Demat» oder «Kenavo» auf Bretonisch macht auf Einheimische im Finistère grossen Eindruck — und zeigt Respekt vor der ältesten Sprache Frankreichs.</p>
+</div>
+
+<!-- ══ COLUMN HEADERS ══ -->
+<div class="col-headers">
+  <span>🇩🇪 Deutsch</span>
+  <span>🇫🇷 Français</span>
+  <span>✦ Brezhoneg</span>
+</div>
+
+<!-- ══════════════════════════════
+     1. BEGRÜSSUNGEN
+     ══════════════════════════════ -->
+<div class="ph-section c-staedte">
+  <div class="sec-title">👋 Begrüssungen</div>
+  <div class="ph-body">
+
+    <div class="ph">
+      <div class="ph-col ph-de"><span class="lb lb-de">DE</span><span class="pw">Guten Tag</span></div>
+      <div class="ph-col ph-fr"><span class="lb lb-fr">FR</span><span class="pw">Bonjour</span></div>
+      <div class="ph-col ph-br"><span class="lb lb-br">BR</span><span class="pw">Demat</span></div>
+    </div>
+
+    <div class="ph">
+      <div class="ph-col ph-de"><span class="lb lb-de">DE</span><span class="pw">Guten Abend</span></div>
+      <div class="ph-col ph-fr"><span class="lb lb-fr">FR</span><span class="pw">Bonsoir</span></div>
+      <div class="ph-col ph-br"><span class="lb lb-br">BR</span><span class="pw">Noz vat</span></div>
+    </div>
+
+    <div class="ph">
+      <div class="ph-col ph-de"><span class="lb lb-de">DE</span><span class="pw">Auf Wiedersehen</span></div>
+      <div class="ph-col ph-fr"><span class="lb lb-fr">FR</span><span class="pw">Au revoir</span></div>
+      <div class="ph-col ph-br"><span class="lb lb-br">BR</span><span class="pw">Kenavo</span></div>
+      <div class="ph-note">✦ «Kenavo» hört man in der Bretagne oft auch auf Französisch — es ist im Alltag übergegangen.</div>
+    </div>
+
+    <div class="ph">
+      <div class="ph-col ph-de"><span class="lb lb-de">DE</span><span class="pw">Willkommen!</span></div>
+      <div class="ph-col ph-fr"><span class="lb lb-fr">FR</span><span class="pw">Bienvenue !</span></div>
+      <div class="ph-col ph-br"><span class="lb lb-br">BR</span><span class="pw">Degemer mat !</span></div>
+    </div>
+
+    <div class="ph">
+      <div class="ph-col ph-de"><span class="lb lb-de">DE</span><span class="pw">Wie geht es Ihnen?</span></div>
+      <div class="ph-col ph-fr"><span class="lb lb-fr">FR</span><span class="pw">Comment allez-vous ?</span></div>
+      <div class="ph-col ph-br"><span class="lb lb-br">BR</span><span class="pw">Penaos emañ kont ?</span></div>
+    </div>
+
+    <div class="ph">
+      <div class="ph-col ph-de"><span class="lb lb-de">DE</span><span class="pw">Danke, gut!</span></div>
+      <div class="ph-col ph-fr"><span class="lb lb-fr">FR</span><span class="pw">Bien, merci !</span></div>
+      <div class="ph-col ph-br"><span class="lb lb-br">BR</span><span class="pw">Mat, trugarez !</span></div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ══════════════════════════════
+     2. HÖFLICHKEIT & GRUNDLEGENDES
+     ══════════════════════════════ -->
+<div class="ph-section c-kueste">
+  <div class="sec-title">🤝 Höflichkeit &amp; Grundlegendes</div>
+  <div class="ph-body">
+
+    <div class="ph">
+      <div class="ph-col ph-de"><span class="lb lb-de">DE</span><span class="pw">Bitte</span></div>
+      <div class="ph-col ph-fr"><span class="lb lb-fr">FR</span><span class="pw">S'il vous plaît</span></div>
+      <div class="ph-col ph-br"><span class="lb lb-br">BR</span><span class="pw">Mar plij</span></div>
+    </div>
+
+    <div class="ph">
+      <div class="ph-col ph-de"><span class="lb lb-de">DE</span><span class="pw">Danke</span></div>
+      <div class="ph-col ph-fr"><span class="lb lb-fr">FR</span><span class="pw">Merci</span></div>
+      <div class="ph-col ph-br"><span class="lb lb-br">BR</span><span class="pw">Trugarez</span></div>
+    </div>
+
+    <div class="ph">
+      <div class="ph-col ph-de"><span class="lb lb-de">DE</span><span class="pw">Vielen Dank!</span></div>
+      <div class="ph-col ph-fr"><span class="lb lb-fr">FR</span><span class="pw">Merci beaucoup !</span></div>
+      <div class="ph-col ph-br"><span class="lb lb-br">BR</span><span class="pw">Trugarez vras !</span></div>
+    </div>
+
+    <div class="ph">
+      <div class="ph-col ph-de"><span class="lb lb-de">DE</span><span class="pw">Entschuldigung</span></div>
+      <div class="ph-col ph-fr"><span class="lb lb-fr">FR</span><span class="pw">Excusez-moi</span></div>
+      <div class="ph-col ph-br"><span class="lb lb-br">BR</span><span class="pw">Digarezit ac'hanon</span></div>
+    </div>
+
+    <div class="ph">
+      <div class="ph-col ph-de"><span class="lb lb-de">DE</span><span class="pw">Ja</span></div>
+      <div class="ph-col ph-fr"><span class="lb lb-fr">FR</span><span class="pw">Oui</span></div>
+      <div class="ph-col ph-br"><span class="lb lb-br">BR</span><span class="pw">Ya</span></div>
+    </div>
+
+    <div class="ph">
+      <div class="ph-col ph-de"><span class="lb lb-de">DE</span><span class="pw">Nein</span></div>
+      <div class="ph-col ph-fr"><span class="lb lb-fr">FR</span><span class="pw">Non</span></div>
+      <div class="ph-col ph-br"><span class="lb lb-br">BR</span><span class="pw">Nann</span></div>
+    </div>
+
+    <div class="ph">
+      <div class="ph-col ph-de"><span class="lb lb-de">DE</span><span class="pw">Ich verstehe nicht</span></div>
+      <div class="ph-col ph-fr"><span class="lb lb-fr">FR</span><span class="pw">Je ne comprends pas</span></div>
+      <div class="ph-col ph-br"><span class="lb lb-br">BR</span><span class="pw">N'underañ ket</span></div>
+    </div>
+
+    <div class="ph">
+      <div class="ph-col ph-de"><span class="lb lb-de">DE</span><span class="pw">Kein Problem!</span></div>
+      <div class="ph-col ph-fr"><span class="lb lb-fr">FR</span><span class="pw">De rien !</span></div>
+      <div class="ph-col ph-br"><span class="lb lb-br">BR</span><span class="pw">N'eo ket tra !</span></div>
+    </div>
+
+    <div class="ph">
+      <div class="ph-col ph-de"><span class="lb lb-de">DE</span><span class="pw">Sprechen Sie Englisch?</span></div>
+      <div class="ph-col ph-fr"><span class="lb lb-fr">FR</span><span class="pw">Parlez-vous anglais ?</span></div>
+      <div class="ph-col ph-br"><span class="lb lb-br">BR</span><span class="pw">Saozneg a gomzit-hu ?</span></div>
+      <div class="ph-note">✦ «Saozneg» = Englisch auf Bretonisch; «Saoz» bedeutet «Sachse/Engländer» (keltisch-archaisch).</div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ══════════════════════════════
+     3. IM RESTAURANT
+     ══════════════════════════════ -->
+<div class="ph-section c-natur">
+  <div class="sec-title">🍽️ Im Restaurant</div>
+  <div class="ph-body">
+
+    <div class="ph">
+      <div class="ph-col ph-de"><span class="lb lb-de">DE</span><span class="pw">Einen Tisch für zwei, bitte</span></div>
+      <div class="ph-col ph-fr"><span class="lb lb-fr">FR</span><span class="pw">Une table pour deux, s'il vous plaît</span></div>
+      <div class="ph-col ph-br"><span class="lb lb-br">BR</span><span class="pw">Ur bord evit daou, mar plij</span></div>
+    </div>
+
+    <div class="ph">
+      <div class="ph-col ph-de"><span class="lb lb-de">DE</span><span class="pw">Die Speisekarte, bitte</span></div>
+      <div class="ph-col ph-fr"><span class="lb lb-fr">FR</span><span class="pw">La carte, s'il vous plaît</span></div>
+      <div class="ph-col ph-br"><span class="lb lb-br">BR</span><span class="pw">Ar c'hartenn, mar plij</span></div>
+    </div>
+
+    <div class="ph">
+      <div class="ph-col ph-de"><span class="lb lb-de">DE</span><span class="pw">Ich hätte gerne…</span></div>
+      <div class="ph-col ph-fr"><span class="lb lb-fr">FR</span><span class="pw">Je voudrais…</span></div>
+      <div class="ph-col ph-br"><span class="lb lb-br">BR</span><span class="pw">Me garfe…</span></div>
+    </div>
+
+    <div class="ph">
+      <div class="ph-col ph-de"><span class="lb lb-de">DE</span><span class="pw">Was empfehlen Sie?</span></div>
+      <div class="ph-col ph-fr"><span class="lb lb-fr">FR</span><span class="pw">Qu'est-ce que vous recommandez ?</span></div>
+      <div class="ph-col ph-br"><span class="lb lb-br">BR</span><span class="pw">Petra a gaseg-hu ?</span></div>
+    </div>
+
+    <div class="ph">
+      <div class="ph-col ph-de"><span class="lb lb-de">DE</span><span class="pw">Die Rechnung, bitte</span></div>
+      <div class="ph-col ph-fr"><span class="lb lb-fr">FR</span><span class="pw">L'addition, s'il vous plaît</span></div>
+      <div class="ph-col ph-br"><span class="lb lb-br">BR</span><span class="pw">Ar gontadenn, mar plij</span></div>
+    </div>
+
+    <div class="ph">
+      <div class="ph-col ph-de"><span class="lb lb-de">DE</span><span class="pw">Es war köstlich!</span></div>
+      <div class="ph-col ph-fr"><span class="lb lb-fr">FR</span><span class="pw">C'était délicieux !</span></div>
+      <div class="ph-col ph-br"><span class="lb lb-br">BR</span><span class="pw">Tre mat oa !</span></div>
+    </div>
+
+    <div class="ph">
+      <div class="ph-col ph-de"><span class="lb lb-de">DE</span><span class="pw">Prost! / Zum Wohl!</span></div>
+      <div class="ph-col ph-fr"><span class="lb lb-fr">FR</span><span class="pw">Santé !</span></div>
+      <div class="ph-col ph-br"><span class="lb lb-br">BR</span><span class="pw">Yec'hed mat !</span></div>
+      <div class="ph-note">✦ «Yec'hed mat» (= «gute Gesundheit») hört man in bretonischen Bars noch heute — das Äquivalent zum irischen «Sláinte».</div>
+    </div>
+
+    <div class="ph">
+      <div class="ph-col ph-de"><span class="lb lb-de">DE</span><span class="pw">Guten Appetit!</span></div>
+      <div class="ph-col ph-fr"><span class="lb lb-fr">FR</span><span class="pw">Bon appétit !</span></div>
+      <div class="ph-col ph-br"><span class="lb lb-br">BR</span><span class="pw">Debrit mat !</span></div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ══════════════════════════════
+     4. ESSEN & TRINKEN
+     ══════════════════════════════ -->
+<div class="ph-section c-staedte">
+  <div class="sec-title">🦪 Essen &amp; Trinken</div>
+  <div class="ph-body">
+
+    <div class="ph">
+      <div class="ph-col ph-de"><span class="lb lb-de">DE</span><span class="pw">Wasser</span></div>
+      <div class="ph-col ph-fr"><span class="lb lb-fr">FR</span><span class="pw">Eau</span></div>
+      <div class="ph-col ph-br"><span class="lb lb-br">BR</span><span class="pw">Dour</span></div>
+      <div class="ph-note">✦ «Dour» ist keltisch — wie walisisch «dŵr» und irisch «dobhar» (beide = Wasser). Bekannt durch Ortsnamen wie «Dour» in Belgien.</div>
+    </div>
+
+    <div class="ph">
+      <div class="ph-col ph-de"><span class="lb lb-de">DE</span><span class="pw">Wein</span></div>
+      <div class="ph-col ph-fr"><span class="lb lb-fr">FR</span><span class="pw">Vin</span></div>
+      <div class="ph-col ph-br"><span class="lb lb-br">BR</span><span class="pw">Gwin</span></div>
+      <div class="ph-note">✦ «Gwin» ist verwandt mit walisisch «gwin» und irisch «fion» — alle aus lateinisch «vinum». Keltische Sprachen lieben den Wein schon lange.</div>
+    </div>
+
+    <div class="ph">
+      <div class="ph-col ph-de"><span class="lb lb-de">DE</span><span class="pw">Cidre (Apfelmost)</span></div>
+      <div class="ph-col ph-fr"><span class="lb lb-fr">FR</span><span class="pw">Cidre</span></div>
+      <div class="ph-col ph-br"><span class="lb lb-br">BR</span><span class="pw">Sistr</span></div>
+      <div class="ph-note">✦ Bretonischer Cidre (trocken: «sistr sec'h») ist komplex und trocken — ein Pflichtgetränk zum Galette-Essen!</div>
+    </div>
+
+    <div class="ph">
+      <div class="ph-col ph-de"><span class="lb lb-de">DE</span><span class="pw">Brot</span></div>
+      <div class="ph-col ph-fr"><span class="lb lb-fr">FR</span><span class="pw">Pain</span></div>
+      <div class="ph-col ph-br"><span class="lb lb-br">BR</span><span class="pw">Bara</span></div>
+      <div class="ph-note">✦ «Bara» ist identisch mit dem walisischen «bara» (Brot). «Bara brith» = «buntes Brot» — ein keltischer Verwandter des Früchtekuchens.</div>
+    </div>
+
+    <div class="ph">
+      <div class="ph-col ph-de"><span class="lb lb-de">DE</span><span class="pw">Gesalzene Butter</span></div>
+      <div class="ph-col ph-fr"><span class="lb lb-fr">FR</span><span class="pw">Beurre salé</span></div>
+      <div class="ph-col ph-br"><span class="lb lb-br">BR</span><span class="pw">Amann sall</span></div>
+      <div class="ph-note">✦ Bretonische Salzbutter ist Weltkulturerbe der Küche. Früheres Salz-Vorrecht der Bretagne schuf eine einzigartige Butterkultur. «Amann» = Butter auf Bretonisch und Walisisch («menyn»).</div>
+    </div>
+
+    <div class="ph">
+      <div class="ph-col ph-de"><span class="lb lb-de">DE</span><span class="pw">Fisch</span></div>
+      <div class="ph-col ph-fr"><span class="lb lb-fr">FR</span><span class="pw">Poisson</span></div>
+      <div class="ph-col ph-br"><span class="lb lb-br">BR</span><span class="pw">Pesked</span></div>
+    </div>
+
+    <div class="ph">
+      <div class="ph-col ph-de"><span class="lb lb-de">DE</span><span class="pw">Austern</span></div>
+      <div class="ph-col ph-fr"><span class="lb lb-fr">FR</span><span class="pw">Huîtres</span></div>
+      <div class="ph-col ph-br"><span class="lb lb-br">BR</span><span class="pw">Estred</span></div>
+      <div class="ph-note">✦ Cancale (Tag 8) ist die Austern-Hauptstadt. Direkt am Kai essen: «Estred Cancale» — unvergesslich. Einzel-Form: «Estr».</div>
+    </div>
+
+    <div class="ph">
+      <div class="ph-col ph-de"><span class="lb lb-de">DE</span><span class="pw">Meeresfrüchte</span></div>
+      <div class="ph-col ph-fr"><span class="lb lb-fr">FR</span><span class="pw">Fruits de mer</span></div>
+      <div class="ph-col ph-br"><span class="lb lb-br">BR</span><span class="pw">Frouezh-mor</span></div>
+    </div>
+
+    <div class="ph">
+      <div class="ph-col ph-de"><span class="lb lb-de">DE</span><span class="pw">Buchweizen-Galette (salzig)</span></div>
+      <div class="ph-col ph-fr"><span class="lb lb-fr">FR</span><span class="pw">Galette de blé noir</span></div>
+      <div class="ph-col ph-br"><span class="lb lb-br">BR</span><span class="pw">Krampouezhenn gwinizh-du</span></div>
+      <div class="ph-note">✦ «Gwinizh du» = schwarzer Weizen (= Buchweizen). Die salzige Galette mit Käse, Ei und Schinken («complète») ist das Nationalgericht der Bretagne.</div>
+    </div>
+
+    <div class="ph">
+      <div class="ph-col ph-de"><span class="lb lb-de">DE</span><span class="pw">Crêpe (süss)</span></div>
+      <div class="ph-col ph-fr"><span class="lb lb-fr">FR</span><span class="pw">Crêpe sucrée</span></div>
+      <div class="ph-col ph-br"><span class="lb lb-br">BR</span><span class="pw">Krampouezhenn</span></div>
+    </div>
+
+    <div class="ph">
+      <div class="ph-col ph-de"><span class="lb lb-de">DE</span><span class="pw">Buttergebäck (karamellisiert)</span></div>
+      <div class="ph-col ph-fr"><span class="lb lb-fr">FR</span><span class="pw">Kouign-Amann</span></div>
+      <div class="ph-col ph-br"><span class="lb lb-br">BR</span><span class="pw">Kouign-Amann</span></div>
+      <div class="ph-note">✦ Einer der wenigen Fälle, wo Französisch und Bretonisch identisch sind: «Kouign» = Kuchen, «Amann» = Butter. Erfunden 1860 in Douarnenez. In Pont-Aven kaufen!</div>
+    </div>
+
+    <div class="ph">
+      <div class="ph-col ph-de"><span class="lb lb-de">DE</span><span class="pw">Kaffee</span></div>
+      <div class="ph-col ph-fr"><span class="lb lb-fr">FR</span><span class="pw">Café</span></div>
+      <div class="ph-col ph-br"><span class="lb lb-br">BR</span><span class="pw">Kafe</span></div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ══════════════════════════════
+     5. UNTERWEGS
+     ══════════════════════════════ -->
+<div class="ph-section c-anreise">
+  <div class="sec-title">🗺️ Unterwegs &amp; Orientierung</div>
+  <div class="ph-body">
+
+    <div class="ph">
+      <div class="ph-col ph-de"><span class="lb lb-de">DE</span><span class="pw">Wo ist…?</span></div>
+      <div class="ph-col ph-fr"><span class="lb lb-fr">FR</span><span class="pw">Où est… ?</span></div>
+      <div class="ph-col ph-br"><span class="lb lb-br">BR</span><span class="pw">Pelec'h emañ… ?</span></div>
+    </div>
+
+    <div class="ph">
+      <div class="ph-col ph-de"><span class="lb lb-de">DE</span><span class="pw">links</span></div>
+      <div class="ph-col ph-fr"><span class="lb lb-fr">FR</span><span class="pw">à gauche</span></div>
+      <div class="ph-col ph-br"><span class="lb lb-br">BR</span><span class="pw">kleiz</span></div>
+    </div>
+
+    <div class="ph">
+      <div class="ph-col ph-de"><span class="lb lb-de">DE</span><span class="pw">rechts</span></div>
+      <div class="ph-col ph-fr"><span class="lb lb-fr">FR</span><span class="pw">à droite</span></div>
+      <div class="ph-col ph-br"><span class="lb lb-br">BR</span><span class="pw">dehou</span></div>
+    </div>
+
+    <div class="ph">
+      <div class="ph-col ph-de"><span class="lb lb-de">DE</span><span class="pw">geradeaus</span></div>
+      <div class="ph-col ph-fr"><span class="lb lb-fr">FR</span><span class="pw">tout droit</span></div>
+      <div class="ph-col ph-br"><span class="lb lb-br">BR</span><span class="pw">war-eeun</span></div>
+    </div>
+
+    <div class="ph">
+      <div class="ph-col ph-de"><span class="lb lb-de">DE</span><span class="pw">Strand</span></div>
+      <div class="ph-col ph-fr"><span class="lb lb-fr">FR</span><span class="pw">Plage</span></div>
+      <div class="ph-col ph-br"><span class="lb lb-br">BR</span><span class="pw">Traezhenn</span></div>
+    </div>
+
+    <div class="ph">
+      <div class="ph-col ph-de"><span class="lb lb-de">DE</span><span class="pw">Meer / See</span></div>
+      <div class="ph-col ph-fr"><span class="lb lb-fr">FR</span><span class="pw">Mer / Lac</span></div>
+      <div class="ph-col ph-br"><span class="lb lb-br">BR</span><span class="pw">Mor / Lenn</span></div>
+      <div class="ph-note">✦ «Mor» = Meer (wie walisisch «môr», irisch «muir»). Vorkommnisse: «Mor Breizh» = Ärmelkanal (wörtl. «Bretonisches Meer»).</div>
+    </div>
+
+    <div class="ph">
+      <div class="ph-col ph-de"><span class="lb lb-de">DE</span><span class="pw">Hafen</span></div>
+      <div class="ph-col ph-fr"><span class="lb lb-fr">FR</span><span class="pw">Port</span></div>
+      <div class="ph-col ph-br"><span class="lb lb-br">BR</span><span class="pw">Porzh</span></div>
+    </div>
+
+    <div class="ph">
+      <div class="ph-col ph-de"><span class="lb lb-de">DE</span><span class="pw">Kirche</span></div>
+      <div class="ph-col ph-fr"><span class="lb lb-fr">FR</span><span class="pw">Église</span></div>
+      <div class="ph-col ph-br"><span class="lb lb-br">BR</span><span class="pw">Iliz</span></div>
+    </div>
+
+    <div class="ph">
+      <div class="ph-col ph-de"><span class="lb lb-de">DE</span><span class="pw">Burg / Schloss</span></div>
+      <div class="ph-col ph-fr"><span class="lb lb-fr">FR</span><span class="pw">Château</span></div>
+      <div class="ph-col ph-br"><span class="lb lb-br">BR</span><span class="pw">C'hastell</span></div>
+      <div class="ph-note">✦ «C'hastell» ist uralt-keltisch — wie walisisch «castell» und englisch «castle». Alle aus dem Lateinischen «castellum», aber keltisch tradiert.</div>
+    </div>
+
+    <div class="ph">
+      <div class="ph-col ph-de"><span class="lb lb-de">DE</span><span class="pw">Leuchtturm</span></div>
+      <div class="ph-col ph-fr"><span class="lb lb-fr">FR</span><span class="pw">Phare</span></div>
+      <div class="ph-col ph-br"><span class="lb lb-br">BR</span><span class="pw">Farenn</span></div>
+    </div>
+
+    <div class="ph">
+      <div class="ph-col ph-de"><span class="lb lb-de">DE</span><span class="pw">Wanderweg</span></div>
+      <div class="ph-col ph-fr"><span class="lb lb-fr">FR</span><span class="pw">Sentier / Chemin</span></div>
+      <div class="ph-col ph-br"><span class="lb lb-br">BR</span><span class="pw">Hent-bihan</span></div>
+    </div>
+
+    <div class="ph">
+      <div class="ph-col ph-de"><span class="lb lb-de">DE</span><span class="pw">Ich bin verloren</span></div>
+      <div class="ph-col ph-fr"><span class="lb lb-fr">FR</span><span class="pw">Je suis perdu(e)</span></div>
+      <div class="ph-col ph-br"><span class="lb lb-br">BR</span><span class="pw">Kollet on</span></div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ══════════════════════════════
+     6. BRETONISCHE KULTUR & SPRACHE
+     ══════════════════════════════ -->
+<div class="ph-section c-kueste">
+  <div class="sec-title">🏴 Bretonische Kultur &amp; Etymologie</div>
+  <div class="ph-body">
+
+    <div class="ph">
+      <div class="ph-col ph-de"><span class="lb lb-de">DE</span><span class="pw">Bretagne</span></div>
+      <div class="ph-col ph-fr"><span class="lb lb-fr">FR</span><span class="pw">Bretagne</span></div>
+      <div class="ph-col ph-br"><span class="lb lb-br">BR</span><span class="pw">Breizh</span></div>
+      <div class="ph-note">✦ «Breizh» bedeutet «Britannien» — dieselbe Wurzel wie «Britain». Die Bretonen waren ursprünglich Einwanderer aus Britannien (5.–6. Jh. n. Chr.).</div>
+    </div>
+
+    <div class="ph">
+      <div class="ph-col ph-de"><span class="lb lb-de">DE</span><span class="pw">Bretonisch (Sprache)</span></div>
+      <div class="ph-col ph-fr"><span class="lb lb-fr">FR</span><span class="pw">Le breton</span></div>
+      <div class="ph-col ph-br"><span class="lb lb-br">BR</span><span class="pw">Brezhoneg</span></div>
+    </div>
+
+    <div class="ph">
+      <div class="ph-col ph-de"><span class="lb lb-de">DE</span><span class="pw">Bretonin / Bretone</span></div>
+      <div class="ph-col ph-fr"><span class="lb lb-fr">FR</span><span class="pw">Bretonne / Breton</span></div>
+      <div class="ph-col ph-br"><span class="lb lb-br">BR</span><span class="pw">Breizhat</span></div>
+    </div>
+
+    <div class="ph">
+      <div class="ph-col ph-de"><span class="lb lb-de">DE</span><span class="pw">Bretonische Flagge («Weiss &amp; Schwarz»)</span></div>
+      <div class="ph-col ph-fr"><span class="lb lb-fr">FR</span><span class="pw">Le drapeau breton</span></div>
+      <div class="ph-col ph-br"><span class="lb lb-br">BR</span><span class="pw">Gwenn ha Du</span></div>
+      <div class="ph-note">✦ «Gwenn ha Du» = Weiss und Schwarz. Entworfen 1925, angelehnt an den US-amerikanischen «Stars and Stripes» mit bretonischen Hermelin-Wappen.</div>
+    </div>
+
+    <div class="ph">
+      <div class="ph-col ph-de"><span class="lb lb-de">DE</span><span class="pw">Das Ende der Welt</span></div>
+      <div class="ph-col ph-fr"><span class="lb lb-fr">FR</span><span class="pw">Le bout du monde</span></div>
+      <div class="ph-col ph-br"><span class="lb lb-br">BR</span><span class="pw">Penn-ar-Bed</span></div>
+      <div class="ph-note">✦ «Penn-ar-Bed» ist der bretonische Name für das Département Finistère. «Penn» = Kopf/Spitze, «ar» = das, «Bed» = Welt. Wörtlich: «Kopf der Welt» — für die Römer war es das Ende der bekannten Welt.</div>
+    </div>
+
+    <div class="ph">
+      <div class="ph-col ph-de"><span class="lb lb-de">DE</span><span class="pw">Langer Stein (Menhir)</span></div>
+      <div class="ph-col ph-fr"><span class="lb lb-fr">FR</span><span class="pw">Menhir</span></div>
+      <div class="ph-col ph-br"><span class="lb lb-br">BR</span><span class="pw">Maen-hir</span></div>
+      <div class="ph-note">✦✦ «Menhir» ist ein bretonisches Wort, das die Welt geerbt hat! «Maen» = Stein, «hir» = lang/gross. Carnac (Tag 12) hat über 3'000 davon.</div>
+    </div>
+
+    <div class="ph">
+      <div class="ph-col ph-de"><span class="lb lb-de">DE</span><span class="pw">Tischstein (Dolmen)</span></div>
+      <div class="ph-col ph-fr"><span class="lb lb-fr">FR</span><span class="pw">Dolmen</span></div>
+      <div class="ph-col ph-br"><span class="lb lb-br">BR</span><span class="pw">Taol-maen</span></div>
+      <div class="ph-note">✦✦ Auch «Dolmen» kommt aus dem Bretonischen: «Taol» = Tisch (von lateinisch «tabula»), «maen» = Stein. Ein Grabmal aus einem Deckstein auf Stützsteinen.</div>
+    </div>
+
+    <div class="ph">
+      <div class="ph-col ph-de"><span class="lb lb-de">DE</span><span class="pw">Möwe</span></div>
+      <div class="ph-col ph-fr"><span class="lb lb-fr">FR</span><span class="pw">Goéland</span></div>
+      <div class="ph-col ph-br"><span class="lb lb-br">BR</span><span class="pw">Gwelan</span></div>
+      <div class="ph-note">✦ Das französische «goéland» (Silbermöwe) ist direkt aus dem Bretonischen «gwelan» entlehnt. Häufig an der Küste des Finistère zu sehen.</div>
+    </div>
+
+    <div class="ph">
+      <div class="ph-col ph-de"><span class="lb lb-de">DE</span><span class="pw">Es lebe die Bretagne (für immer)!</span></div>
+      <div class="ph-col ph-fr"><span class="lb lb-fr">FR</span><span class="pw">Vive la Bretagne !</span></div>
+      <div class="ph-col ph-br"><span class="lb lb-br">BR</span><span class="pw">Breizh da viken !</span></div>
+      <div class="ph-note">✦ «Da viken» = für immer / auf ewig. Kampfruf der bretonischen Identitätsbewegung. Auf Graffiti, Stickern und T-Shirts in der ganzen Bretagne zu sehen.</div>
+    </div>
+
+    <div class="ph">
+      <div class="ph-col ph-de"><span class="lb lb-de">DE</span><span class="pw">Ich liebe die Bretagne</span></div>
+      <div class="ph-col ph-fr"><span class="lb lb-fr">FR</span><span class="pw">J'adore la Bretagne</span></div>
+      <div class="ph-col ph-br"><span class="lb lb-br">BR</span><span class="pw">Karantez am eus ouzh Breizh</span></div>
+      <div class="ph-note">✦ «Karantez» = Liebe (wie walisisch «cariad»). Nach zwei Wochen Reise vermutlich vollkommen zutreffend.</div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ══════════════════════════════
+     7. NOTFÄLLE
+     ══════════════════════════════ -->
+<div class="ph-section c-geschichte">
+  <div class="sec-title">🆘 Notfälle</div>
+  <div class="ph-body">
+
+    <div class="ph">
+      <div class="ph-col ph-de"><span class="lb lb-de">DE</span><span class="pw">Hilfe!</span></div>
+      <div class="ph-col ph-fr"><span class="lb lb-fr">FR</span><span class="pw">Au secours !</span></div>
+      <div class="ph-col ph-br"><span class="lb lb-br">BR</span><span class="pw">Skoazell !</span></div>
+    </div>
+
+    <div class="ph">
+      <div class="ph-col ph-de"><span class="lb lb-de">DE</span><span class="pw">Ich brauche einen Arzt</span></div>
+      <div class="ph-col ph-fr"><span class="lb lb-fr">FR</span><span class="pw">J'ai besoin d'un médecin</span></div>
+      <div class="ph-col ph-br"><span class="lb lb-br">BR</span><span class="pw">Ur mezeg a veze ezhomm din</span></div>
+    </div>
+
+    <div class="ph">
+      <div class="ph-col ph-de"><span class="lb lb-de">DE</span><span class="pw">Krankenwagen</span></div>
+      <div class="ph-col ph-fr"><span class="lb lb-fr">FR</span><span class="pw">Ambulance · SAMU</span></div>
+      <div class="ph-col ph-br"><span class="lb lb-br">☎</span><span class="pw" style="font-weight:700;color:#9B1C1C">15</span></div>
+    </div>
+
+    <div class="ph">
+      <div class="ph-col ph-de"><span class="lb lb-de">DE</span><span class="pw">Polizei</span></div>
+      <div class="ph-col ph-fr"><span class="lb lb-fr">FR</span><span class="pw">Police / Gendarmerie</span></div>
+      <div class="ph-col ph-br"><span class="lb lb-br">☎</span><span class="pw" style="font-weight:700;color:#9B1C1C">17</span></div>
+    </div>
+
+    <div class="ph">
+      <div class="ph-col ph-de"><span class="lb lb-de">DE</span><span class="pw">Feuerwehr</span></div>
+      <div class="ph-col ph-fr"><span class="lb lb-fr">FR</span><span class="pw">Pompiers</span></div>
+      <div class="ph-col ph-br"><span class="lb lb-br">☎</span><span class="pw" style="font-weight:700;color:#9B1C1C">18</span></div>
+    </div>
+
+    <div class="ph">
+      <div class="ph-col ph-de"><span class="lb lb-de">DE</span><span class="pw">Europäischer Notruf</span></div>
+      <div class="ph-col ph-fr"><span class="lb lb-fr">FR</span><span class="pw">Urgences européennes</span></div>
+      <div class="ph-col ph-br"><span class="lb lb-br">☎</span><span class="pw" style="font-weight:700;color:#9B1C1C">112</span></div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ══ TIPPS-BOX ══ -->
+<div class="tips-box">
+  <h3>📚 Keltische Verwandtschaft — kurz erklärt</h3>
+  <ul>
+    <li><strong>Bretonisch, Walisisch und Kornisch</strong> sind «Brittonische» keltische Sprachen — dieselbe Sprachfamilie, gegenseitig teilweise verständlich.</li>
+    <li><strong>Irisch, Schottisch-Gälisch und Manx</strong> sind «Goidelische» keltische Sprachen — eine andere Unterfamilie.</li>
+    <li>Deshalb sind <em>Demat / Dia dhuit / Dydd da</em> (Bretonisch/Irisch/Walisisch) ähnlich, aber nicht identisch.</li>
+    <li><strong>Ortsnamen</strong> auf BR: «Plou-» (Pfarrei), «Ker-» (Dorf), «Pen-» (Spitze), «Bre-/Bre-» (Hügel), «Loc-» (Ort/heiliger Bezirk) — überall im Finistère erkennbar.</li>
+    <li><strong>Aussprache Bretonisch:</strong> «c'h» wie schottisches «ch» in «loch» · «zh» wie «s» oder «z» · «ñ» wie frz. «gn» · «w» wie englisches «w».</li>
+  </ul>
+</div>
+
+<!-- ══ FOOTER ══ -->
+<footer>
+  <strong>Normandie &amp; Bretagne 2026 · Wörterbuch Français &amp; Brezhoneg</strong>
+  Bretonisch ist keltisch, lebendig und auf Schildern in der Bretagne allgegenwärtig.<br>
+  Alle Übersetzungen nach bestem Wissen — Bretonisch variiert zwischen den Dialekten.<br><br>
+  <em>Kenavo — Breizh da viken! 🌊</em>
+</footer>
+
+</body>
+</html>
