@@ -3,1003 +3,901 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Normandie & Bretagne 2026 · Reiseprogramm</title>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,700&family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+<title>Normandie &amp; Bretagne 2026 · Reiseprogramm</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
-*{box-sizing:border-box;margin:0;padding:0}
-
 :root{
-  --bg:#F5F3EE;
-  --card:#FFFFFF;
-  --text:#1C2B3A;
-  --muted:#6B7280;
-  --border:#E4E0D8;
-  --anreise:#64748B;
-  --staedte:#1E3A8A;
-  --kueste:#0E7490;
-  --natur:#2D6A4F;
+  --staedte:   #1E3A8A;
+  --kueste:    #0E7490;
+  --natur:     #2D6A4F;
   --geschichte:#9B1C1C;
+  --anreise:   #64748B;
+  --bg:        #F5F3EE;
+  --card:      #ffffff;
+  --text:      #1C2B3A;
+  --muted:     #5B6B7C;
+  --line:      #E2DED5;
+  --gold:      #B4884A;
 }
-
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
 body{
-  background:var(--bg);
-  font-family:'Inter',system-ui,-apple-system,sans-serif;
-  color:var(--text);
-  max-width:780px;
-  margin:0 auto;
-  font-size:15px;
+  font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+  background:var(--bg); color:var(--text);
+  line-height:1.65; -webkit-font-smoothing:antialiased;
 }
+.wrap{max-width:1080px;margin:0 auto;padding:0 16px}
 
-/* ── HEADER ── */
+/* ---------- HEADER ---------- */
 .site-header{
-  background:linear-gradient(160deg,#0A1628 0%,#1B3461 55%,#0D5276 100%);
-  color:#fff;
-  text-align:center;
-  padding:2.5rem 1.5rem 2rem;
-  position:relative;
-  overflow:hidden;
+  background:linear-gradient(135deg,#12213A 0%,#1E3A8A 55%,#0E7490 100%);
+  color:#fff; padding:34px 0 30px; text-align:center;
 }
-.site-header::before{
-  content:'';
-  position:absolute;
-  top:0;left:0;right:0;
-  height:4px;
-  background:linear-gradient(90deg,#002395 33%,#fff 33%,#fff 66%,#ED2939 66%);
-}
-.flag{font-size:3.5rem;display:block;margin-bottom:.5rem;line-height:1}
-.header-label{
-  font-size:.7rem;letter-spacing:.22em;text-transform:uppercase;
-  color:rgba(255,255,255,.55);margin-bottom:.9rem
+.flag{font-size:2rem;line-height:1;display:block;margin-bottom:8px}
+.kicker{
+  text-transform:uppercase; letter-spacing:.18em; font-size:.7rem;
+  font-weight:600; color:#A8D8EA; margin-bottom:14px;
 }
 .header-title{
   font-family:'Playfair Display',Georgia,serif;
-  font-size:clamp(1.8rem,5vw,2.6rem);font-weight:700;line-height:1.15;
-  margin-bottom:.5rem
+  font-size:clamp(2rem,7vw,3.4rem); font-weight:700; line-height:1.12;
 }
-.header-title em{font-style:italic;color:#7DC8E8}
-.header-dates{font-size:.85rem;color:rgba(255,255,255,.75);margin-bottom:1.2rem}
-.badges{display:flex;flex-wrap:wrap;justify-content:center;gap:.4rem}
-.badge{
-  background:rgba(255,255,255,.13);border:1px solid rgba(255,255,255,.22);
-  color:rgba(255,255,255,.9);padding:.3rem .7rem;border-radius:2rem;font-size:.75rem;font-weight:600
+.header-title em{color:#F0C674;font-style:italic}
+.breton-sub{font-size:1em;color:#A8D8EA;font-style:italic;font-weight:700;display:block}
+.header-sub{margin-top:14px;font-size:1rem;color:#D6E4F0}
+.facts{
+  display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin-top:20px;
 }
+.fact{
+  background:rgba(255,255,255,.12); border:1px solid rgba(255,255,255,.22);
+  border-radius:999px; padding:5px 14px; font-size:.82rem; font-weight:500;
+}
+.phrase-link{
+  display:inline-block;margin-top:22px;padding:11px 22px;
+  background:#F0C674;color:#12213A;text-decoration:none;
+  border-radius:999px;font-weight:700;font-size:.92rem;
+  transition:transform .15s ease,box-shadow .15s ease;
+}
+.phrase-link:hover{transform:translateY(-2px);box-shadow:0 6px 18px rgba(0,0,0,.25)}
 
-/* ── HERO ── */
-.hero-wrap{
-  position:relative;width:100%;height:240px;overflow:hidden;
-  background:linear-gradient(180deg,#0A1628 0%,#1B3461 45%,#2E86AB 80%,#6FB3CC 100%)
-}
+/* ---------- HERO ---------- */
+.hero-wrap{position:relative;height:240px;overflow:hidden;background:#12213A}
 .hero-wrap img{width:100%;height:100%;object-fit:cover;object-position:center 40%;display:block}
+.hero-cap{
+  position:absolute;left:0;right:0;bottom:0;padding:28px 16px 12px;
+  background:linear-gradient(to top,rgba(0,0,0,.72),transparent);
+  color:#fff;font-size:.82rem;text-align:center;
+}
 @media(min-width:600px){.hero-wrap{height:480px}}
 @media(min-width:900px){.hero-wrap{height:560px}}
 
-/* ── BRETON SUBTITLE ── */
-.breton-sub{font-size:1em;color:#A8D8EA;letter-spacing:.02em;font-style:italic;font-weight:700;display:block;margin-top:.2rem}
+/* ---------- LEGENDE + FILTER ---------- */
+.toolbar{padding:26px 0 6px}
+.legend{display:flex;flex-wrap:wrap;justify-content:center;gap:8px 16px;margin-bottom:18px}
+.legend span{display:flex;align-items:center;gap:7px;font-size:.82rem;color:var(--muted);font-weight:500}
+.dot{width:11px;height:11px;border-radius:50%;display:inline-block}
+.d-staedte{background:var(--staedte)} .d-kueste{background:var(--kueste)}
+.d-natur{background:var(--natur)} .d-geschichte{background:var(--geschichte)}
+.d-anreise{background:var(--anreise)}
+.maps-note{text-align:center;font-size:.78rem;color:var(--muted);margin-bottom:16px}
+.filters{display:flex;flex-wrap:wrap;justify-content:center;gap:8px;margin-bottom:8px}
+.filter-btn{
+  font-family:inherit;font-size:.84rem;font-weight:600;cursor:pointer;
+  padding:8px 16px;border-radius:999px;border:1.5px solid var(--line);
+  background:var(--card);color:var(--muted);transition:all .15s ease;
+}
+.filter-btn:hover{border-color:var(--gold);color:var(--text)}
+.filter-btn.active{background:var(--text);border-color:var(--text);color:#fff}
 
-/* ── SUBPAGE LINK ── */
-.page-links{margin-top:1.1rem}
-.page-link-btn{
-  display:inline-block;background:rgba(255,255,255,.14);color:rgba(255,255,255,.88);
-  text-decoration:none;padding:.35rem 1rem;border-radius:2rem;font-size:.76rem;font-weight:600;
-  border:1px solid rgba(255,255,255,.24);transition:all .15s
+/* ---------- WOCHEN-TRENNER ---------- */
+.week-sep{
+  font-family:'Playfair Display',serif;font-size:1.15rem;font-weight:700;
+  color:var(--muted);text-align:center;margin:36px 0 20px;
+  display:flex;align-items:center;gap:16px;
 }
-.page-link-btn:hover{background:rgba(255,255,255,.24)}
-.hero-overlay{
-  position:absolute;bottom:0;left:0;right:0;
-  background:linear-gradient(transparent,rgba(0,0,0,.55));
-  padding:.75rem 1rem
-}
-.hero-caption{color:rgba(255,255,255,.8);font-size:.72rem;font-style:italic}
+.week-sep::before,.week-sep::after{content:'';flex:1;height:1px;background:var(--line)}
 
-/* ── LEGEND ── */
-.legend-bar{
-  display:flex;flex-wrap:wrap;align-items:center;gap:.5rem .9rem;
-  padding:.9rem 1rem .5rem;border-bottom:1px solid var(--border)
-}
-.legend-item{display:flex;align-items:center;gap:.35rem;font-size:.73rem;font-weight:600;color:var(--text)}
-.ldot{width:10px;height:10px;border-radius:50%;flex-shrink:0}
-.ldot-anreise{background:var(--anreise)}
-.ldot-staedte{background:var(--staedte)}
-.ldot-kueste{background:var(--kueste)}
-.ldot-natur{background:var(--natur)}
-.ldot-geschichte{background:var(--geschichte)}
-.legend-maps{margin-left:auto;font-size:.7rem;color:var(--muted)}
-
-/* ── FILTERS ── */
-.filter-bar{
-  display:flex;flex-wrap:wrap;gap:.4rem;
-  padding:.7rem 1rem 1rem
-}
-.fb{
-  padding:.35rem .85rem;border:1.5px solid var(--border);border-radius:2rem;
-  background:#fff;color:var(--text);font-size:.75rem;font-weight:600;
-  cursor:pointer;transition:all .18s;font-family:inherit
-}
-.fb:hover,.fb.active{background:var(--text);color:#fff;border-color:var(--text)}
-
-/* ── WEEK HEADER ── */
-.week-header{
-  background:linear-gradient(90deg,#0A1628,#1B3461);
-  color:rgba(255,255,255,.88);
-  padding:.55rem 1.25rem;font-size:.72rem;font-weight:700;
-  letter-spacing:.12em;text-transform:uppercase;margin:.25rem 0
-}
-
-/* ── DAY CARD ── */
+/* ---------- DAY CARDS ---------- */
+.days{display:flex;flex-direction:column;gap:22px}
 .day-card{
-  background:var(--card);
-  margin:.5rem .75rem .75rem;
-  border-radius:.75rem;
-  overflow:hidden;
-  box-shadow:0 1px 4px rgba(0,0,0,.07),0 1px 2px rgba(0,0,0,.04);
-  border-left:5px solid var(--border);
-  transition:box-shadow .2s
+  background:var(--card);border-radius:14px;overflow:hidden;
+  box-shadow:0 2px 10px rgba(28,43,58,.07);
+  border:1px solid var(--line);
 }
-.day-card:hover{box-shadow:0 4px 14px rgba(0,0,0,.1)}
 .day-card.hidden{display:none}
-
-.day-card.type-anreise{border-left-color:var(--anreise)}
-.day-card.type-staedte{border-left-color:var(--staedte)}
-.day-card.type-kueste{border-left-color:var(--kueste)}
-.day-card.type-natur{border-left-color:var(--natur)}
-.day-card.type-geschichte{border-left-color:var(--geschichte)}
-
 .card-top{
-  display:flex;align-items:flex-start;justify-content:space-between;
-  padding:.85rem 1rem .3rem
+  display:flex;align-items:center;gap:14px;padding:14px 20px;color:#fff;
 }
-.day-meta{display:flex;align-items:baseline;gap:.45rem}
+.type-staedte    .card-top{background:var(--staedte)}
+.type-kueste     .card-top{background:var(--kueste)}
+.type-natur      .card-top{background:var(--natur)}
+.type-geschichte .card-top{background:var(--geschichte)}
+.type-anreise    .card-top{background:var(--anreise)}
 .day-num{
-  font-family:'Playfair Display',Georgia,serif;
-  font-size:2.6rem;font-weight:700;line-height:1
+  font-family:'Playfair Display',serif;font-size:1.6rem;font-weight:700;
+  min-width:44px;height:44px;border-radius:50%;
+  background:rgba(255,255,255,.18);display:flex;align-items:center;justify-content:center;
 }
-.type-anreise .day-num{color:var(--anreise)}
-.type-staedte .day-num{color:var(--staedte)}
-.type-kueste .day-num{color:var(--kueste)}
-.type-natur .day-num{color:var(--natur)}
-.type-geschichte .day-num{color:var(--geschichte)}
-
-.day-label{font-size:.72rem;color:var(--muted);font-weight:600;text-transform:uppercase;letter-spacing:.05em}
-.day-icon{font-size:1.7rem;margin-top:.1rem}
-
-.card-body{padding:.2rem 1rem 1rem}
-.card-title{
-  font-family:'Playfair Display',Georgia,serif;
-  font-size:1.15rem;font-weight:700;line-height:1.25;
-  margin:.1rem 0 .55rem
-}
+.day-label{flex:1;font-size:.86rem;font-weight:600;letter-spacing:.04em}
+.day-label small{display:block;font-weight:400;opacity:.85;letter-spacing:0}
+.day-icon{font-size:1.5rem}
+.card-body{padding:20px}
+.card-title{font-family:'Playfair Display',serif;font-size:1.4rem;font-weight:700;line-height:1.25}
 .drive-badge{
-  display:inline-block;background:#F0EDE6;color:var(--muted);
-  font-size:.72rem;font-weight:600;padding:.22rem .6rem;
-  border-radius:.3rem;margin-bottom:.7rem
+  display:inline-block;margin:10px 0 12px;padding:4px 12px;border-radius:6px;
+  background:#EFEBE1;color:var(--muted);font-size:.78rem;font-weight:600;
 }
-.card-desc{font-size:.88rem;line-height:1.65;color:var(--text);margin-bottom:.75rem}
-
-/* MAP BUTTONS */
-.map-links{display:flex;flex-wrap:wrap;gap:.35rem;margin-bottom:.75rem}
+.booked{
+  display:block;margin:0 0 12px;padding:10px 14px;border-radius:8px;
+  background:#F3E9D8;border-left:4px solid var(--gold);
+  font-size:.86rem;font-weight:600;color:#6B4E1E;
+}
+.card-desc{font-size:.95rem;color:#33475B}
+.card-desc strong{color:var(--text)}
+.day-map-wrap{margin:18px 0 12px;border-radius:10px;overflow:hidden;border:1px solid var(--line)}
+.day-map-wrap iframe{width:100%;height:260px;border:0;display:block}
+.map-links{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:14px}
 .map-btn{
-  display:inline-block;background:#EFF6FF;color:#1E40AF;
-  font-size:.72rem;font-weight:600;padding:.28rem .65rem;
-  border-radius:.35rem;text-decoration:none;
-  border:1px solid #BFDBFE;transition:all .15s
+  font-size:.78rem;font-weight:600;text-decoration:none;
+  padding:6px 12px;border-radius:999px;
+  background:#EFEBE1;color:var(--muted);border:1px solid var(--line);
+  transition:all .15s ease;
 }
-.map-btn:hover{background:#1E40AF;color:#fff;border-color:#1E40AF}
-
-/* HIGHLIGHTS */
-details{margin-top:.25rem}
-details summary{
-  cursor:pointer;font-size:.78rem;font-weight:600;color:var(--muted);
-  padding:.5rem 0;border-top:1px solid var(--border);
-  list-style:none;user-select:none
+.map-btn:hover{background:var(--gold);color:#fff;border-color:var(--gold)}
+details{border-top:1px solid var(--line);padding-top:12px}
+summary{
+  cursor:pointer;font-weight:700;font-size:.9rem;color:var(--text);
+  list-style:none;display:flex;align-items:center;gap:8px;
 }
-details summary::-webkit-details-marker{display:none}
-details summary::before{content:'▶';font-size:.55rem;margin-right:.4rem;transition:transform .2s;display:inline-block}
+summary::-webkit-details-marker{display:none}
+summary::before{content:'▸';color:var(--gold);transition:transform .15s ease;display:inline-block}
 details[open] summary::before{transform:rotate(90deg)}
+.det-block{margin-top:14px}
+.det-block h4{font-size:.82rem;font-weight:700;color:var(--muted);margin-bottom:5px;letter-spacing:.02em}
+.det-block p,.det-block li{font-size:.88rem;color:#33475B}
+.det-block ul{margin:0;padding-left:20px}
+.det-block li{margin-bottom:4px}
 
-.hl-body{padding:.75rem 0 .1rem;display:grid;gap:.7rem}
-.hl-section strong{
-  display:block;font-size:.68rem;font-weight:700;
-  text-transform:uppercase;letter-spacing:.07em;color:var(--muted);margin-bottom:.3rem
+/* ---------- HINWEISE ---------- */
+.notes{
+  background:var(--card);border:1px solid var(--line);border-radius:14px;
+  padding:24px;margin:40px 0 30px;box-shadow:0 2px 10px rgba(28,43,58,.07);
 }
-.hl-section p{font-size:.83rem;line-height:1.55;color:var(--text)}
-.hl-section ul{margin-left:1.1rem}
-.hl-section li{font-size:.83rem;line-height:1.5;color:var(--text);margin-bottom:.18rem}
+.notes h3{font-family:'Playfair Display',serif;font-size:1.3rem;margin-bottom:14px}
+.notes ul{padding-left:20px}
+.notes li{font-size:.9rem;margin-bottom:8px;color:#33475B}
+.notes a{color:var(--kueste);font-weight:600}
 
-/* ── DAY MAP ── */
-.day-map-wrap{margin:.25rem 0 .75rem;border-radius:.5rem;overflow:hidden;height:190px;border:1px solid var(--border)}
-.day-map-wrap iframe{width:100%;height:100%;border:0;display:block}
-@media(min-width:600px){.day-map-wrap{height:240px}}
-
-/* ── TIPS BOX ── */
-.tips-box{
-  margin:1rem .75rem;padding:1.1rem 1.2rem;
-  background:#FFF8E7;border:1px solid #F6D860;border-radius:.75rem
+/* ---------- FOOTER ---------- */
+.site-footer{
+  background:#12213A;color:#C8D4E0;text-align:center;
+  padding:28px 16px 34px;font-size:.82rem;
 }
-.tips-box h3{font-size:.85rem;font-weight:700;margin-bottom:.7rem;color:#92400E}
-.tips-box ul{margin-left:1.1rem}
-.tips-box li{font-size:.83rem;line-height:1.55;color:var(--text);margin-bottom:.3rem}
-
-/* ── FOOTER ── */
-footer{
-  text-align:center;padding:1.75rem 1rem 2rem;
-  font-size:.72rem;color:var(--muted);
-  border-top:1px solid var(--border);margin-top:.75rem
-}
-footer strong{display:block;margin-bottom:.35rem;font-size:.8rem;color:var(--text)}
-
-@media(max-width:480px){
-  .site-header{padding:2rem 1rem 1.5rem}
-  .header-title{font-size:1.65rem}
-  .day-card{margin:.4rem .5rem .6rem}
-  .card-top,.card-body{padding-left:.85rem;padding-right:.85rem}
-  .day-num{font-size:2.1rem}
-}
+.site-footer strong{color:#fff;display:block;margin-bottom:8px;font-size:.9rem}
+.site-footer em{display:block;margin-top:14px;color:#F0C674;font-size:1rem;font-style:italic}
 </style>
 </head>
 <body>
 
-<!-- ══ HEADER ══ -->
 <header class="site-header">
-  <span class="flag">🇫🇷</span>
-  <div class="header-label">Normandie &amp; Bretagne 2026 · Persönliches Reiseprogramm</div>
-  <h1 class="header-title">Bonjour, <em>Normandie!</em><span class="breton-sub">Demat, <em>Breizh!</em></span></h1>
-  <div class="header-dates">29. August – 12. September 2026 · Stefan &amp; Karin · Roadtrip ab Pfungen</div>
-  <div class="badges">
-    <span class="badge">📅 15 Tage</span>
-    <span class="badge">🚗 ~3 500 km</span>
-    <span class="badge">🏨 14 Nächte</span>
-    <span class="badge">🌡️ 16–22 °C</span>
-    <span class="badge">🌊 Normandie + Bretagne</span>
-  </div>
-  <div class="page-links">
-    <a href="./phrases.html" class="page-link-btn">📖 Wörterbuch DE · FR · Brezhoneg →</a>
+  <div class="wrap">
+    <span class="flag">🇫🇷</span>
+    <div class="kicker">Normandie &amp; Bretagne 2026 · Persönliches Reiseprogramm</div>
+    <h1 class="header-title">
+      Bonjour, <em>Normandie!</em>
+      <span class="breton-sub">Demat, <em>Breizh!</em></span>
+    </h1>
+    <p class="header-sub">29. August – 12. September 2026 · Stefan &amp; Karin · Roadtrip ab Pfungen</p>
+    <div class="facts">
+      <span class="fact">📅 15 Tage</span>
+      <span class="fact">🚗 ~3 600 km</span>
+      <span class="fact">🏨 14 Nächte</span>
+      <span class="fact">🌡️ 16–22 °C</span>
+      <span class="fact">🌊 Normandie + Bretagne</span>
+    </div>
+    <a class="phrase-link" href="phrases.html">📖 Wörterbuch DE · FR · Brezhoneg →</a>
   </div>
 </header>
 
-<!-- ══ HERO ══ -->
 <div class="hero-wrap">
-  <img src="https://images.unsplash.com/photo-1596436831831-87dd84a69101?w=1280&q=80&fm=jpg&auto=format&fit=crop"
-       alt="Mont Saint-Michel" onerror="this.remove()">
-  <div class="hero-overlay">
-    <p class="hero-caption">Mont Saint-Michel — Tag 6 &amp; 7 · Das Ziel schlechthin · Foto: Bas van Breukelen / Unsplash</p>
-  </div>
+  <img src="https://images.unsplash.com/photo-1596436831831-87dd84a69101?w=1280&q=80&fm=jpg&auto=format&fit=crop" alt="Mont Saint-Michel">
+  <div class="hero-cap">Mont Saint-Michel · Tag 6 &amp; 7 · Das Ziel schlechthin · Foto: Bas van Breukelen / Unsplash</div>
 </div>
 
-<!-- ══ LEGEND ══ -->
-<div class="legend-bar">
-  <div class="legend-item"><span class="ldot ldot-staedte"></span>Städte &amp; Kultur</div>
-  <div class="legend-item"><span class="ldot ldot-kueste"></span>Küste &amp; Meer</div>
-  <div class="legend-item"><span class="ldot ldot-natur"></span>Natur &amp; Wandern</div>
-  <div class="legend-item"><span class="ldot ldot-geschichte"></span>D-Day &amp; Geschichte</div>
-  <div class="legend-item"><span class="ldot ldot-anreise"></span>An-/Abreise</div>
-  <span class="legend-maps">📍 Buttons öffnen Google Maps</span>
-</div>
+<div class="wrap">
 
-<!-- ══ FILTERS ══ -->
-<div class="filter-bar">
-  <button class="fb active" data-f="all">Alle Tage</button>
-  <button class="fb" data-f="staedte">Städte</button>
-  <button class="fb" data-f="kueste">Küste</button>
-  <button class="fb" data-f="natur">Natur</button>
-  <button class="fb" data-f="geschichte">D-Day</button>
-  <button class="fb" data-f="anreise">An-/Abreise</button>
-</div>
-
-<!-- ════════════════════════════════════════
-     WOCHE 1 · 29. Aug. – 4. Sep.
-     ════════════════════════════════════════ -->
-<div class="week-header">Woche 1 · 29. Aug. – 4. Sep.</div>
-
-<!-- TAG 1 -->
-<div class="day-card type-anreise" data-type="anreise">
-  <div class="card-top">
-    <div class="day-meta">
-      <span class="day-num">29</span>
-      <span class="day-label">Aug · Sa</span>
+  <div class="toolbar">
+    <div class="legend">
+      <span><i class="dot d-staedte"></i>Städte &amp; Kultur</span>
+      <span><i class="dot d-kueste"></i>Küste &amp; Meer</span>
+      <span><i class="dot d-natur"></i>Natur &amp; Wandern</span>
+      <span><i class="dot d-geschichte"></i>D-Day &amp; Geschichte</span>
+      <span><i class="dot d-anreise"></i>An-/Abreise</span>
     </div>
-    <span class="day-icon">🚗</span>
-  </div>
-  <div class="card-body">
-    <h3 class="card-title">Pfungen → Strassburg → Reims</h3>
-    <div class="drive-badge">🚗 ~620 km · ~6 Std. · Anreisetag</div>
-    <p class="card-desc">Frühzeitig losfahren — über Basel und Strassburg nach Reims. Wer mag, legt in Strassburg einen Mittagsstopp ein: Das Münster und das Quartier Petite France sind einen kurzen Spaziergang wert. Abends erwartet euch die <strong>Cathédrale Notre-Dame de Reims</strong> — dreimal häufiger von Monet gemalt als der Dom in Rouen, abends beleuchtet schlicht atemberaubend.</p>
-    
-    <div class="day-map-wrap"><iframe src="https://maps.google.com/maps?saddr=Pfungen,+Winterthur,+Schweiz&daddr=Reims,+France&output=embed&hl=de" loading="lazy" allowfullscreen referrerpolicy="no-referrer-when-downgrade"></iframe></div>
-    <div class="map-links">
-      <a href="https://maps.google.com/?q=Cathédrale+Notre-Dame+de+Reims,+France" class="map-btn" target="_blank">📍 Cathédrale de Reims</a>
-      <a href="https://maps.google.com/?q=Quartier+Petite+France+Strasbourg" class="map-btn" target="_blank">📍 Strassburg (Stopp)</a>
+    <div class="maps-note">📍 Buttons öffnen Google Maps</div>
+    <div class="filters">
+      <button class="filter-btn active" data-filter="all">Alle Tage</button>
+      <button class="filter-btn" data-filter="staedte">Städte</button>
+      <button class="filter-btn" data-filter="kueste">Küste</button>
+      <button class="filter-btn" data-filter="natur">Natur</button>
+      <button class="filter-btn" data-filter="geschichte">D-Day</button>
+      <button class="filter-btn" data-filter="anreise">An-/Abreise</button>
     </div>
-    <details>
-      <summary>Hotels, Restaurants &amp; Tipps</summary>
-      <div class="hl-body">
-        <div class="hl-section">
-          <strong>🏨 Übernachtung Reims</strong>
-          <p><strong>Grand Hôtel des Templiers</strong> ⭐⭐⭐⭐ — Historisches Stadthaus (22 Rue des Templiers), stilvolles Interieur. ~€150–210/N. · <strong>Hôtel de la Paix</strong> ⭐⭐⭐ — Zentral, solide, günstiger. ~€90–120/N.</p>
+  </div>
+
+  <div class="week-sep">Woche 1 · 29. Aug. – 4. Sep.</div>
+
+  <div class="days">
+
+  <!-- ══════════ TAG 1 ══════════ -->
+  <div class="day-card type-anreise" data-type="anreise">
+    <div class="card-top">
+      <div class="day-num">1</div>
+      <div class="day-label">29 Aug · Sa<small>Anreisetag</small></div>
+      <div class="day-icon">🚗</div>
+    </div>
+    <div class="card-body">
+      <h3 class="card-title">Pfungen → Besançon → Troyes</h3>
+      <div class="drive-badge">🚗 ~540 km · ~5.5 Std. · Anreisetag</div>
+      <p class="card-desc">Früh losfahren, über Basel und Belfort in die Franche-Comté. Als Mittagsstopp bietet sich <strong>Besançon</strong> an: die Vauban-Zitadelle hoch über der Doubs-Schleife ist UNESCO-Welterbe und der Altstadtkern aus blaugrauem Kalkstein ein unterschätztes Kleinod. Wer lieber kürzer hält, nimmt <strong>Langres</strong> mit dem vollständig begehbaren Mauerring auf dem Plateau. Abends dann <strong>Troyes</strong>, die alte Hauptstadt der Champagne. Der Altstadtgrundriss hat tatsächlich die Form eines Champagnerkorkens, über 400 Fachwerkhäuser stehen noch, und die <strong>Ruelle des Chats</strong> ist so eng, dass sich die Dächer oben fast berühren. Katzen sollen von Haus zu Haus gesprungen sein, daher der Name.</p>
+      <div class="day-map-wrap"><iframe src="https://maps.google.com/maps?saddr=Pfungen,+Winterthur,+Schweiz&daddr=Besancon,+France+to:Troyes,+France&output=embed&hl=de" loading="lazy" allowfullscreen referrerpolicy="no-referrer-when-downgrade"></iframe></div>
+      <div class="map-links">
+        <a class="map-btn" href="https://maps.google.com/?q=Citadelle+de+Besançon,+France" target="_blank">📍 Zitadelle Besançon</a>
+        <a class="map-btn" href="https://maps.google.com/?q=Ruelle+des+Chats+Troyes,+France" target="_blank">📍 Ruelle des Chats</a>
+        <a class="map-btn" href="https://maps.google.com/?q=Cathédrale+Saint-Pierre-et-Saint-Paul+Troyes,+France" target="_blank">📍 Kathedrale Troyes</a>
+        <a class="map-btn" href="https://maps.google.com/?q=Cité+du+Vitrail+Troyes,+France" target="_blank">📍 Cité du Vitrail</a>
+      </div>
+      <details>
+        <summary>Hotels, Restaurants &amp; Tipps</summary>
+        <div class="det-block">
+          <h4>🏨 Übernachtung Troyes</h4>
+          <p><strong>La Maison de Rhodes</strong> ⭐⭐⭐⭐: Ehemalige Templerkommende aus dem 12. Jh. mitten in der Altstadt, Innenhof mit Kopfsteinpflaster. ~€180–240/N. · <strong>Le Champ des Oiseaux</strong> ⭐⭐⭐⭐: Drei Fachwerkhäuser des 15. Jh. zusammengewachsen, romantisch. ~€160–210/N. · <strong>Best Western Hôtel de la Poste</strong> ⭐⭐⭐: Solide und zentral. ~€95–130/N.</p>
         </div>
-        <div class="hl-section">
-          <strong>🍽️ Abendessen</strong>
-          <p><strong>Le Boulingrin</strong> — Authentische Reimer Brasserie, klassische Meeresfrüchteplatten, exzellente Champagnerkarte. Tisch reservieren!</p>
+        <div class="det-block">
+          <h4>🍽️ Abendessen</h4>
+          <p><strong>Aux Crieurs de Vin</strong>: Weinbar und Bistro, Naturweine, Tagesgerichte an der Tafel. Sehr lebendig, kaum Touristen. · <strong>Le Valentino</strong>: Feiner, in einer Gasse im Fachwerkviertel, gute regionale Küche.</p>
         </div>
-        <div class="hl-section">
-          <strong>💡 Tipps</strong>
+        <div class="det-block">
+          <h4>💡 Tipps</h4>
           <ul>
-            <li>Früh losfahren (vor 8 Uhr) — Stau-Risiko um Basel/Mulhouse morgens höher.</li>
-            <li>A4 Strassburg → Metz → Reims ist gut ausgebaut, mautfrei.</li>
-            <li>Strassburg-Stopp ist optional — falls zu müde, direkt nach Reims.</li>
+            <li>Vor 8 Uhr losfahren, das Stau-Risiko um Basel und Mulhouse ist morgens deutlich geringer.</li>
+            <li>Route A5 Basel → A36 Belfort → Vesoul → Langres → Troyes. Mautpflichtig ab Belfort, rechne mit ~€25.</li>
+            <li>Die <strong>Andouillette de Troyes</strong> ist die berühmteste Frankreichs. Ehrliche Warnung: sehr kräftig im Aroma, nicht jedermanns Sache.</li>
+            <li>Troyes hat neun mittelalterliche Kirchen mit Renaissance-Glasfenstern. Die <strong>Cité du Vitrail</strong> im ehemaligen Hôtel-Dieu erklärt die Technik hervorragend.</li>
           </ul>
         </div>
-      </div>
-    </details>
+      </details>
+    </div>
   </div>
-</div>
 
-<!-- TAG 2 -->
-<div class="day-card type-staedte" data-type="staedte">
-  <div class="card-top">
-    <div class="day-meta">
-      <span class="day-num">30</span>
-      <span class="day-label">Aug · So</span>
+  <!-- ══════════ TAG 2 ══════════ -->
+  <div class="day-card type-staedte" data-type="staedte">
+    <div class="card-top">
+      <div class="day-num">2</div>
+      <div class="day-label">30 Aug · So<small>Champagne &amp; Normandie</small></div>
+      <div class="day-icon">🥂</div>
     </div>
-    <span class="day-icon">🥂</span>
-  </div>
-  <div class="card-body">
-    <h3 class="card-title">Reims → Épernay → Rouen</h3>
-    <div class="drive-badge">🚗 ~280 km · ~3.5 Std.</div>
-    <p class="card-desc">Vormittags eine <strong>Champagner-Kellerführung</strong>: Entweder in Reims (Taittinger oder Pommery — monumentale Römergruben!) oder kurzer Abstecher nach <strong>Épernay</strong>, wo Moët &amp; Chandon, Perrier-Jouët und Pol Roger Seite an Seite an der «Avenue de Champagne» stehen. Eine Kellerführung dauert ca. 1.5 Std., Kosten ~€30–50/Person. Dann Fahrt nach <strong>Rouen</strong> — Abendspaziergang durch die Rue du Gros-Horloge zur beleuchteten gotischen Kathedrale.</p>
-    
-    <div class="day-map-wrap"><iframe src="https://maps.google.com/maps?saddr=Reims,+France&daddr=Epernay,+France+to:Rouen,+France&output=embed&hl=de" loading="lazy" allowfullscreen referrerpolicy="no-referrer-when-downgrade"></iframe></div>
-    <div class="map-links">
-      <a href="https://maps.google.com/?q=Avenue+de+Champagne+Épernay,+France" class="map-btn" target="_blank">📍 Avenue de Champagne</a>
-      <a href="https://maps.google.com/?q=Cathédrale+Notre-Dame+de+Rouen,+France" class="map-btn" target="_blank">📍 Kathedrale Rouen</a>
-      <a href="https://maps.google.com/?q=Rue+du+Gros-Horloge+Rouen,+France" class="map-btn" target="_blank">📍 Gros-Horloge</a>
-    </div>
-    <details>
-      <summary>Hotels, Restaurants &amp; Tipps</summary>
-      <div class="hl-body">
-        <div class="hl-section">
-          <strong>🏨 Übernachtung Rouen</strong>
-          <p><strong>Hôtel de Bourgtheroulde</strong> ⭐⭐⭐⭐⭐ — Im gotischen Palais des 15. Jh. — eine Luxuserfahrung. ~€200–280/N. · <strong>Hôtel Mercure Rouen Centre Cathédrale</strong> ⭐⭐⭐⭐ — Direkt gegenüber der Kathedrale, praktisch. ~€110–160/N.</p>
+    <div class="card-body">
+      <h3 class="card-title">Troyes → Épernay → Rouen</h3>
+      <div class="drive-badge">🚗 ~390 km · ~4.5 Std. · längster Etappentag</div>
+      <p class="card-desc">Heute wird gefahren, also früh raus. Nach rund 1.5 Stunden erreicht ihr <strong>Épernay</strong> und damit die <strong>Avenue de Champagne</strong>, wo Moët &amp; Chandon, Perrier-Jouët und Pol Roger Seite an Seite residieren. Unter dieser einen Strasse liegen über 100 km Kellergänge. Eine Führung dauert etwa 1.5 Std. und kostet €30–50 pro Person. Danach die lange Etappe nach <strong>Rouen</strong> (~3 Std.), der Hauptstadt der Normandie. Abends durch die Rue du Gros-Horloge zur beleuchteten Kathedrale, die Monet in 30 Varianten gemalt hat, immer dieselbe Fassade, immer anderes Licht.</p>
+      <div class="day-map-wrap"><iframe src="https://maps.google.com/maps?saddr=Troyes,+France&daddr=Epernay,+France+to:Rouen,+France&output=embed&hl=de" loading="lazy" allowfullscreen referrerpolicy="no-referrer-when-downgrade"></iframe></div>
+      <div class="map-links">
+        <a class="map-btn" href="https://maps.google.com/?q=Avenue+de+Champagne+Épernay,+France" target="_blank">📍 Avenue de Champagne</a>
+        <a class="map-btn" href="https://maps.google.com/?q=Moët+et+Chandon+Épernay,+France" target="_blank">📍 Moët &amp; Chandon</a>
+        <a class="map-btn" href="https://maps.google.com/?q=Cathédrale+Notre-Dame+de+Rouen,+France" target="_blank">📍 Kathedrale Rouen</a>
+        <a class="map-btn" href="https://maps.google.com/?q=Rue+du+Gros-Horloge+Rouen,+France" target="_blank">📍 Gros-Horloge</a>
+      </div>
+      <details>
+        <summary>Hotels, Restaurants &amp; Tipps</summary>
+        <div class="det-block">
+          <h4>🏨 Übernachtung Rouen</h4>
+          <p><strong>Hôtel de Bourgtheroulde</strong> ⭐⭐⭐⭐⭐: Im gotischen Palais des 15. Jh., eine Luxuserfahrung. ~€200–280/N. · <strong>Hôtel Mercure Rouen Centre Cathédrale</strong> ⭐⭐⭐⭐: Direkt gegenüber der Kathedrale, praktisch. ~€110–160/N.</p>
         </div>
-        <div class="hl-section">
-          <strong>🍽️ Abendessen</strong>
-          <p><strong>La Couronne</strong> — Seit 1345 das älteste Restaurant Frankreichs. Die Canard à la Rouennaise ist legendär. Reservieren! · <strong>Les Nymphéas</strong> als moderne Alternative in einem Fachwerkhaus.</p>
+        <div class="det-block">
+          <h4>🍽️ Abendessen</h4>
+          <p><strong>La Couronne</strong>: Seit 1345 das älteste Restaurant Frankreichs. Die Canard à la Rouennaise ist legendär. Reservieren! · <strong>Les Nymphéas</strong> als moderne Alternative in einem Fachwerkhaus.</p>
         </div>
-        <div class="hl-section">
-          <strong>💡 Tipps</strong>
+        <div class="det-block">
+          <h4>💡 Tipps</h4>
           <ul>
-            <li>Moët &amp; Chandon Épernay: Online vorbuchen, sehr beliebt auch im September.</li>
-            <li>Sonntag: Champagnerkeller meist ab 9:30 Uhr offen.</li>
-            <li>Rouen: Abbaye Saint-Ouen am Abend beleuchtet — sehr schön.</li>
+            <li><strong>Achtung Fahrzeit:</strong> Mit ~4.5 Std. reiner Fahrt der längste Tag ausserhalb der An- und Abreise. Kellerführung auf 10 oder 10:30 Uhr legen, dann seid ihr um 14 Uhr wieder auf der Strasse.</li>
+            <li>Moët &amp; Chandon Épernay online vorbuchen, auch an einem Sonntag im September schnell voll.</li>
+            <li>Sonntags öffnen die meisten Häuser an der Avenue ab 9:30 Uhr.</li>
+            <li>Falls es zu knapp wird: Épernay streichen und stattdessen in Troyes gemütlich frühstücken. Champagner gibt es auch in Rouen.</li>
+            <li>Rouen: Die Abbaye Saint-Ouen ist am Abend beleuchtet, ein kurzer Umweg lohnt.</li>
           </ul>
         </div>
-      </div>
-    </details>
+      </details>
+    </div>
   </div>
-</div>
 
-<!-- TAG 3 -->
-<div class="day-card type-kueste" data-type="kueste">
-  <div class="card-top">
-    <div class="day-meta">
-      <span class="day-num">31</span>
-      <span class="day-label">Aug · Mo</span>
+  <!-- ══════════ TAG 3 ══════════ -->
+  <div class="day-card type-kueste" data-type="kueste">
+    <div class="card-top">
+      <div class="day-num">3</div>
+      <div class="day-label">31 Aug · Mo<small>Alabasterküste</small></div>
+      <div class="day-icon">🌊</div>
     </div>
-    <span class="day-icon">🌊</span>
-  </div>
-  <div class="card-body">
-    <h3 class="card-title">Rouen → Étretat → Honfleur</h3>
-    <div class="drive-badge">🚗 ~180 km · ~2.5 Std.</div>
-    <p class="card-desc">Morgens Rouen erkunden: <strong>Abbaye Saint-Ouen</strong> (flamboyante Gotik par excellence), <strong>Palais de Justice</strong> (Fassade wie steinernes Spitzentuch), Vieux-Marché (wo Johanna von Arkus 1431 verbrannte). Mittags Fahrt nach <strong>Étretat</strong> — die Kreidefelsenbögen Falaise d'Aval und d'Amont sind schlicht ausserordentlich. <strong>Wanderung auf dem Chemin des Falaises: ~1.5 Std.</strong> Abends das malerischste Hafenstädtchen der Normandie: <strong>Honfleur</strong>, Liebling der Impressionisten. Den Vieux-Bassin im letzten Abendlicht geniessen.</p>
-    
-    <div class="day-map-wrap"><iframe src="https://maps.google.com/maps?saddr=Rouen,+France&daddr=Etretat,+France+to:Honfleur,+France&output=embed&hl=de" loading="lazy" allowfullscreen referrerpolicy="no-referrer-when-downgrade"></iframe></div>
-    <div class="map-links">
-      <a href="https://maps.google.com/?q=Falaises+d'Étretat,+France" class="map-btn" target="_blank">📍 Falaises d'Étretat</a>
-      <a href="https://maps.google.com/?q=Vieux-Bassin+Honfleur,+France" class="map-btn" target="_blank">📍 Vieux-Bassin Honfleur</a>
-      <a href="https://maps.google.com/?q=Église+Sainte-Catherine+Honfleur,+France" class="map-btn" target="_blank">📍 Église Sainte-Catherine</a>
-    </div>
-    <details>
-      <summary>Hotels, Restaurants &amp; Tipps</summary>
-      <div class="hl-body">
-        <div class="hl-section">
-          <strong>🏨 Übernachtung Honfleur</strong>
-          <p><strong>La Maison de Lucie</strong> ⭐⭐⭐⭐ — Boutique-Hotel in einem Herrenhaus des 19. Jh., romantischer Garten. ~€170–240/N. · <strong>L'Absinthe</strong> ⭐⭐⭐ — Charmant, direkt am Vieux-Bassin. ~€130–180/N.</p>
+    <div class="card-body">
+      <h3 class="card-title">Rouen → Étretat → Honfleur</h3>
+      <div class="drive-badge">🚗 ~180 km · ~2.5 Std.</div>
+      <p class="card-desc">Morgens Rouen erkunden: <strong>Abbaye Saint-Ouen</strong> (flamboyante Gotik par excellence), <strong>Palais de Justice</strong> (die Fassade wirkt wie steinernes Spitzentuch), Vieux-Marché, wo Jeanne d'Arc 1431 verbrannt wurde. Mittags Fahrt nach <strong>Étretat</strong>: die Kreidefelsenbögen Falaise d'Aval und d'Amont sind schlicht ausserordentlich. <strong>Wanderung auf dem Chemin des Falaises: ~1.5 Std.</strong> Abends das malerischste Hafenstädtchen der Normandie: <strong>Honfleur</strong>, Liebling der Impressionisten. Den Vieux-Bassin im letzten Abendlicht geniessen.</p>
+      <div class="day-map-wrap"><iframe src="https://maps.google.com/maps?saddr=Rouen,+France&daddr=Etretat,+France+to:Honfleur,+France&output=embed&hl=de" loading="lazy" allowfullscreen referrerpolicy="no-referrer-when-downgrade"></iframe></div>
+      <div class="map-links">
+        <a class="map-btn" href="https://maps.google.com/?q=Falaises+d'Étretat,+France" target="_blank">📍 Falaises d'Étretat</a>
+        <a class="map-btn" href="https://maps.google.com/?q=Vieux-Bassin+Honfleur,+France" target="_blank">📍 Vieux-Bassin Honfleur</a>
+        <a class="map-btn" href="https://maps.google.com/?q=Église+Sainte-Catherine+Honfleur,+France" target="_blank">📍 Église Sainte-Catherine</a>
+      </div>
+      <details>
+        <summary>Hotels, Restaurants &amp; Tipps</summary>
+        <div class="det-block">
+          <h4>🏨 Übernachtung Honfleur</h4>
+          <p><strong>La Maison de Lucie</strong> ⭐⭐⭐⭐: Boutique-Hotel in einem Herrenhaus des 19. Jh., romantischer Garten. ~€170–240/N. · <strong>L'Absinthe</strong> ⭐⭐⭐: Charmant, direkt am Vieux-Bassin. ~€130–180/N.</p>
         </div>
-        <div class="hl-section">
-          <strong>🍽️ Abendessen</strong>
-          <p><strong>SaQuaNa</strong> — Alexandre Bourdas' Sterne-Restaurant, eine der kreativsten Küchen der Normandie. Weit im Voraus reservieren! · <strong>Au P'tit Mareyeur</strong> — Frische Meeresfrüchte am Hafen, entspannt und sehr gut.</p>
+        <div class="det-block">
+          <h4>🍽️ Abendessen</h4>
+          <p><strong>SaQuaNa</strong>: Alexandre Bourdas' Sterne-Restaurant, eine der kreativsten Küchen der Normandie. Weit im Voraus reservieren! · <strong>Au P'tit Mareyeur</strong>: Frische Meeresfrüchte am Hafen, entspannt und sehr gut.</p>
         </div>
-        <div class="hl-section">
-          <strong>💡 Tipps</strong>
+        <div class="det-block">
+          <h4>💡 Tipps</h4>
           <ul>
-            <li>Étretat: Festes Schuhwerk für den Klippenweg — Kreide ist bei Nässe rutschig.</li>
-            <li>Falaise d'Amont (mit der Kapelle oben) bietet den besten Blick auf d'Aval.</li>
-            <li>Honfleur: Église Sainte-Catherine ist die grösste Holzkirche Frankreichs — einzigartig.</li>
+            <li>Étretat: Festes Schuhwerk für den Klippenweg, Kreide ist bei Nässe rutschig.</li>
+            <li>Die Falaise d'Amont mit der Kapelle oben bietet den besten Blick auf d'Aval.</li>
+            <li>Honfleur: Église Sainte-Catherine ist die grösste Holzkirche Frankreichs, gebaut von Schiffszimmerleuten. Das Gewölbe sieht aus wie ein umgedrehter Schiffsrumpf.</li>
           </ul>
         </div>
-      </div>
-    </details>
+      </details>
+    </div>
   </div>
-</div>
 
-<!-- TAG 4 -->
-<div class="day-card type-kueste" data-type="kueste">
-  <div class="card-top">
-    <div class="day-meta">
-      <span class="day-num">1</span>
-      <span class="day-label">Sep · Di</span>
+  <!-- ══════════ TAG 4 ══════════ -->
+  <div class="day-card type-kueste" data-type="kueste">
+    <div class="card-top">
+      <div class="day-num">4</div>
+      <div class="day-label">1 Sep · Di<small>Côte Fleurie</small></div>
+      <div class="day-icon">🏖️</div>
     </div>
-    <span class="day-icon">🏖️</span>
-  </div>
-  <div class="card-body">
-    <h3 class="card-title">Honfleur → Deauville/Trouville → Bayeux</h3>
-    <div class="drive-badge">🚗 ~130 km · ~2 Std.</div>
-    <p class="card-desc">Morgens noch etwas Honfleur: Der Vieux-Bassin, die Quais, der kleine Markt. Dann die <strong>Côte Fleurie</strong>: <strong>Deauville</strong> und <strong>Trouville</strong> (durch einen Tunnel verbunden). Die Planches — die ikonische Strandpromenade mit den Farbkabinen und den eingravierten Filmstarnamen — riechen nach Belle Époque. Trouville ist volkstümlicher, hat den besseren Fischmarkt. Nachmittags: Weiterfahrt nach <strong>Bayeux</strong> — die erste Stadt der Normandie, die nach D-Day befreit wurde und die einzige, die den Krieg ohne Bombenschäden überstand.</p>
-    
-    <div class="day-map-wrap"><iframe src="https://maps.google.com/maps?saddr=Honfleur,+France&daddr=Deauville,+France+to:Bayeux,+France&output=embed&hl=de" loading="lazy" allowfullscreen referrerpolicy="no-referrer-when-downgrade"></iframe></div>
-    <div class="map-links">
-      <a href="https://maps.google.com/?q=Les+Planches+Deauville,+France" class="map-btn" target="_blank">📍 Les Planches Deauville</a>
-      <a href="https://maps.google.com/?q=Marché+de+Trouville,+France" class="map-btn" target="_blank">📍 Trouville Marché</a>
-      <a href="https://maps.google.com/?q=Bayeux+Vieille+Ville,+France" class="map-btn" target="_blank">📍 Bayeux Vieille Ville</a>
-    </div>
-    <details>
-      <summary>Hotels, Restaurants &amp; Tipps</summary>
-      <div class="hl-body">
-        <div class="hl-section">
-          <strong>🏨 Übernachtung Bayeux (2 Nächte)</strong>
-          <p><strong>Château de Bellefontaine</strong> ⭐⭐⭐⭐ — Schlösschen im Park, 5 Min. zu Fuss ins Zentrum. ~€150–200/N. · <strong>Le Lion d'Or</strong> ⭐⭐⭐ — Klassisch normannisch, direkt im Zentrum. ~€100–140/N.</p>
+    <div class="card-body">
+      <h3 class="card-title">Honfleur → Deauville/Trouville → Bayeux</h3>
+      <div class="drive-badge">🚗 ~130 km · ~2 Std.</div>
+      <p class="card-desc">Morgens noch etwas Honfleur: der Vieux-Bassin, die Quais, der kleine Markt. Dann die <strong>Côte Fleurie</strong>: <strong>Deauville</strong> und <strong>Trouville</strong>, nur durch einen Tunnel getrennt. Die Planches, die ikonische Strandpromenade mit den Farbkabinen und den eingravierten Filmstarnamen, riechen nach Belle Époque. Trouville ist volkstümlicher und hat den besseren Fischmarkt. Nachmittags Weiterfahrt nach <strong>Bayeux</strong>, der ersten befreiten Stadt der Normandie nach dem 6. Juni 1944 und die einzige, die den Krieg ohne Bombenschäden überstand.</p>
+      <div class="day-map-wrap"><iframe src="https://maps.google.com/maps?saddr=Honfleur,+France&daddr=Deauville,+France+to:Bayeux,+France&output=embed&hl=de" loading="lazy" allowfullscreen referrerpolicy="no-referrer-when-downgrade"></iframe></div>
+      <div class="map-links">
+        <a class="map-btn" href="https://maps.google.com/?q=Les+Planches+Deauville,+France" target="_blank">📍 Les Planches Deauville</a>
+        <a class="map-btn" href="https://maps.google.com/?q=Marché+de+Trouville,+France" target="_blank">📍 Trouville Marché</a>
+        <a class="map-btn" href="https://maps.google.com/?q=Bayeux+Vieille+Ville,+France" target="_blank">📍 Bayeux Vieille Ville</a>
+      </div>
+      <details>
+        <summary>Hotels, Restaurants &amp; Tipps</summary>
+        <div class="det-block">
+          <h4>🏨 Übernachtung Bayeux (2 Nächte)</h4>
+          <p><strong>Château de Bellefontaine</strong> ⭐⭐⭐⭐: Schlösschen im Park, 5 Min. zu Fuss ins Zentrum. ~€150–200/N. · <strong>Le Lion d'Or</strong> ⭐⭐⭐: Klassisch normannisch, direkt im Zentrum. ~€100–140/N.</p>
         </div>
-        <div class="hl-section">
-          <strong>🍽️ Abendessen</strong>
-          <p><strong>L'Angle Saint-Laurent</strong> — Sehr gute moderne Küche mit normannischen Produkten. · <strong>La Rapière</strong> — Mittelalterliches Gewölbe, solide Normannenküche, gutes Preis-Leistungs-Verhältnis.</p>
+        <div class="det-block">
+          <h4>🍽️ Abendessen</h4>
+          <p><strong>L'Angle Saint-Laurent</strong>: Sehr gute moderne Küche mit normannischen Produkten. · <strong>La Rapière</strong>: Mittelalterliches Gewölbe, solide Normannenküche, gutes Preis-Leistungs-Verhältnis.</p>
         </div>
-        <div class="hl-section">
-          <strong>💡 Tipps</strong>
+        <div class="det-block">
+          <h4>💡 Tipps</h4>
           <ul>
-            <li>Deauville &amp; Trouville: Parking am Strand kostenpflichtig. Etwas weiter hinein parken.</li>
-            <li>Bayeux: Schöne Altstadt für einen Abendspaziergang — Kathedrale auch beleuchtet.</li>
+            <li>Deauville und Trouville: Parking am Strand kostenpflichtig, etwas weiter hinein parken lohnt sich.</li>
+            <li>Bayeux: schöne Altstadt für einen Abendspaziergang, die Kathedrale ist beleuchtet.</li>
           </ul>
         </div>
-      </div>
-    </details>
+      </details>
+    </div>
   </div>
-</div>
 
-<!-- TAG 5 -->
-<div class="day-card type-geschichte" data-type="geschichte">
-  <div class="card-top">
-    <div class="day-meta">
-      <span class="day-num">2</span>
-      <span class="day-label">Sep · Mi</span>
+  <!-- ══════════ TAG 5 ══════════ -->
+  <div class="day-card type-geschichte" data-type="geschichte">
+    <div class="card-top">
+      <div class="day-num">5</div>
+      <div class="day-label">2 Sep · Mi<small>D-Day</small></div>
+      <div class="day-icon">🎖️</div>
     </div>
-    <span class="day-icon">🎖️</span>
-  </div>
-  <div class="card-body">
-    <h3 class="card-title">Bayeux &amp; die D-Day-Strände</h3>
-    <div class="drive-badge">🚗 ~80 km Rundfahrt · Lokaler Tag</div>
-    <p class="card-desc">Vormittags die berühmte <strong>Tapisserie de Bayeux</strong> — 70 Meter Leinwand aus dem 11. Jh., die 1066 erzählt. UNESCO-Welterbe. Dazu die Kathedrale. Nachmittags die <strong>D-Day-Strände</strong>: Bei <strong>Arromanches</strong> liegen die Überreste des künstlichen Mulberry-Hafens noch immer im Meer — das Musée du Débarquement erklärt die Genialität dieser Konstruktion. Am <strong>Omaha Beach</strong> begreift man, was der 6. Juni 1944 bedeutete. Der <strong>Cimetière Américain de Colleville-sur-Mer</strong> mit seinen 9'387 weissen Marmorkreuzen über dem Atlantik ist still, erschütternd und von einer eigentümlichen Schönheit. Optional: <strong>Pointe du Hoc</strong> — die Rangers kletterten hier senkrechte Klippen hoch, die Bombenkrater sind noch sichtbar.</p>
-    
-    <div class="day-map-wrap"><iframe src="https://maps.google.com/maps?saddr=Bayeux,+France&daddr=Arromanches-les-Bains,+France+to:Omaha+Beach,+Colleville-sur-Mer,+France+to:Pointe+du+Hoc,+France&output=embed&hl=de" loading="lazy" allowfullscreen referrerpolicy="no-referrer-when-downgrade"></iframe></div>
-    <div class="map-links">
-      <a href="https://maps.google.com/?q=Tapisserie+de+Bayeux,+France" class="map-btn" target="_blank">📍 Tapisserie de Bayeux</a>
-      <a href="https://maps.google.com/?q=Arromanches-les-Bains,+France" class="map-btn" target="_blank">📍 Arromanches</a>
-      <a href="https://maps.google.com/?q=Omaha+Beach,+Colleville-sur-Mer,+France" class="map-btn" target="_blank">📍 Omaha Beach</a>
-      <a href="https://maps.google.com/?q=Cimetière+Américain+Colleville-sur-Mer,+France" class="map-btn" target="_blank">📍 Cimetière Américain</a>
-      <a href="https://maps.google.com/?q=Pointe+du+Hoc,+Normandy,+France" class="map-btn" target="_blank">📍 Pointe du Hoc</a>
-    </div>
-    <details>
-      <summary>Hotels, Restaurants &amp; Tipps</summary>
-      <div class="hl-body">
-        <div class="hl-section">
-          <strong>🏨 Übernachtung</strong>
-          <p>2. Nacht in Bayeux — kein Umzug heute.</p>
+    <div class="card-body">
+      <h3 class="card-title">Bayeux &amp; die D-Day-Strände</h3>
+      <div class="drive-badge">🚗 ~80 km Rundfahrt · Lokaler Tag</div>
+      <p class="card-desc">Vormittags die berühmte <strong>Tapisserie de Bayeux</strong>: 70 Meter Leinwand aus dem 11. Jh., die 1066 erzählt, UNESCO-Welterbe. Dazu die Kathedrale. Nachmittags die <strong>D-Day-Strände</strong>. Bei <strong>Arromanches</strong> liegen die Überreste des künstlichen Mulberry-Hafens noch immer im Meer. Am <strong>Omaha Beach</strong> begreift man, was der 6. Juni 1944 bedeutete. Der <strong>Cimetière Américain de Colleville-sur-Mer</strong> mit seinen 9'387 weissen Marmorkreuzen über dem Atlantik ist still, erschütternd und von eigentümlicher Schönheit. Optional die <strong>Pointe du Hoc</strong>, wo die Rangers senkrechte Klippen hochkletterten. Die Bombenkrater sind noch da.</p>
+      <div class="day-map-wrap"><iframe src="https://maps.google.com/maps?saddr=Bayeux,+France&daddr=Arromanches-les-Bains,+France+to:Omaha+Beach,+Colleville-sur-Mer,+France+to:Pointe+du+Hoc,+France&output=embed&hl=de" loading="lazy" allowfullscreen referrerpolicy="no-referrer-when-downgrade"></iframe></div>
+      <div class="map-links">
+        <a class="map-btn" href="https://maps.google.com/?q=Tapisserie+de+Bayeux,+France" target="_blank">📍 Tapisserie de Bayeux</a>
+        <a class="map-btn" href="https://maps.google.com/?q=Arromanches-les-Bains,+France" target="_blank">📍 Arromanches</a>
+        <a class="map-btn" href="https://maps.google.com/?q=Omaha+Beach,+Colleville-sur-Mer,+France" target="_blank">📍 Omaha Beach</a>
+        <a class="map-btn" href="https://maps.google.com/?q=Cimetière+Américain+Colleville-sur-Mer,+France" target="_blank">📍 Cimetière Américain</a>
+        <a class="map-btn" href="https://maps.google.com/?q=Pointe+du+Hoc,+Normandy,+France" target="_blank">📍 Pointe du Hoc</a>
+      </div>
+      <details>
+        <summary>Hotels, Restaurants &amp; Tipps</summary>
+        <div class="det-block">
+          <h4>🏨 Übernachtung</h4>
+          <p>2. Nacht in Bayeux, kein Umzug heute.</p>
         </div>
-        <div class="hl-section">
-          <strong>🍽️ Abendessen</strong>
-          <p><strong>La Table du Terroir</strong> — Normannische Spezialitäten in Bayeux, bodenständig gut, faire Preise.</p>
+        <div class="det-block">
+          <h4>🍽️ Abendessen</h4>
+          <p><strong>La Table du Terroir</strong>: Normannische Spezialitäten in Bayeux, bodenständig gut, faire Preise.</p>
         </div>
-        <div class="hl-section">
-          <strong>💡 Tipps</strong>
+        <div class="det-block">
+          <h4>💡 Tipps</h4>
           <ul>
             <li>Tapisserie: Online-Ticket kaufen! Auch im September schnell ausgebucht.</li>
-            <li>Den Cimetière Américain nicht als letzten Stopp des Tages planen — man braucht danach Stille.</li>
-            <li>Reihenfolge: Tapisserie → Arromanches → Omaha → Friedhof → Pointe du Hoc.</li>
-            <li>Am Friedhof: Gratis Eintritt, Parkplatz vorhanden. Mindestens 45 Min. einplanen.</li>
+            <li>Den Cimetière Américain nicht als letzten Stopp planen. Man braucht danach Stille.</li>
+            <li>Sinnvolle Reihenfolge: Tapisserie → Arromanches → Omaha → Friedhof → Pointe du Hoc.</li>
+            <li>Am Friedhof: Eintritt gratis, Parkplatz vorhanden, mindestens 45 Min. einplanen.</li>
           </ul>
         </div>
-      </div>
-    </details>
+      </details>
+    </div>
   </div>
-</div>
 
-<!-- TAG 6 -->
-<div class="day-card type-geschichte" data-type="geschichte">
-  <div class="card-top">
-    <div class="day-meta">
-      <span class="day-num">3</span>
-      <span class="day-label">Sep · Do</span>
+  <!-- ══════════ TAG 6 ══════════ -->
+  <div class="day-card type-geschichte" data-type="geschichte">
+    <div class="card-top">
+      <div class="day-num">6</div>
+      <div class="day-label">3 Sep · Do<small>Cotentin &amp; die Bucht</small></div>
+      <div class="day-icon">🏰</div>
     </div>
-    <span class="day-icon">🏰</span>
-  </div>
-  <div class="card-body">
-    <h3 class="card-title">Bayeux → Utah Beach → Mont Saint-Michel</h3>
-    <div class="drive-badge">🚗 ~130 km · ~2 Std.</div>
-    <p class="card-desc">Morgens: <strong>Utah Beach</strong> — das westlichste D-Day-Landungsgebiet, heute ein langer, stiller Strand. <strong>Sainte-Mère-Église</strong>: Das Airborne Museum ist das beste Fallschirmjäger-Museum Frankreichs — und ja, die Puppe des Fallschirmjägers John Steele hängt noch an der Kirchturmspitze. Mittags: Fahrt zum <strong>Mont Saint-Michel</strong>. Der erste Anblick des aufragenden Felsens aus der flachen Bucht — dieser Moment lässt niemanden kalt. <strong>Gezeiten prüfen</strong> auf annuaire-maree.fr! Flut am Abend ist spektakulär — das Wasser kommt mit der Geschwindigkeit eines galoppierenden Pferdes.</p>
-    
-    <div class="day-map-wrap"><iframe src="https://maps.google.com/maps?saddr=Bayeux,+France&daddr=Sainte-Mere-Eglise,+France+to:Mont+Saint-Michel,+France&output=embed&hl=de" loading="lazy" allowfullscreen referrerpolicy="no-referrer-when-downgrade"></iframe></div>
-    <div class="map-links">
-      <a href="https://maps.google.com/?q=Utah+Beach+Museum,+Sainte-Marie-du-Mont,+France" class="map-btn" target="_blank">📍 Utah Beach</a>
-      <a href="https://maps.google.com/?q=Airborne+Museum+Sainte-Mère-Église,+France" class="map-btn" target="_blank">📍 Airborne Museum</a>
-      <a href="https://maps.google.com/?q=Mont+Saint-Michel,+France" class="map-btn" target="_blank">📍 Mont Saint-Michel</a>
-    </div>
-    <details>
-      <summary>Hotels, Restaurants &amp; Tipps</summary>
-      <div class="hl-body">
-        <div class="hl-section">
-          <strong>🏨 Übernachtung Mont Saint-Michel</strong>
-          <p><strong>Relais du Roy</strong> ⭐⭐⭐⭐ — 300 m vor dem Burgtor, sehr gutes Preis-Leistungs-Verhältnis, schöne Aussicht. ~€150–200/N. · <strong>Hôtel les Terrasses Poulard</strong> ⭐⭐⭐ — Direkt auf der Insel, einzigartige Lage. ~€200–280/N. ⚠️ Nicht in Pontorson übernachten — 7 km zu weit weg!</p>
+    <div class="card-body">
+      <h3 class="card-title">Bayeux → Utah Beach → Mont Saint-Michel</h3>
+      <div class="drive-badge">🚗 ~130 km · ~2 Std.</div>
+      <div class="booked">✅ Reserviert: Auberge La Mère Poulard, Mont Saint-Michel, inklusive Abendessen</div>
+      <p class="card-desc">Morgens <strong>Utah Beach</strong>, das westlichste D-Day-Landungsgebiet, heute ein langer, stiller Strand. In <strong>Sainte-Mère-Église</strong> ist das Airborne Museum das beste Fallschirmjäger-Museum Frankreichs, und ja, die Puppe von John Steele hängt noch immer an der Kirchturmspitze. Mittags Fahrt zum <strong>Mont Saint-Michel</strong>. Der erste Anblick des aufragenden Felsens aus der flachen Bucht lässt niemanden kalt. <strong>Gezeiten prüfen</strong> auf annuaire-maree.fr! Die Flut am Abend ist spektakulär, das Wasser kommt mit der Geschwindigkeit eines galoppierenden Pferdes.</p>
+      <div class="day-map-wrap"><iframe src="https://maps.google.com/maps?saddr=Bayeux,+France&daddr=Sainte-Mere-Eglise,+France+to:Mont+Saint-Michel,+France&output=embed&hl=de" loading="lazy" allowfullscreen referrerpolicy="no-referrer-when-downgrade"></iframe></div>
+      <div class="map-links">
+        <a class="map-btn" href="https://maps.google.com/?q=Utah+Beach+Museum,+Sainte-Marie-du-Mont,+France" target="_blank">📍 Utah Beach</a>
+        <a class="map-btn" href="https://maps.google.com/?q=Airborne+Museum+Sainte-Mère-Église,+France" target="_blank">📍 Airborne Museum</a>
+        <a class="map-btn" href="https://maps.google.com/?q=Auberge+La+Mère+Poulard,+Mont+Saint-Michel,+France" target="_blank">📍 Auberge La Mère Poulard</a>
+        <a class="map-btn" href="https://maps.google.com/?q=Mont+Saint-Michel,+France" target="_blank">📍 Mont Saint-Michel</a>
+      </div>
+      <details>
+        <summary>Hotels, Restaurants &amp; Tipps</summary>
+        <div class="det-block">
+          <h4>🏨 Übernachtung, fix gebucht</h4>
+          <p><strong>Auberge La Mère Poulard</strong> ⭐⭐⭐: Direkt auf der Insel, an der Grande Rue gleich hinter dem Burgtor. Die legendärste Adresse des Mont, seit 1888. Abendessen ist inklusive.</p>
         </div>
-        <div class="hl-section">
-          <strong>🍽️ Abendessen</strong>
-          <p><strong>La Mère Poulard</strong> — Ja, touristisch, ja, teuer — aber die legendären Kupferpfannen-Omelettes und das Theater in der offenen Küche sind ein einmaliges Erlebnis. · <strong>Les Terrasses Poulard</strong> — Gute Küche mit Blick über die Bucht.</p>
+        <div class="det-block">
+          <h4>🍽️ Abendessen, inklusive</h4>
+          <p>Im Haus. Die berühmten <strong>Omelettes in Kupferpfannen</strong> über offenem Feuer werden im Eingangsraum vor Publikum geschlagen, ein rhythmisches Klopfen, das man auf der ganzen Gasse hört. Ja, es ist Theater. Ja, es lohnt sich trotzdem. Auf der Karte stehen daneben Agneau de pré-salé (Salzwiesenlamm aus der Bucht) und Fisch.</p>
         </div>
-        <div class="hl-section">
-          <strong>💡 Tipps</strong>
+        <div class="det-block">
+          <h4>💡 Tipps</h4>
           <ul>
-            <li>Gezeiten: <strong>annuaire-maree.fr</strong> — Flutzeit für Tag 6 und 7 notieren.</li>
-            <li>Abbey-Eintritt online vorbuchen: abbaye-mont-saint-michel.fr</li>
-            <li>Abendstimmung nach 18 Uhr: Die meisten Tagestouristen sind weg — Magie pur.</li>
+            <li><strong>Grosser Vorteil der Insel-Übernachtung:</strong> Ab etwa 18 Uhr sind die Tagestouristen weg. Ihr habt die Gassen und Terrassen praktisch für euch. Das ist der Moment, für den man kommt.</li>
+            <li><strong>Anreise mit Gepäck:</strong> Auto auf dem Festland-Parkplatz (Le Bec d'Andaine / Parkplatz Mont Saint-Michel, ~€16/Tag) abstellen. Von dort Navette-Shuttle bis kurz vor das Tor. Der Weg über die Passerelle ist zu Fuss ~35 Min., mit Shuttle ~12 Min. Am besten kleines Gepäck packen, die Grande Rue ist steil und gepflastert.</li>
+            <li>Hotel vorab anrufen und die Ankunftszeit sowie Gepäcktransport klären, die Häuser auf der Insel organisieren das meist.</li>
+            <li>Gezeiten: <strong>annuaire-maree.fr</strong>, Flutzeiten für Tag 6 und 7 notieren. Bei grosser Flut (grandes marées) wird der Mont zur echten Insel.</li>
+            <li>Abbey-Eintritt für morgen früh schon heute online buchen: abbaye-mont-saint-michel.fr</li>
           </ul>
         </div>
-      </div>
-    </details>
+      </details>
+    </div>
   </div>
-</div>
 
-<!-- TAG 7 -->
-<div class="day-card type-staedte" data-type="staedte">
-  <div class="card-top">
-    <div class="day-meta">
-      <span class="day-num">4</span>
-      <span class="day-label">Sep · Fr</span>
+  <!-- ══════════ TAG 7 ══════════ -->
+  <div class="day-card type-staedte" data-type="staedte">
+    <div class="card-top">
+      <div class="day-num">7</div>
+      <div class="day-label">4 Sep · Fr<small>Abtei &amp; Korsarenstadt</small></div>
+      <div class="day-icon">🏯</div>
     </div>
-    <span class="day-icon">🏯</span>
-  </div>
-  <div class="card-body">
-    <h3 class="card-title">Mont Saint-Michel → Saint-Malo</h3>
-    <div class="drive-badge">🚗 ~55 km · ~1 Std.</div>
-    <p class="card-desc">Früh morgens — <strong>vor 9 Uhr!</strong> — die <strong>Abbaye du Mont Saint-Michel</strong> besuchen: dann gehört sie fast euch allein. Der <strong>Cloître</strong> (Kreuzgang) ist ein Meisterwerk der normannischen Gotik. 1.5–2 Std. einplanen. Mittags: Fahrt nach <strong>Saint-Malo</strong> (~1 Std.). Die vollständig erhaltenen <strong>Remparts</strong> (Stadtmauern) in 1.5–2 Std. umrunden — fantastischer Blick aufs Meer und die vorgelagerten Inseln. Bei <strong>Niedrigwasser</strong> zu Fuss auf die <strong>Île du Grand Bé</strong>: Chateaubriands Grab. Fakt: Saint-Malo wurde im Zweiten Weltkrieg zu 80% zerstört und danach täuschend originalgetreu wiederaufgebaut.</p>
-    
-    <div class="day-map-wrap"><iframe src="https://maps.google.com/maps?saddr=Mont+Saint-Michel,+France&daddr=Saint-Malo,+France&output=embed&hl=de" loading="lazy" allowfullscreen referrerpolicy="no-referrer-when-downgrade"></iframe></div>
-    <div class="map-links">
-      <a href="https://maps.google.com/?q=Abbaye+du+Mont+Saint-Michel,+France" class="map-btn" target="_blank">📍 Abbaye du Mont Saint-Michel</a>
-      <a href="https://maps.google.com/?q=Remparts+de+Saint-Malo,+France" class="map-btn" target="_blank">📍 Remparts Saint-Malo</a>
-      <a href="https://maps.google.com/?q=Île+du+Grand+Bé+Saint-Malo,+France" class="map-btn" target="_blank">📍 Île du Grand Bé</a>
-    </div>
-    <details>
-      <summary>Hotels, Restaurants &amp; Tipps</summary>
-      <div class="hl-body">
-        <div class="hl-section">
-          <strong>🏨 Übernachtung Saint-Malo</strong>
-          <p><strong>Hôtel de l'Univers</strong> ⭐⭐⭐ — Direkt intramuros (innerhalb der Stadtmauern), der ideale Standort, charmant. ~€100–150/N. · <strong>Grand Hôtel des Thermes</strong> ⭐⭐⭐⭐⭐ — Luxus-Wellness-Hotel am Meer, etwas ausserhalb. ~€220–320/N.</p>
+    <div class="card-body">
+      <h3 class="card-title">Mont Saint-Michel → Saint-Malo</h3>
+      <div class="drive-badge">🚗 ~55 km · ~1 Std.</div>
+      <p class="card-desc">Der grosse Bonus der Übernachtung auf der Insel: Ihr steht schon oben, wenn die ersten Busse noch auf dem Festland parken. <strong>Vor 9 Uhr</strong> in die <strong>Abbaye du Mont Saint-Michel</strong>, dann gehört sie fast euch allein. Der <strong>Cloître</strong> ist ein Meisterwerk der normannischen Gotik, 1.5 bis 2 Std. einplanen. Mittags Fahrt nach <strong>Saint-Malo</strong>. Die vollständig erhaltenen <strong>Remparts</strong> in 1.5 bis 2 Std. umrunden, fantastischer Blick aufs Meer und die vorgelagerten Inseln. Bei Niedrigwasser zu Fuss auf die <strong>Île du Grand Bé</strong> zu Chateaubriands Grab. Saint-Malo wurde 1944 zu 80 % zerstört und danach täuschend originalgetreu wieder aufgebaut.</p>
+      <div class="day-map-wrap"><iframe src="https://maps.google.com/maps?saddr=Mont+Saint-Michel,+France&daddr=Saint-Malo,+France&output=embed&hl=de" loading="lazy" allowfullscreen referrerpolicy="no-referrer-when-downgrade"></iframe></div>
+      <div class="map-links">
+        <a class="map-btn" href="https://maps.google.com/?q=Abbaye+du+Mont+Saint-Michel,+France" target="_blank">📍 Abbaye du Mont Saint-Michel</a>
+        <a class="map-btn" href="https://maps.google.com/?q=Remparts+de+Saint-Malo,+France" target="_blank">📍 Remparts Saint-Malo</a>
+        <a class="map-btn" href="https://maps.google.com/?q=Île+du+Grand+Bé+Saint-Malo,+France" target="_blank">📍 Île du Grand Bé</a>
+      </div>
+      <details>
+        <summary>Hotels, Restaurants &amp; Tipps</summary>
+        <div class="det-block">
+          <h4>🏨 Übernachtung Saint-Malo</h4>
+          <p><strong>Hôtel de l'Univers</strong> ⭐⭐⭐: Direkt intramuros, der ideale Standort, charmant. ~€100–150/N. · <strong>Grand Hôtel des Thermes</strong> ⭐⭐⭐⭐⭐: Luxus-Wellness-Hotel am Meer, etwas ausserhalb. ~€220–320/N.</p>
         </div>
-        <div class="hl-section">
-          <strong>🍽️ Abendessen</strong>
-          <p><strong>Le Chalut</strong> — Exzellentes Fischrestaurant in Saint-Malo. Reservieren! · <strong>À La Duchesse Anne</strong> — Klassiker der Stadt seit 1946, verlässlich gut.</p>
+        <div class="det-block">
+          <h4>🍽️ Abendessen</h4>
+          <p><strong>Le Chalut</strong>: Exzellentes Fischrestaurant. Reservieren! · <strong>À La Duchesse Anne</strong>: Klassiker der Stadt seit 1946, verlässlich gut.</p>
         </div>
-        <div class="hl-section">
-          <strong>💡 Tipps</strong>
+        <div class="det-block">
+          <h4>💡 Tipps</h4>
           <ul>
-            <li>Gezeitenzeiten für Grand Bé prüfen — nur bei Niedrigwasser erreichbar!</li>
-            <li>Abbey vor 9 Uhr: Eintrittsticket gilt trotzdem, aber deutlich weniger Betrieb.</li>
-            <li>Saint-Malo Parking: Intramuros kein Parkplatz — Bonabry oder Kiosque empfohlen.</li>
+            <li>Gezeitenzeiten für den Grand Bé prüfen, der Sandweg ist nur bei Niedrigwasser begehbar.</li>
+            <li>Abbey-Ticket gilt unabhängig von der Uhrzeit, aber vor 9 Uhr ist es eine völlig andere Erfahrung.</li>
+            <li>Saint-Malo Parking: intramuros gibt es keine Plätze, Parkhaus Bonabry oder Kiosque nutzen.</li>
           </ul>
         </div>
+      </details>
+    </div>
+  </div>
+
+  </div><!-- /days woche1 -->
+
+  <div class="week-sep">Woche 2 · 5. – 12. Sep.</div>
+
+  <div class="days">
+
+  <!-- ══════════ TAG 8 ══════════ -->
+  <div class="day-card type-kueste" data-type="kueste">
+    <div class="card-top">
+      <div class="day-num">8</div>
+      <div class="day-label">5 Sep · Sa<small>Austern &amp; Klippen</small></div>
+      <div class="day-icon">🦪</div>
+    </div>
+    <div class="card-body">
+      <h3 class="card-title">Saint-Malo → Cancale → Cap Fréhel → Dinan</h3>
+      <div class="drive-badge">🚗 ~100 km · ~2 Std.</div>
+      <p class="card-desc">Morgens <strong>Cancale</strong> (15 Min.). Am <strong>Marché de la Houle</strong> kauft ihr Austern direkt von der Züchterin, für €3–5 eine Handvoll Fines de Claire, aufgestossen mit Zitrone, stehend am Kai mit Blick auf die Bänke und den Mont Saint-Michel am Horizont. So beginnt ein guter Tag. Mittags <strong>Cap Fréhel</strong> (~45 Min.), wilder Felsvorsprung mit Leuchtturm und Heide. <strong>Wanderung zum Fort La Latte: ~3 km hin und zurück, ~1.5 Std.</strong>, eine mittelalterliche Burg direkt auf den Klippen. Absolut lohnend. Nachmittags <strong>Dinan</strong>, das am besten erhaltene mittelalterliche Stadtbild der Bretagne.</p>
+      <div class="day-map-wrap"><iframe src="https://maps.google.com/maps?saddr=Saint-Malo,+France&daddr=Cancale,+France+to:Cap+Frehel,+France+to:Dinan,+France&output=embed&hl=de" loading="lazy" allowfullscreen referrerpolicy="no-referrer-when-downgrade"></iframe></div>
+      <div class="map-links">
+        <a class="map-btn" href="https://maps.google.com/?q=Marché+de+la+Houle+Cancale,+France" target="_blank">📍 Austernmarkt Cancale</a>
+        <a class="map-btn" href="https://maps.google.com/?q=Cap+Fréhel,+France" target="_blank">📍 Cap Fréhel</a>
+        <a class="map-btn" href="https://maps.google.com/?q=Fort+La+Latte,+France" target="_blank">📍 Fort La Latte</a>
+        <a class="map-btn" href="https://maps.google.com/?q=Dinan+Vieille+Ville,+France" target="_blank">📍 Dinan Vieille Ville</a>
       </div>
-    </details>
-  </div>
-</div>
-
-<!-- ════════════════════════════════════════
-     WOCHE 2 · 5. – 12. Sep.
-     ════════════════════════════════════════ -->
-<div class="week-header">Woche 2 · 5. – 12. Sep.</div>
-
-<!-- TAG 8 -->
-<div class="day-card type-kueste" data-type="kueste">
-  <div class="card-top">
-    <div class="day-meta">
-      <span class="day-num">5</span>
-      <span class="day-label">Sep · Sa</span>
-    </div>
-    <span class="day-icon">🦪</span>
-  </div>
-  <div class="card-body">
-    <h3 class="card-title">Saint-Malo → Cancale → Cap Fréhel → Dinan</h3>
-    <div class="drive-badge">🚗 ~100 km · ~2 Std.</div>
-    <p class="card-desc">Morgens: <strong>Cancale</strong> (15 Min.). Am <strong>Marché de la Houle</strong> kauft ihr Austern direkt vom Züchter — für €3–5 eine Handvoll Fines de Claire, aufgestossen mit Zitrone, stehend am Kai mit Blick auf die Austernbänke und den Mont Saint-Michel am Horizont. So beginnt ein guter Tag. Mittags: <strong>Cap Fréhel</strong> (~45 Min.) — wilder Felsvorsprung mit Leuchtturm und Heide. <strong>Wanderung zum Fort La Latte: ~3 km hin und zurück, ~1.5 Std.</strong> — eine mittelalterliche Burg direkt auf Klippen über dem Meer. Absolut lohnend. Nachmittags: <strong>Dinan</strong> — das am besten erhaltene mittelalterliche Stadtbild der Bretagne.</p>
-    
-    <div class="day-map-wrap"><iframe src="https://maps.google.com/maps?saddr=Saint-Malo,+France&daddr=Cancale,+France+to:Cap+Frehel,+France+to:Dinan,+France&output=embed&hl=de" loading="lazy" allowfullscreen referrerpolicy="no-referrer-when-downgrade"></iframe></div>
-    <div class="map-links">
-      <a href="https://maps.google.com/?q=Marché+de+la+Houle+Cancale,+France" class="map-btn" target="_blank">📍 Austernmarkt Cancale</a>
-      <a href="https://maps.google.com/?q=Cap+Fréhel,+France" class="map-btn" target="_blank">📍 Cap Fréhel</a>
-      <a href="https://maps.google.com/?q=Fort+La+Latte,+France" class="map-btn" target="_blank">📍 Fort La Latte</a>
-      <a href="https://maps.google.com/?q=Dinan+Vieille+Ville,+France" class="map-btn" target="_blank">📍 Dinan Vieille Ville</a>
-    </div>
-    <details>
-      <summary>Hotels, Restaurants &amp; Tipps</summary>
-      <div class="hl-body">
-        <div class="hl-section">
-          <strong>🏨 Übernachtung Dinan</strong>
-          <p><strong>Hôtel d'Avaugour</strong> ⭐⭐⭐⭐ — Direkt an den Gärten der Stadtmauern, sehr schöne Lage. ~€130–180/N. · <strong>Le D</strong> ⭐⭐⭐ — Modernes Boutique-Hotel im historischen Kern. ~€90–130/N.</p>
+      <details>
+        <summary>Hotels, Restaurants &amp; Tipps</summary>
+        <div class="det-block">
+          <h4>🏨 Übernachtung Dinan</h4>
+          <p><strong>Hôtel d'Avaugour</strong> ⭐⭐⭐⭐: Direkt an den Gärten der Stadtmauern, sehr schöne Lage. ~€130–180/N. · <strong>Le D</strong> ⭐⭐⭐: Modernes Boutique-Hotel im historischen Kern. ~€90–130/N.</p>
         </div>
-        <div class="hl-section">
-          <strong>🍽️ Abendessen</strong>
-          <p><strong>Le Cantorbéry</strong> — Im mittelalterlichen Fachwerkhaus, sehr atmosphärisch. · <strong>La Fleur de Sel</strong> — Gute bretonische Küche, persönlicher.</p>
+        <div class="det-block">
+          <h4>🍽️ Abendessen</h4>
+          <p><strong>Le Cantorbéry</strong>: Im mittelalterlichen Fachwerkhaus, sehr atmosphärisch. · <strong>La Fleur de Sel</strong>: Gute bretonische Küche, persönlicher.</p>
         </div>
-        <div class="hl-section">
-          <strong>💡 Tipps</strong>
+        <div class="det-block">
+          <h4>💡 Tipps</h4>
           <ul>
-            <li>Cancale-Samstag: Besonders lebhafter Markt — früh da sein!</li>
-            <li>Cap Fréhel: Windschutz mitbringen — oben immer windig.</li>
-            <li>Fort La Latte Eintritt: ~€7/Person, lohnt sich sehr.</li>
-            <li>Dinan: Port de Dinan am Fluss Rance (20 Min. zu Fuss vom Zentrum) ist sehr malerisch.</li>
+            <li>Samstag in Cancale: besonders lebhafter Markt, früh da sein!</li>
+            <li>Cap Fréhel: Windjacke mitnehmen, oben ist es immer windig.</li>
+            <li>Fort La Latte Eintritt ~€7/Person, lohnt sich sehr.</li>
+            <li>Dinan: der Port de Dinan an der Rance ist 20 Min. zu Fuss vom Zentrum und sehr malerisch. Bergab leicht, bergauf weniger.</li>
           </ul>
         </div>
-      </div>
-    </details>
+      </details>
+    </div>
   </div>
-</div>
 
-<!-- TAG 9 -->
-<div class="day-card type-natur" data-type="natur">
-  <div class="card-top">
-    <div class="day-meta">
-      <span class="day-num">6</span>
-      <span class="day-label">Sep · So</span>
+  <!-- ══════════ TAG 9 ══════════ -->
+  <div class="day-card type-natur" data-type="natur">
+    <div class="card-top">
+      <div class="day-num">9</div>
+      <div class="day-label">6 Sep · So<small>Rosa Granit</small></div>
+      <div class="day-icon">🪨</div>
     </div>
-    <span class="day-icon">🪨</span>
-  </div>
-  <div class="card-body">
-    <h3 class="card-title">Dinan → Côte de Granit Rose (Perros-Guirec)</h3>
-    <div class="drive-badge">🚗 ~120 km · ~1.5 Std.</div>
-    <p class="card-desc">Morgens letzter Blick über Dinan von der <strong>Terrasse des Jardins Anglais</strong> — bester Aussichtspunkt auf die mittelalterliche Stadtsilhouette. Nachmittags: Die <strong>Côte de Granit Rose</strong> ist einer der faszinierendsten Küstenabschnitte Europas. Gigantische rosa Granitfelsen formen bizarre, fast surrealistische Skulpturen am Wasser. <strong>Wanderung: Sentier des Douaniers</strong> zwischen <strong>Perros-Guirec</strong> und <strong>Ploumanach</strong> — 7 km, ~2 Std., durch Felsen, Buchten und Heideflächen. Einer der schönsten Küstenwanderwege der Bretagne. Absolut nicht verpassen.</p>
-    
-    <div class="day-map-wrap"><iframe src="https://maps.google.com/maps?saddr=Dinan,+France&daddr=Perros-Guirec,+France&output=embed&hl=de" loading="lazy" allowfullscreen referrerpolicy="no-referrer-when-downgrade"></iframe></div>
-    <div class="map-links">
-      <a href="https://maps.google.com/?q=Perros-Guirec,+France" class="map-btn" target="_blank">📍 Perros-Guirec</a>
-      <a href="https://maps.google.com/?q=Ploumanach+Côte+de+Granit+Rose,+France" class="map-btn" target="_blank">📍 Ploumanach</a>
-      <a href="https://maps.google.com/?q=Sentier+des+Douaniers+Perros-Guirec,+France" class="map-btn" target="_blank">📍 Sentier des Douaniers</a>
-    </div>
-    <details>
-      <summary>Hotels, Restaurants &amp; Tipps</summary>
-      <div class="hl-body">
-        <div class="hl-section">
-          <strong>🏨 Übernachtung Perros-Guirec</strong>
-          <p><strong>Castel Beau Site</strong> ⭐⭐⭐⭐ — Direkt über dem Meer, grossartige Meereslage. ~€160–220/N. · <strong>Hôtel de la Clarté</strong> ⭐⭐⭐ — Mit Meeresblick, etwas günstiger. ~€100–140/N.</p>
+    <div class="card-body">
+      <h3 class="card-title">Dinan → Côte de Granit Rose (Perros-Guirec)</h3>
+      <div class="drive-badge">🚗 ~120 km · ~1.5 Std.</div>
+      <p class="card-desc">Morgens ein letzter Blick über Dinan von der <strong>Terrasse des Jardins Anglais</strong>, dem besten Aussichtspunkt auf die mittelalterliche Silhouette. Nachmittags die <strong>Côte de Granit Rose</strong>, einer der eigenartigsten Küstenabschnitte Europas. Gigantische rosa Granitblöcke formen bizarre, fast surreale Skulpturen am Wasser. <strong>Wanderung: Sentier des Douaniers</strong> zwischen <strong>Perros-Guirec</strong> und <strong>Ploumanac'h</strong>, 7 km, ~2 Std., durch Felsen, Buchten und Heide. Einer der schönsten Küstenwege der Bretagne, nicht verpassen.</p>
+      <div class="day-map-wrap"><iframe src="https://maps.google.com/maps?saddr=Dinan,+France&daddr=Perros-Guirec,+France&output=embed&hl=de" loading="lazy" allowfullscreen referrerpolicy="no-referrer-when-downgrade"></iframe></div>
+      <div class="map-links">
+        <a class="map-btn" href="https://maps.google.com/?q=Perros-Guirec,+France" target="_blank">📍 Perros-Guirec</a>
+        <a class="map-btn" href="https://maps.google.com/?q=Ploumanach+Côte+de+Granit+Rose,+France" target="_blank">📍 Ploumanac'h</a>
+        <a class="map-btn" href="https://maps.google.com/?q=Sentier+des+Douaniers+Perros-Guirec,+France" target="_blank">📍 Sentier des Douaniers</a>
+      </div>
+      <details>
+        <summary>Hotels, Restaurants &amp; Tipps</summary>
+        <div class="det-block">
+          <h4>🏨 Übernachtung Perros-Guirec</h4>
+          <p><strong>Castel Beau Site</strong> ⭐⭐⭐⭐: Direkt über dem Meer, grossartige Lage. ~€160–220/N. · <strong>Hôtel de la Clarté</strong> ⭐⭐⭐: Mit Meerblick, etwas günstiger. ~€100–140/N.</p>
         </div>
-        <div class="hl-section">
-          <strong>🍽️ Abendessen</strong>
-          <p><strong>Le Homard Bleu</strong> — Meeresfrüchte-Restaurant in Perros-Guirec, ausgezeichnet. · Alternativ: Lokale <strong>Crêperie</strong> — authentische Galettes au Froment sind Pflicht in der Bretagne!</p>
+        <div class="det-block">
+          <h4>🍽️ Abendessen</h4>
+          <p><strong>Le Homard Bleu</strong>: Meeresfrüchte in Perros-Guirec, ausgezeichnet. · Alternativ eine lokale <strong>Crêperie</strong>: eine Galette de blé noir ist in der Bretagne Pflicht.</p>
         </div>
-        <div class="hl-section">
-          <strong>💡 Tipps</strong>
+        <div class="det-block">
+          <h4>💡 Tipps</h4>
           <ul>
-            <li>Sentier-Start: Parken an der Plage de Trestraou (Perros) oder bei Ploumanach.</li>
-            <li>Festes Schuhwerk: Die Granitfelsen sind bei Nässe sehr rutschig.</li>
-            <li>Trégastel (10 Min. von Perros): Weitere schöne Felsbuchten, weniger Touristen.</li>
+            <li>Sentier-Start: parken an der Plage de Trestraou (Perros) oder in Ploumanac'h.</li>
+            <li>Festes Schuhwerk, der Granit ist bei Nässe sehr rutschig.</li>
+            <li>Trégastel (10 Min. weiter) hat weitere schöne Felsbuchten und weniger Betrieb.</li>
           </ul>
         </div>
-      </div>
-    </details>
+      </details>
+    </div>
   </div>
-</div>
 
-<!-- TAG 10 -->
-<div class="day-card type-staedte" data-type="staedte">
-  <div class="card-top">
-    <div class="day-meta">
-      <span class="day-num">7</span>
-      <span class="day-label">Sep · Mo</span>
+  <!-- ══════════ TAG 10 ══════════ -->
+  <div class="day-card type-staedte" data-type="staedte">
+    <div class="card-top">
+      <div class="day-num">10</div>
+      <div class="day-label">7 Sep · Mo<small>Viadukt, Granit &amp; Faïence</small></div>
+      <div class="day-icon">🏙️</div>
     </div>
-    <span class="day-icon">🏙️</span>
-  </div>
-  <div class="card-body">
-    <h3 class="card-title">Perros-Guirec → Morlaix → Quimper</h3>
-    <div class="drive-badge">🚗 ~175 km · ~2.5 Std.</div>
-    <p class="card-desc">Morgens letzte Eindrücke der rosa Granitküste. Kurzer Stopp in <strong>Morlaix</strong> (~45 Min. von Perros): Das <strong>zweigeschossige Eisenbahnviadukt</strong> von 1861 dominiert die Altstadt dramatisch. Die alten <strong>Maisons à pondalez</strong> mit ihren innen spiralförmigen Holztreppen sind einzigartig in Europa — 30 Min. Stadtspaziergang genügt. Nachmittags: <strong>Quimper</strong> — die lebendige Hauptstadt der Bretagne. Die <strong>Cathédrale Saint-Corentin</strong> hat einen um 3 Grad versetzten Chor (mittelalterliche Absicht!). Die <strong>Faïenceries HB-Henriot</strong> stellen das berühmte handbemalte Quimper-Porzellan her — tolle Mitbringsel.</p>
-    
-    <div class="day-map-wrap"><iframe src="https://maps.google.com/maps?saddr=Perros-Guirec,+France&daddr=Morlaix,+France+to:Quimper,+France&output=embed&hl=de" loading="lazy" allowfullscreen referrerpolicy="no-referrer-when-downgrade"></iframe></div>
-    <div class="map-links">
-      <a href="https://maps.google.com/?q=Viaduc+de+Morlaix,+France" class="map-btn" target="_blank">📍 Viaduc de Morlaix</a>
-      <a href="https://maps.google.com/?q=Cathédrale+Saint-Corentin+Quimper,+France" class="map-btn" target="_blank">📍 Cathédrale Quimper</a>
-      <a href="https://maps.google.com/?q=Faïenceries+HB-Henriot+Quimper,+France" class="map-btn" target="_blank">📍 Faïenceries HB-Henriot</a>
-      <a href="https://maps.google.com/?q=Quimper+Vieille+Ville,+France" class="map-btn" target="_blank">📍 Quimper Altstadt</a>
-    </div>
-    <details>
-      <summary>Hotels, Restaurants &amp; Tipps</summary>
-      <div class="hl-body">
-        <div class="hl-section">
-          <strong>🏨 Übernachtung Quimper</strong>
-          <p><strong>Hôtel Kregenn</strong> ⭐⭐⭐ — Modern und zentral. ~€90–130/N. · <strong>Hôtel Gradlon</strong> ⭐⭐⭐ — Charme und Garten, etwas ruhiger. ~€100–145/N.</p>
+    <div class="card-body">
+      <h3 class="card-title">Perros-Guirec → Morlaix → Locronan → Quimper</h3>
+      <div class="drive-badge">🚗 ~200 km · ~2.5 Std.</div>
+      <p class="card-desc">Morgens letzte Eindrücke der rosa Granitküste. Kurzer Stopp in <strong>Morlaix</strong> (~1 Std.): Das zweigeschossige <strong>Eisenbahnviadukt</strong> von 1861 überspannt die Altstadt in 58 Metern Höhe, dramatischer geht Stadtbild kaum. Die alten <strong>Maisons à pondalez</strong> mit ihren innenliegenden Wendeltreppen sind europaweit einzigartig, 30 Min. genügen. Dann <strong>Locronan</strong> (~1 Std.), und das ist der eigentliche Grund für den Umweg: ein kompletter Renaissance-Platz aus grauem Granit, gebaut vom Reichtum der Segeltuchweber, die die Schiffe der königlichen Marine ausrüsteten. Keine Stromleitungen, keine Autos, keine Ladenschilder. Deshalb drehen hier ständig Filmteams, unter anderem Polanski für «Tess». Rechnet mit 45 bis 60 Min. Nachmittags <strong>Quimper</strong>, die lebendige historische Hauptstadt der Cornouaille. Die <strong>Cathédrale Saint-Corentin</strong> hat einen um 3 Grad versetzten Chor, mittelalterliche Absicht, kein Baufehler.</p>
+      <div class="day-map-wrap"><iframe src="https://maps.google.com/maps?saddr=Perros-Guirec,+France&daddr=Morlaix,+France+to:Locronan,+France+to:Quimper,+France&output=embed&hl=de" loading="lazy" allowfullscreen referrerpolicy="no-referrer-when-downgrade"></iframe></div>
+      <div class="map-links">
+        <a class="map-btn" href="https://maps.google.com/?q=Viaduc+de+Morlaix,+France" target="_blank">📍 Viaduc de Morlaix</a>
+        <a class="map-btn" href="https://maps.google.com/?q=Locronan,+France" target="_blank">📍 Locronan</a>
+        <a class="map-btn" href="https://maps.google.com/?q=Église+Saint-Ronan+Locronan,+France" target="_blank">📍 Église Saint-Ronan</a>
+        <a class="map-btn" href="https://maps.google.com/?q=Cathédrale+Saint-Corentin+Quimper,+France" target="_blank">📍 Kathedrale Quimper</a>
+        <a class="map-btn" href="https://maps.google.com/?q=Faïenceries+HB-Henriot+Quimper,+France" target="_blank">📍 Faïenceries HB-Henriot</a>
+      </div>
+      <details>
+        <summary>Hotels, Restaurants &amp; Tipps</summary>
+        <div class="det-block">
+          <h4>🏨 Übernachtung Quimper</h4>
+          <p><strong>Hôtel Kregenn</strong> ⭐⭐⭐: Modern und zentral. ~€90–130/N. · <strong>Hôtel Gradlon</strong> ⭐⭐⭐: Charme und Garten, etwas ruhiger. ~€100–145/N.</p>
         </div>
-        <div class="hl-section">
-          <strong>🍽️ Abendessen</strong>
-          <p><strong>L'Ambroisie</strong> — Eines der besten Restaurants in Quimper, kreative bretonische Küche. Reservieren! · <strong>Le Temps d'une Pause</strong> — Bodenständig gut.</p>
+        <div class="det-block">
+          <h4>🍽️ Abendessen</h4>
+          <p><strong>L'Ambroisie</strong>: Eines der besten Häuser in Quimper, kreative bretonische Küche. Reservieren! · <strong>Le Temps d'une Pause</strong>: Bodenständig gut.</p>
         </div>
-        <div class="hl-section">
-          <strong>💡 Tipps</strong>
+        <div class="det-block">
+          <h4>💡 Tipps zu Locronan</h4>
           <ul>
-            <li>Faïenceries: Werksführungen nur wochentags — Montag ist ideal.</li>
-            <li>Quimper Altstadt am Zusammenfluss von Odet und Steir — abends wunderschön beleuchtet.</li>
+            <li><strong>Parken:</strong> Autos dürfen nicht in den Ort, es gibt einen ausgeschilderten Parkplatz am Rand (~€4). Von dort 3 Min. zu Fuss.</li>
+            <li>Der Name kommt von <em>Lok-Ronan</em>, «heiliger Bezirk des Ronan». Der irische Mönch Ronan missionierte hier im 5. Jh. Die <strong>Troménie</strong>, eine 12 km lange Prozession, folgt bis heute seinem Weg. Die grosse Version findet nur alle sechs Jahre statt.</li>
+            <li><strong>Kouign-Amann</strong> bei der Boulangerie am Platz. Das Original stammt aus dem nahen Douarnenez.</li>
+            <li>Montag ist gut: weniger Reisebusse als am Wochenende.</li>
           </ul>
         </div>
-      </div>
-    </details>
-  </div>
-</div>
-
-<!-- TAG 11 -->
-<div class="day-card type-natur" data-type="natur">
-  <div class="card-top">
-    <div class="day-meta">
-      <span class="day-num">8</span>
-      <span class="day-label">Sep · Di</span>
-    </div>
-    <span class="day-icon">🌬️</span>
-  </div>
-  <div class="card-body">
-    <h3 class="card-title">Quimper → Pointe du Raz → Concarneau</h3>
-    <div class="drive-badge">🚗 ~150 km · ~2.5 Std.</div>
-    <p class="card-desc">Einer der dramatischsten Tage der Reise: Die <strong>Pointe du Raz</strong> (~1 Std. ab Quimper) ist der westlichste Punkt des französischen Festlandes. Der Wind heult, die Wellen donnern gegen die Klippen, und in der Ferne liegt die Île de Sein. <strong>Wanderung auf dem Kap: ~1.5 Std.</strong> Optional: <strong>Pointe du Van</strong> (15 Min. weiter nördlich) — weniger bekannt, gleichermassen grandios, deutlich weniger Touristen. Mittags kurzer Stopp in <strong>Douarnenez</strong> — echter Fischerhafen, Port du Rosmeur. Nachmittags: <strong>Concarneau</strong> mit der <strong>Ville Close</strong> — eine vollständig erhaltene mittelalterliche Festung auf einer Insel mitten im Hafen.</p>
-    
-    <div class="day-map-wrap"><iframe src="https://maps.google.com/maps?saddr=Quimper,+France&daddr=Pointe+du+Raz,+Plogoff,+France+to:Douarnenez,+France+to:Concarneau,+France&output=embed&hl=de" loading="lazy" allowfullscreen referrerpolicy="no-referrer-when-downgrade"></iframe></div>
-    <div class="map-links">
-      <a href="https://maps.google.com/?q=Pointe+du+Raz,+Finistère,+France" class="map-btn" target="_blank">📍 Pointe du Raz</a>
-      <a href="https://maps.google.com/?q=Pointe+du+Van,+Finistère,+France" class="map-btn" target="_blank">📍 Pointe du Van</a>
-      <a href="https://maps.google.com/?q=Port+du+Rosmeur+Douarnenez,+France" class="map-btn" target="_blank">📍 Douarnenez</a>
-      <a href="https://maps.google.com/?q=Ville+Close+Concarneau,+France" class="map-btn" target="_blank">📍 Ville Close Concarneau</a>
-    </div>
-    <details>
-      <summary>Hotels, Restaurants &amp; Tipps</summary>
-      <div class="hl-body">
-        <div class="hl-section">
-          <strong>🏨 Übernachtung Concarneau</strong>
-          <p><strong>Hôtel les Sables Blancs</strong> ⭐⭐⭐⭐ — Direkt am Strand, schöne Meereslage. ~€130–190/N. · <strong>Hôtel de l'Océan</strong> ⭐⭐⭐ — Zentral, gut, vernünftiger Preis. ~€90–130/N.</p>
-        </div>
-        <div class="hl-section">
-          <strong>🍽️ Abendessen</strong>
-          <p><strong>L'Amiral</strong> — Das beste Fischrestaurant in Concarneau. · <strong>Le Buccin</strong> — Grosse Meeresfrüchteplatten, lebendig.</p>
-        </div>
-        <div class="hl-section">
-          <strong>💡 Tipps</strong>
+        <div class="det-block">
+          <h4>💡 Tipps Morlaix &amp; Quimper</h4>
           <ul>
-            <li>Pointe du Raz: Windschutzjacke und feste Schuhe — auch im September kann es stürmisch sein.</li>
+            <li>Faïenceries HB-Henriot: Werksführungen nur werktags, Montag passt.</li>
+            <li>Quimpers Altstadt liegt am Zusammenfluss von Odet und Steir, abends schön beleuchtet.</li>
+            <li>Reine Fahrzeit heute 2.5 Std., verteilt auf drei Etappen. Der Tag ist entspannt, wenn ihr um 9 Uhr startet.</li>
+          </ul>
+        </div>
+      </details>
+    </div>
+  </div>
+
+  <!-- ══════════ TAG 11 ══════════ -->
+  <div class="day-card type-natur" data-type="natur">
+    <div class="card-top">
+      <div class="day-num">11</div>
+      <div class="day-label">8 Sep · Di<small>Penn-ar-Bed</small></div>
+      <div class="day-icon">🌬️</div>
+    </div>
+    <div class="card-body">
+      <h3 class="card-title">Quimper → Pointe du Raz → Concarneau</h3>
+      <div class="drive-badge">🚗 ~150 km · ~2.5 Std.</div>
+      <p class="card-desc">Einer der dramatischsten Tage der Reise. Die <strong>Pointe du Raz</strong> (~1 Std. ab Quimper) ist der westlichste Punkt des französischen Festlands. Der Wind heult, die Wellen donnern gegen die Klippen, draussen liegt die Île de Sein. <strong>Wanderung auf dem Kap: ~1.5 Std.</strong> Optional die <strong>Pointe du Van</strong> (15 Min. weiter nördlich), weniger bekannt, gleichermassen grandios, deutlich weniger Menschen. Mittags kurzer Stopp in <strong>Douarnenez</strong>, echter Fischerhafen am Port du Rosmeur. Nachmittags <strong>Concarneau</strong> mit der <strong>Ville Close</strong>, einer vollständig erhaltenen mittelalterlichen Festung auf einer Insel mitten im Hafen.</p>
+      <div class="day-map-wrap"><iframe src="https://maps.google.com/maps?saddr=Quimper,+France&daddr=Pointe+du+Raz,+Plogoff,+France+to:Douarnenez,+France+to:Concarneau,+France&output=embed&hl=de" loading="lazy" allowfullscreen referrerpolicy="no-referrer-when-downgrade"></iframe></div>
+      <div class="map-links">
+        <a class="map-btn" href="https://maps.google.com/?q=Pointe+du+Raz,+Finistère,+France" target="_blank">📍 Pointe du Raz</a>
+        <a class="map-btn" href="https://maps.google.com/?q=Pointe+du+Van,+Finistère,+France" target="_blank">📍 Pointe du Van</a>
+        <a class="map-btn" href="https://maps.google.com/?q=Port+du+Rosmeur+Douarnenez,+France" target="_blank">📍 Douarnenez</a>
+        <a class="map-btn" href="https://maps.google.com/?q=Ville+Close+Concarneau,+France" target="_blank">📍 Ville Close Concarneau</a>
+      </div>
+      <details>
+        <summary>Hotels, Restaurants &amp; Tipps</summary>
+        <div class="det-block">
+          <h4>🏨 Übernachtung Concarneau</h4>
+          <p><strong>Hôtel les Sables Blancs</strong> ⭐⭐⭐⭐: Direkt am Strand, schöne Meereslage. ~€130–190/N. · <strong>Hôtel de l'Océan</strong> ⭐⭐⭐: Zentral, gut, vernünftiger Preis. ~€90–130/N.</p>
+        </div>
+        <div class="det-block">
+          <h4>🍽️ Abendessen</h4>
+          <p><strong>L'Amiral</strong>: Das beste Fischrestaurant in Concarneau. · <strong>Le Buccin</strong>: Grosse Meeresfrüchteplatten, lebendig.</p>
+        </div>
+        <div class="det-block">
+          <h4>💡 Tipps</h4>
+          <ul>
+            <li>Pointe du Raz: Windjacke und feste Schuhe, auch im September kann es stürmen.</li>
             <li>Pointe du Van: Parkplatz ca. 1.5 km vor dem Kap, kurzer Fussmarsch.</li>
-            <li>Concarneau Ville Close: Abends nach 18 Uhr besonders stimmungsvoll, weniger Betrieb.</li>
+            <li>Ville Close nach 18 Uhr: stimmungsvoll und fast leer.</li>
           </ul>
         </div>
-      </div>
-    </details>
+      </details>
+    </div>
   </div>
-</div>
 
-<!-- TAG 12 -->
-<div class="day-card type-natur" data-type="natur">
-  <div class="card-top">
-    <div class="day-meta">
-      <span class="day-num">9</span>
-      <span class="day-label">Sep · Mi</span>
+  <!-- ══════════ TAG 12 ══════════ -->
+  <div class="day-card type-natur" data-type="natur">
+    <div class="card-top">
+      <div class="day-num">12</div>
+      <div class="day-label">9 Sep · Mi<small>Gauguin &amp; Megalithen</small></div>
+      <div class="day-icon">🗿</div>
     </div>
-    <span class="day-icon">🗿</span>
-  </div>
-  <div class="card-body">
-    <h3 class="card-title">Concarneau → Pont-Aven → Carnac → Vannes</h3>
-    <div class="drive-badge">🚗 ~120 km · ~2 Std.</div>
-    <p class="card-desc">Morgens: <strong>Pont-Aven</strong> (~30 Min.) — das Dorf, das Paul Gauguin berühmt machte. Heute eine hübsche Galerienstadt an einem Fluss mit alten Mühlen. Die <strong>Kouign-Amann</strong> beim örtlichen Bäcker probieren — buttrig, karamellisiert, eine moralische Pflicht. Mittags: <strong>Alignements de Carnac</strong> (~45 Min.) — das grösste vorgeschichtliche Megalith-Monument der Welt: Über 3'000 aufrecht stehende Steine aus dem Neolithikum in langen parallelen Reihen. Nichts bereitet auf diesen Anblick vor. Nachmittags: <strong>Vannes</strong> (~25 Min.) mit seiner wunderschönen mittelalterlichen Altstadt, vollständig erhaltenen Stadtmauern und den ikonischen <strong>Lavandières</strong>-Skulpturen an der Stadtmauer.</p>
-    
-    <div class="day-map-wrap"><iframe src="https://maps.google.com/maps?saddr=Concarneau,+France&daddr=Pont-Aven,+France+to:Carnac,+France+to:Vannes,+France&output=embed&hl=de" loading="lazy" allowfullscreen referrerpolicy="no-referrer-when-downgrade"></iframe></div>
-    <div class="map-links">
-      <a href="https://maps.google.com/?q=Pont-Aven+Musée,+France" class="map-btn" target="_blank">📍 Pont-Aven</a>
-      <a href="https://maps.google.com/?q=Alignements+de+Carnac,+France" class="map-btn" target="_blank">📍 Alignements de Carnac</a>
-      <a href="https://maps.google.com/?q=Musée+de+Préhistoire+Carnac,+France" class="map-btn" target="_blank">📍 Musée Préhistoire Carnac</a>
-      <a href="https://maps.google.com/?q=Remparts+de+Vannes,+France" class="map-btn" target="_blank">📍 Remparts Vannes</a>
-    </div>
-    <details>
-      <summary>Hotels, Restaurants &amp; Tipps</summary>
-      <div class="hl-body">
-        <div class="hl-section">
-          <strong>🏨 Übernachtung Vannes</strong>
-          <p><strong>Villa Kerasy</strong> ⭐⭐⭐⭐ — Boutique-Hotel, wunderschön eingerichtet, ruhige Lage nahe dem Hafen. ~€150–200/N. · <strong>Le Roof</strong> ⭐⭐⭐ — Direkt am Hafen, toller Blick. ~€100–150/N.</p>
+    <div class="card-body">
+      <h3 class="card-title">Concarneau → Pont-Aven → Carnac → Vannes</h3>
+      <div class="drive-badge">🚗 ~120 km · ~2 Std.</div>
+      <p class="card-desc">Morgens <strong>Pont-Aven</strong> (~30 Min.), das Dorf, das Paul Gauguin berühmt machte. Heute eine hübsche Galerienstadt an einem Fluss mit alten Mühlen. Das <strong>Kouign-Amann</strong> beim örtlichen Bäcker probieren, buttrig und karamellisiert, eine moralische Pflicht. Mittags die <strong>Alignements de Carnac</strong> (~45 Min.), das grösste vorgeschichtliche Megalith-Monument der Welt: über 3'000 aufrecht stehende Steine aus dem Neolithikum in langen parallelen Reihen, älter als Stonehenge und die Pyramiden. Nichts bereitet auf diesen Anblick vor. Nachmittags <strong>Vannes</strong> (~25 Min.) mit mittelalterlicher Altstadt, erhaltenen Stadtmauern und den <strong>Lavandières</strong>, den alten Waschhäusern am Wall.</p>
+      <div class="day-map-wrap"><iframe src="https://maps.google.com/maps?saddr=Concarneau,+France&daddr=Pont-Aven,+France+to:Carnac,+France+to:Vannes,+France&output=embed&hl=de" loading="lazy" allowfullscreen referrerpolicy="no-referrer-when-downgrade"></iframe></div>
+      <div class="map-links">
+        <a class="map-btn" href="https://maps.google.com/?q=Pont-Aven+Musée,+France" target="_blank">📍 Pont-Aven</a>
+        <a class="map-btn" href="https://maps.google.com/?q=Alignements+de+Carnac,+France" target="_blank">📍 Alignements de Carnac</a>
+        <a class="map-btn" href="https://maps.google.com/?q=Musée+de+Préhistoire+Carnac,+France" target="_blank">📍 Musée Préhistoire Carnac</a>
+        <a class="map-btn" href="https://maps.google.com/?q=Remparts+de+Vannes,+France" target="_blank">📍 Remparts Vannes</a>
+      </div>
+      <details>
+        <summary>Hotels, Restaurants &amp; Tipps</summary>
+        <div class="det-block">
+          <h4>🏨 Übernachtung Vannes</h4>
+          <p><strong>Villa Kerasy</strong> ⭐⭐⭐⭐: Boutique-Hotel, wunderschön eingerichtet, ruhige Lage nahe dem Hafen. ~€150–200/N. · <strong>Le Roof</strong> ⭐⭐⭐: Direkt am Hafen, toller Blick. ~€100–150/N.</p>
         </div>
-        <div class="hl-section">
-          <strong>🍽️ Abendessen</strong>
-          <p><strong>Dan Ewen</strong> — Bretonische Küche auf hohem Niveau, lokal sehr geschätzt. Reservieren! · <strong>La Table des Gourmets</strong> — Verlässlich gut.</p>
+        <div class="det-block">
+          <h4>🍽️ Abendessen</h4>
+          <p><strong>Dan Ewen</strong>: Bretonische Küche auf hohem Niveau, lokal sehr geschätzt. Reservieren! · <strong>La Table des Gourmets</strong>: Verlässlich gut.</p>
         </div>
-        <div class="hl-section">
-          <strong>💡 Tipps</strong>
+        <div class="det-block">
+          <h4>💡 Tipps</h4>
           <ul>
-            <li>Carnac-Steine sind eingezäunt — Führungen oder Besucherwege folgen. Kein Betreten.</li>
-            <li>Beste Sicht auf die Alignements: von der Butte de Tumiac (10 Min. Umweg).</li>
-            <li>Pont-Aven: Museum Gauguin sehr sehenswert, klein und schön. ~€5/Person.</li>
+            <li>Die Steinreihen sind eingezäunt. Von Oktober bis März darf man hinein, im September nur auf geführten Touren oder von den Aussichtsplattformen.</li>
+            <li>Beste Übersicht: der Tumulus Saint-Michel oder die Butte de Tumiac.</li>
+            <li>Pont-Aven: das Musée de Pont-Aven ist klein und sehr schön, ~€8/Person.</li>
           </ul>
         </div>
-      </div>
-    </details>
+      </details>
+    </div>
   </div>
-</div>
 
-<!-- TAG 13 -->
-<div class="day-card type-staedte" data-type="staedte">
-  <div class="card-top">
-    <div class="day-meta">
-      <span class="day-num">10</span>
-      <span class="day-label">Sep · Do</span>
+  <!-- ══════════ TAG 13 ══════════ -->
+  <div class="day-card type-staedte" data-type="staedte">
+    <div class="card-top">
+      <div class="day-num">13</div>
+      <div class="day-label">10 Sep · Do<small>Golf, Elefant &amp; Loire</small></div>
+      <div class="day-icon">🚢</div>
     </div>
-    <span class="day-icon">🚢</span>
-  </div>
-  <div class="card-body">
-    <h3 class="card-title">Vannes → Golfe du Morbihan → Nantes → Loire-Tal</h3>
-    <div class="drive-badge">🚗 ~200 km · ~2.5 Std.</div>
-    <p class="card-desc">Morgens: <strong>Vannes Altstadt</strong> zu Fuss — die Remparts, Jardins des Remparts, Cathédrale Saint-Pierre. Optional: Eine <strong>Bootsfahrt auf dem Golfe du Morbihan</strong> (Croisières du Golfe, ~2 Std.) — dieser fast geschlossene Meeresarm mit Inseln und Gezeitenkanälen ist eine bretonische Besonderheit. Mittags: Fahrt nach <strong>Nantes</strong> (~1.5 Std.): Die <strong>Machines de l'Île</strong> — animatronische Riesenmaschinen, darunter ein zwölf Meter hoher Elefant mit echten Passagieren — sind eines der surrealsten Kunstprojekte Frankreichs. Tickets online kaufen! Abends: Weiterfahrt nach <strong>Saumur</strong> im Loire-Tal (~45 Min.).</p>
-    
-    <div class="day-map-wrap"><iframe src="https://maps.google.com/maps?saddr=Vannes,+France&daddr=Nantes,+France+to:Saumur,+France&output=embed&hl=de" loading="lazy" allowfullscreen referrerpolicy="no-referrer-when-downgrade"></iframe></div>
-    <div class="map-links">
-      <a href="https://maps.google.com/?q=Golfe+du+Morbihan,+France" class="map-btn" target="_blank">📍 Golfe du Morbihan</a>
-      <a href="https://maps.google.com/?q=Machines+de+l'Île+Nantes,+France" class="map-btn" target="_blank">📍 Machines de l'Île</a>
-      <a href="https://maps.google.com/?q=Château+de+Saumur,+France" class="map-btn" target="_blank">📍 Saumur</a>
-    </div>
-    <details>
-      <summary>Hotels, Restaurants &amp; Tipps</summary>
-      <div class="hl-body">
-        <div class="hl-section">
-          <strong>🏨 Übernachtung Saumur / Loire</strong>
-          <p><strong>Hôtel Anne d'Anjou, Saumur</strong> ⭐⭐⭐⭐ — Elegant, Blick auf Loire und Schloss. ~€130–180/N. · <strong>Le Prieuré, Chênehutte</strong> ⭐⭐⭐⭐⭐ — Romantisches Klosterhotel über der Loire, eine der schönsten Adressen. ~€200–320/N.</p>
+    <div class="card-body">
+      <h3 class="card-title">Vannes → Golfe du Morbihan → Nantes → Saumur</h3>
+      <div class="drive-badge">🚗 ~200 km · ~2.5 Std.</div>
+      <p class="card-desc">Morgens <strong>Vannes</strong> zu Fuss: Remparts, Jardins des Remparts, Cathédrale Saint-Pierre. Optional eine <strong>Bootsfahrt auf dem Golfe du Morbihan</strong> (~2 Std.), diesem fast geschlossenen Meeresarm mit Dutzenden Inseln und starken Gezeitenströmen. Mittags nach <strong>Nantes</strong> (~1.5 Std.): Die <strong>Machines de l'Île</strong> sind eines der surrealsten Kunstprojekte Frankreichs, ein zwölf Meter hoher mechanischer Elefant, der mit Passagieren durch die alten Werfthallen stapft und Wasser aus dem Rüssel spritzt. Tickets online! Abends weiter nach <strong>Saumur</strong> an der Loire (~45 Min.).</p>
+      <div class="day-map-wrap"><iframe src="https://maps.google.com/maps?saddr=Vannes,+France&daddr=Nantes,+France+to:Saumur,+France&output=embed&hl=de" loading="lazy" allowfullscreen referrerpolicy="no-referrer-when-downgrade"></iframe></div>
+      <div class="map-links">
+        <a class="map-btn" href="https://maps.google.com/?q=Golfe+du+Morbihan,+France" target="_blank">📍 Golfe du Morbihan</a>
+        <a class="map-btn" href="https://maps.google.com/?q=Machines+de+l'Île+Nantes,+France" target="_blank">📍 Machines de l'Île</a>
+        <a class="map-btn" href="https://maps.google.com/?q=Château+de+Saumur,+France" target="_blank">📍 Saumur</a>
+      </div>
+      <details>
+        <summary>Hotels, Restaurants &amp; Tipps</summary>
+        <div class="det-block">
+          <h4>🏨 Übernachtung Saumur / Loire</h4>
+          <p><strong>Hôtel Anne d'Anjou, Saumur</strong> ⭐⭐⭐⭐: Elegant, Blick auf Loire und Schloss. ~€130–180/N. · <strong>Le Prieuré, Chênehutte</strong> ⭐⭐⭐⭐⭐: Romantisches Klosterhotel über der Loire, eine der schönsten Adressen der Region. ~€200–320/N.</p>
         </div>
-        <div class="hl-section">
-          <strong>🍽️ Abendessen</strong>
-          <p><strong>L'Aromate</strong> (Saumur) — Sehr gute, moderne Loire-Küche. · Restaurant im Hotel.</p>
+        <div class="det-block">
+          <h4>🍽️ Abendessen</h4>
+          <p><strong>L'Aromate</strong> (Saumur): Sehr gute, moderne Loire-Küche. · Alternativ im Hotel.</p>
         </div>
-        <div class="hl-section">
-          <strong>💡 Tipps</strong>
+        <div class="det-block">
+          <h4>💡 Tipps</h4>
           <ul>
-            <li>Machines de l'Île Nantes: Tickets immer online — stark ausgebucht im September!</li>
+            <li>Machines de l'Île: Tickets immer online, im September stark ausgebucht.</li>
             <li>Bootsfahrt Golfe du Morbihan: Croisières du Golfe, 2-Std.-Tour ~€20/Person.</li>
-            <li>Nantes hat viele Parkplätze — Relais Park+Ride am Stadtrand empfohlen.</li>
+            <li>Nantes: Park+Ride am Stadtrand nutzen, die Innenstadt ist mühsam mit dem Auto.</li>
+            <li>Saumur ist Zentrum des Crémant de Loire. Eine Cave in Saint-Hilaire-Saint-Florent liegt 5 Min. ausserhalb.</li>
           </ul>
         </div>
-      </div>
-    </details>
+      </details>
+    </div>
   </div>
-</div>
 
-<!-- TAG 14 -->
-<div class="day-card type-staedte" data-type="staedte">
-  <div class="card-top">
-    <div class="day-meta">
-      <span class="day-num">11</span>
-      <span class="day-label">Sep · Fr</span>
+  <!-- ══════════ TAG 14 ══════════ -->
+  <div class="day-card type-anreise" data-type="anreise">
+    <div class="card-top">
+      <div class="day-num">14</div>
+      <div class="day-label">11 Sep · Fr<small>Rückreisetag</small></div>
+      <div class="day-icon">🍷</div>
     </div>
-    <span class="day-icon">🍷</span>
-  </div>
-  <div class="card-body">
-    <h3 class="card-title">Loire-Tal → Azay-le-Rideau → Beaune (Burgund)</h3>
-    <div class="drive-badge">🚗 ~430 km · ~4.5 Std. · Rückreisetag</div>
-    <p class="card-desc">Morgens optional: <strong>Château d'Azay-le-Rideau</strong> (30 Min. ab Saumur) — eines der romantischsten Renaissanceschlösser Frankreichs, das sich im Wasser des Indre spiegelt. Alternativ: <strong>Chinon</strong> (Burg, Weinort, Rabelais-Stadt). Dann Fahrt nach <strong>Beaune</strong> in Burgund (~4 Std.). Das <strong>Hôtel-Dieu</strong> (mittelalterliches Krankenhaus mit dem farbig glasierten Ziegeldach) ist eines der ikonischsten Gebäude Frankreichs. Und dann: Eine <strong>Weinprobe in einem Burgunder Cave</strong> — Maison Joseph Drouhin oder Bouchard Père &amp; Fils. Das darf nicht fehlen.</p>
-    
-    <div class="day-map-wrap"><iframe src="https://maps.google.com/maps?saddr=Saumur,+France&daddr=Azay-le-Rideau,+France+to:Beaune,+France&output=embed&hl=de" loading="lazy" allowfullscreen referrerpolicy="no-referrer-when-downgrade"></iframe></div>
-    <div class="map-links">
-      <a href="https://maps.google.com/?q=Château+d'Azay-le-Rideau,+France" class="map-btn" target="_blank">📍 Azay-le-Rideau</a>
-      <a href="https://maps.google.com/?q=Hôtel-Dieu+Beaune,+France" class="map-btn" target="_blank">📍 Hôtel-Dieu Beaune</a>
-      <a href="https://maps.google.com/?q=Maison+Joseph+Drouhin+Beaune,+France" class="map-btn" target="_blank">📍 Cave Drouhin Beaune</a>
-    </div>
-    <details>
-      <summary>Hotels, Restaurants &amp; Tipps</summary>
-      <div class="hl-body">
-        <div class="hl-section">
-          <strong>🏨 Übernachtung Beaune</strong>
-          <p><strong>Le Cep</strong> ⭐⭐⭐⭐⭐ — Historisches Stadthaus mitten in Beaune. ~€200–290/N. · <strong>Hôtel des Remparts</strong> ⭐⭐⭐ — Im Renaissance-Fürstenhaus, sehr gut, fairer Preis. ~€120–160/N.</p>
+    <div class="card-body">
+      <h3 class="card-title">Saumur → Azay-le-Rideau → Dijon</h3>
+      <div class="drive-badge">🚗 ~530 km · ~5.5 Std. · Rückreisetag</div>
+      <p class="card-desc">Morgens <strong>Château d'Azay-le-Rideau</strong> (30 Min. ab Saumur), eines der romantischsten Renaissanceschlösser Frankreichs, halb auf Pfählen im Indre gebaut, sodass es sich vollständig im Wasser spiegelt. Balzac nannte es «einen facettierten Diamanten, gefasst von der Indre». Dann die lange Etappe nach <strong>Dijon</strong> (~4.5 Std.), der alten Hauptstadt der Herzöge von Burgund. Abends durch die Altstadt: der <strong>Palais des Ducs</strong> mit dem Halbrund des Place de la Libération, die Fachwerkhäuser der <strong>Rue des Forges</strong> und die <strong>Église Notre-Dame</strong> mit ihren 51 Wasserspeiern. An deren Nordwand sitzt die <strong>Chouette</strong>, die kleine Steineule: mit der linken Hand berühren, Wunsch denken. Sie ist vom Anfassen der Jahrhunderte schon ganz glatt geworden.</p>
+      <div class="day-map-wrap"><iframe src="https://maps.google.com/maps?saddr=Saumur,+France&daddr=Azay-le-Rideau,+France+to:Dijon,+France&output=embed&hl=de" loading="lazy" allowfullscreen referrerpolicy="no-referrer-when-downgrade"></iframe></div>
+      <div class="map-links">
+        <a class="map-btn" href="https://maps.google.com/?q=Château+d'Azay-le-Rideau,+France" target="_blank">📍 Azay-le-Rideau</a>
+        <a class="map-btn" href="https://maps.google.com/?q=Palais+des+Ducs+de+Bourgogne+Dijon,+France" target="_blank">📍 Palais des Ducs</a>
+        <a class="map-btn" href="https://maps.google.com/?q=La+Chouette+Dijon,+France" target="_blank">📍 La Chouette</a>
+        <a class="map-btn" href="https://maps.google.com/?q=Les+Halles+Dijon,+France" target="_blank">📍 Les Halles Dijon</a>
+      </div>
+      <details>
+        <summary>Hotels, Restaurants &amp; Tipps</summary>
+        <div class="det-block">
+          <h4>🏨 Übernachtung Dijon</h4>
+          <p><strong>Grand Hôtel La Cloche</strong> ⭐⭐⭐⭐⭐: Das Traditionshaus der Stadt seit 1424, am Place Darcy, mit Spa. ~€200–290/N. · <strong>Maison Philippe le Bon</strong> ⭐⭐⭐⭐: Herrenhaus des 15. Jh. im historischen Kern, sehr stilvoll. ~€150–200/N. · <strong>Hôtel Vertigo</strong> ⭐⭐⭐⭐: Modern, ruhig, gutes Preis-Leistungs-Verhältnis. ~€120–165/N.</p>
         </div>
-        <div class="hl-section">
-          <strong>🍽️ Abendessen</strong>
-          <p><strong>Le Jardin des Remparts</strong> — Eines der besten Restaurants in Beaune, elegante Burgunderküche. · <strong>Caves Madeleine</strong> — Weinbar + kleine Küche, sehr persönlich.</p>
+        <div class="det-block">
+          <h4>🍽️ Abendessen</h4>
+          <p><strong>Loiseau des Ducs</strong>: Ein Michelin-Stern, direkt hinter dem Palais des Ducs, burgundische Klassiker präzise gemacht. Reservieren! · <strong>DZ'envies</strong>: Modern, kreativ, entspannter, neben den Halles. · <strong>Chez Léon</strong>: Bodenständiges Bistro für Œufs en meurette und Bœuf bourguignon.</p>
         </div>
-        <div class="hl-section">
-          <strong>💡 Tipps</strong>
+        <div class="det-block">
+          <h4>💡 Tipps</h4>
           <ul>
-            <li>Weinprobe in Beaune: Voranmeldung empfohlen bei Drouhin oder Bouchard.</li>
-            <li>Azay-le-Rideau: Online-Ticket, Eingang oft wartezeitenreich.</li>
-            <li>Heute ist der längste Fahrtag — Azay früh (ab 9 Uhr) besuchen.</li>
+            <li><strong>Langer Fahrtag.</strong> Azay früh besuchen (Öffnung ab 9:30 Uhr), gegen 11:30 Uhr weiterfahren, dann seid ihr um 17 Uhr in Dijon.</li>
+            <li>Wer die Fahrt kürzen will: Azay streichen und direkt fahren, das spart etwa 1 Std.</li>
+            <li>Route: A85 → A71 Bourges → A77 Nevers → A38 Dijon. Alternativ nördlich über Orléans und Auxerre, ähnlich lang.</li>
+            <li>Dijon hat einen <strong>Parcours de la Chouette</strong>: 22 in den Boden eingelassene Bronze-Eulen führen durch die Altstadt. Die Broschüre gibt es im Office de Tourisme.</li>
+            <li>Wer doch noch Wein will: die <strong>Route des Grands Crus</strong> beginnt direkt südlich von Dijon in Marsannay und führt über Gevrey-Chambertin und Vosne-Romanée. Eine halbe Stunde Umweg auf der Heimfahrt.</li>
           </ul>
         </div>
-      </div>
-    </details>
+      </details>
+    </div>
   </div>
-</div>
 
-<!-- TAG 15 -->
-<div class="day-card type-anreise" data-type="anreise">
-  <div class="card-top">
-    <div class="day-meta">
-      <span class="day-num">12</span>
-      <span class="day-label">Sep · Sa</span>
+  <!-- ══════════ TAG 15 ══════════ -->
+  <div class="day-card type-anreise" data-type="anreise">
+    <div class="card-top">
+      <div class="day-num">15</div>
+      <div class="day-label">12 Sep · Sa<small>Heimreisetag</small></div>
+      <div class="day-icon">🏠</div>
     </div>
-    <span class="day-icon">🏠</span>
-  </div>
-  <div class="card-body">
-    <h3 class="card-title">Beaune → (Dijon) → Pfungen</h3>
-    <div class="drive-badge">🚗 ~320 km · ~3.5 Std. · Heimreisetag</div>
-    <p class="card-desc">Letzter Reisetag — entspannter Heimweg. Optionaler Morgen-Stopp in <strong>Dijon</strong> (30 Min. ab Beaune): Der <strong>Palais des Ducs de Bourgogne</strong> mit seinem Place de la Libération ist beeindruckend. Und bei <strong>Maille</strong> (Rue de la Liberté) gibt es Senf in mehr Variationen als vorstellbar — das perfekte Mitbringsel. Dann Heimfahrt über <strong>Besançon und Pontarlier</strong> (Schweizer Grenze Les Longevilles) oder via <strong>Basel</strong>. Nach ca. 3–3.5 Stunden: Willkommen zurück in Pfungen — mit Meeresrauschen in den Ohren, Austerngeschmack auf der Zunge und Erinnerungen, die lange nachwirken.</p>
-    
-    <div class="day-map-wrap"><iframe src="https://maps.google.com/maps?saddr=Beaune,+France&daddr=Dijon,+France+to:Pfungen,+Winterthur,+Schweiz&output=embed&hl=de" loading="lazy" allowfullscreen referrerpolicy="no-referrer-when-downgrade"></iframe></div>
-    <div class="map-links">
-      <a href="https://maps.google.com/?q=Palais+des+Ducs+de+Bourgogne+Dijon,+France" class="map-btn" target="_blank">📍 Dijon</a>
-      <a href="https://maps.google.com/?q=Maille+Dijon,+France" class="map-btn" target="_blank">📍 Maille Senfgeschäft</a>
-      <a href="https://maps.google.com/?q=Pfungen,+Schweiz" class="map-btn" target="_blank">📍 Pfungen — Heimkehr!</a>
-    </div>
-    <details>
-      <summary>Letzte Tipps &amp; Mitbringsel</summary>
-      <div class="hl-body">
-        <div class="hl-section">
-          <strong>🛍️ Mitbringsel-Liste</strong>
+    <div class="card-body">
+      <h3 class="card-title">Dijon → Pfungen</h3>
+      <div class="drive-badge">🚗 ~460 km · ~4.5 Std. · Heimreisetag</div>
+      <p class="card-desc">Letzter Reisetag, entspannter Heimweg. Vormittags noch etwas Dijon: die <strong>Halles</strong> von Gustave Eiffel sind samstags voller Marktstände, das ist der beste Tag der Woche dafür. Bei <strong>Maille</strong> an der Rue de la Liberté gibt es Senf frisch vom Fass gezapft, in mehr Variationen als man sich vorstellen kann. Das <strong>Musée des Beaux-Arts</strong> im Herzogspalast ist eines der ältesten Museen Frankreichs und kostenlos. Dann Heimfahrt über <strong>Besançon und Mulhouse nach Basel</strong> oder, schöner und langsamer, über <strong>Pontarlier und den Jura</strong>. Nach gut vier Stunden: willkommen zurück in Pfungen, mit Meeresrauschen in den Ohren, Austerngeschmack auf der Zunge und Erinnerungen, die lange nachwirken.</p>
+      <div class="day-map-wrap"><iframe src="https://maps.google.com/maps?saddr=Dijon,+France&daddr=Besancon,+France+to:Pfungen,+Winterthur,+Schweiz&output=embed&hl=de" loading="lazy" allowfullscreen referrerpolicy="no-referrer-when-downgrade"></iframe></div>
+      <div class="map-links">
+        <a class="map-btn" href="https://maps.google.com/?q=Les+Halles+Dijon,+France" target="_blank">📍 Halles de Dijon</a>
+        <a class="map-btn" href="https://maps.google.com/?q=Maille+Dijon,+France" target="_blank">📍 Maille Senfgeschäft</a>
+        <a class="map-btn" href="https://maps.google.com/?q=Musée+des+Beaux-Arts+de+Dijon,+France" target="_blank">📍 Musée des Beaux-Arts</a>
+        <a class="map-btn" href="https://maps.google.com/?q=Pfungen,+Schweiz" target="_blank">📍 Pfungen, Heimkehr!</a>
+      </div>
+      <details>
+        <summary>Letzte Tipps &amp; Mitbringsel</summary>
+        <div class="det-block">
+          <h4>🛍️ Mitbringsel-Liste</h4>
           <ul>
-            <li>Senf bei Maille, Dijon — Senfgläser mit Keramiketikett</li>
-            <li>Burgunder Wein (Beaune) — Pinot Noir oder Chardonnay</li>
-            <li>Calvados (Normandie) oder Cidre Brut</li>
-            <li>Quimper Faïence-Porzellan (falls noch nicht gekauft)</li>
-            <li>Kouign-Amann (hält leider nur 2–3 Tage)</li>
+            <li>Senf bei Maille, Dijon, die Gläser mit Keramikverschluss werden vor Ort abgefüllt</li>
+            <li>Cassis de Dijon oder ein Burgunder von der Route des Grands Crus</li>
+            <li>Calvados oder Cidre Brut aus der Normandie</li>
+            <li>Quimper-Faïence, handbemalt</li>
+            <li>Bretonische Salzbutter und Fleur de Sel de Guérande</li>
+            <li>Kouign-Amann (hält leider nur 2 bis 3 Tage)</li>
           </ul>
         </div>
-        <div class="hl-section">
-          <strong>🚗 Heimroute</strong>
-          <p>Beaune → Dijon → A36 → Belfort → Basel → A2 → Pfungen: ~3.5 Std. · <br>Oder: Beaune → Chalon → Besançon → Pontarlier → Lausanne → Bern → Winterthur: ~4 Std., aber schöner.</p>
+        <div class="det-block">
+          <h4>🚗 Heimroute</h4>
+          <p><strong>Schnell:</strong> Dijon → A39 → A36 Besançon → Mulhouse → Basel → A2 → Pfungen. ~4.5 Std.<br>
+          <strong>Schöner:</strong> Dijon → Dole → Pontarlier → Vallorbe → Lausanne → Bern → Winterthur. ~5 Std., aber die Jura-Passage ist ein würdiger Abschluss.</p>
         </div>
-      </div>
-    </details>
+      </details>
+    </div>
   </div>
-</div>
 
-<!-- ══ TIPPS-BOX ══ -->
-<div class="tips-box">
-  <h3>⚠️ Wichtige Hinweise für unterwegs</h3>
-  <ul>
-    <li><strong>Mont Saint-Michel Gezeiten:</strong> <a href="https://www.annuaire-maree.fr" target="_blank">annuaire-maree.fr</a> — für Tag 6 und 7 Gezeitenzeiten notieren. Flut kommt sehr schnell!</li>
-    <li><strong>Tapisserie de Bayeux:</strong> Ticket unbedingt online vorbuchen — <a href="https://www.bayeuxmuseum.com" target="_blank">bayeuxmuseum.com</a></li>
-    <li><strong>Abbaye Mont Saint-Michel:</strong> Online-Ticket auf <a href="https://www.abbaye-mont-saint-michel.fr" target="_blank">abbaye-mont-saint-michel.fr</a></li>
-    <li><strong>Machines de l'Île Nantes:</strong> Sehr beliebt — Tickets weit im Voraus kaufen auf <a href="https://www.lesmachines-nantes.fr" target="_blank">lesmachines-nantes.fr</a></li>
-    <li><strong>Restaurant-Reservierungen:</strong> Alle empfohlenen Abendessen-Restaurants unbedingt vorab reservieren, besonders an Wochenenden.</li>
-    <li><strong>Kleidung Bretagne:</strong> Windschutzjacke immer dabei — die Atlantikküste kann auch im September rasch stürmisch werden.</li>
-    <li><strong>Bargeld:</strong> Kleinere Crêperien und Austernhändler oft nur Barzahlung. Immer etwas Cash dabei.</li>
-    <li><strong>Île du Grand Bé (Saint-Malo):</strong> Gezeitenplan prüfen — der Sandweg verschwindet bei Flut!</li>
-  </ul>
-</div>
+  </div><!-- /days woche2 -->
 
-<!-- ══ FOOTER ══ -->
-<footer>
-  <strong>Normandie &amp; Bretagne 2026 · 29. Aug. – 12. Sep. · Stefan &amp; Karin · Roadtrip ab Pfungen, Schweiz</strong>
-  Gesamtstrecke ~3 500 km · 14 Übernachtungen · Alle Fahrtzeiten ab Pfungen (47.53° N, 8.63° O) · Alle Angaben ohne Gewähr<br><br>
-  <em>Bon voyage — et bonne route ! 🌊🥐🍷</em>
+  <div class="notes">
+    <h3>⚠️ Wichtige Hinweise für unterwegs</h3>
+    <ul>
+      <li><strong>Mont Saint-Michel Gezeiten:</strong> <a href="https://www.annuaire-maree.fr" target="_blank">annuaire-maree.fr</a>: Zeiten für Tag 6 und 7 notieren. Die Flut kommt sehr schnell!</li>
+      <li><strong>Auberge La Mère Poulard:</strong> Bereits gebucht inkl. Abendessen. Vorab anrufen wegen Ankunftszeit und Gepäcktransport auf die Insel.</li>
+      <li><strong>Abbaye Mont Saint-Michel:</strong> Online-Ticket auf <a href="https://www.abbaye-mont-saint-michel.fr" target="_blank">abbaye-mont-saint-michel.fr</a>, für Tag 7 früh morgens buchen.</li>
+      <li><strong>Tapisserie de Bayeux:</strong> Ticket unbedingt online vorbuchen auf <a href="https://www.bayeuxmuseum.com" target="_blank">bayeuxmuseum.com</a></li>
+      <li><strong>Champagner-Keller Épernay:</strong> Sonntag, 30. Aug., früher Slot. Vorbuchen auf <a href="https://www.moet.com" target="_blank">moet.com</a> oder direkt beim Haus.</li>
+      <li><strong>Machines de l'Île Nantes:</strong> Sehr beliebt, Tickets weit im Voraus auf <a href="https://www.lesmachines-nantes.fr" target="_blank">lesmachines-nantes.fr</a></li>
+      <li><strong>Restaurant-Reservierungen:</strong> Alle empfohlenen Abendessen vorab reservieren, besonders an Wochenenden.</li>
+      <li><strong>Kleidung Bretagne:</strong> Windjacke immer dabei, die Atlantikküste kann auch im September rasch stürmisch werden.</li>
+      <li><strong>Bargeld:</strong> Kleinere Crêperien und Austernhändler nehmen oft nur Bargeld.</li>
+      <li><strong>Île du Grand Bé (Saint-Malo):</strong> Gezeitenplan prüfen, der Sandweg verschwindet bei Flut!</li>
+      <li><strong>Maut Frankreich:</strong> Für die gesamte Reise rund €150 bis €180 einplanen. Ein Télépéage-Badge lohnt sich nicht für zwei Wochen, aber die Kreditkarte muss kontaktlos funktionieren.</li>
+    </ul>
+  </div>
+
+</div><!-- /wrap -->
+
+<footer class="site-footer">
+  <div class="wrap">
+    <strong>Normandie &amp; Bretagne 2026 · 29. Aug. – 12. Sep. · Stefan &amp; Karin · Roadtrip ab Pfungen, Schweiz</strong>
+    Gesamtstrecke ~3 600 km · 14 Übernachtungen · Alle Fahrtzeiten ab Pfungen (47.53° N, 8.63° O) · Alle Angaben ohne Gewähr
+    <em>Bon voyage, et bonne route ! 🌊🥐🍷</em>
+  </div>
 </footer>
 
 <script>
-// ── FILTER ──
-document.querySelectorAll('.fb').forEach(btn=>{
-  btn.addEventListener('click',function(){
-    document.querySelectorAll('.fb').forEach(b=>b.classList.remove('active'));
-    this.classList.add('active');
-    const f=this.dataset.f;
-    document.querySelectorAll('.day-card').forEach(c=>{
-      c.classList.toggle('hidden', f!=='all' && c.dataset.type!==f);
+document.querySelectorAll('.filter-btn').forEach(function(btn){
+  btn.addEventListener('click', function(){
+    var f = btn.dataset.filter;
+    document.querySelectorAll('.filter-btn').forEach(function(b){ b.classList.remove('active'); });
+    btn.classList.add('active');
+    document.querySelectorAll('.day-card').forEach(function(card){
+      var show = (f === 'all') || (card.dataset.type === f);
+      card.classList.toggle('hidden', !show);
     });
-    document.querySelectorAll('.week-header').forEach(wh=>{
-      let el=wh.nextElementSibling,vis=false;
-      while(el&&!el.classList.contains('week-header')){
-        if(el.classList.contains('day-card')&&!el.classList.contains('hidden'))vis=true;
-        el=el.nextElementSibling;
-      }
-      wh.style.display=vis?'':'none';
+    document.querySelectorAll('.week-sep').forEach(function(sep){
+      sep.style.display = (f === 'all') ? '' : 'none';
     });
   });
 });
 </script>
+
 </body>
 </html>
